@@ -12,7 +12,7 @@ npm install @originprotocol/origin-storybook
 
 In a React component, import components:
 ```tsx
-import { Card, Header, Footer } from 'origin-storybook'
+import { Card, Header, Footer } from '@originprotocol/origin-storybook'
 ...
 <Header webProperty='originprotocol' />
 
