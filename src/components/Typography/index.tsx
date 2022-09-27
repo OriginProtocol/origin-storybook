@@ -99,7 +99,7 @@ export const GradientText = ({
 export class Typography extends Component<TypographyProps> {
   static H1 = ({
     children,
-    className,
+    className = '',
     style,
     as
   }: TypographyProps) => {
@@ -112,7 +112,7 @@ export class Typography extends Component<TypographyProps> {
 
   static H2 = ({
     children,
-    className,
+    className = '',
     style,
     as
   }: TypographyProps) => {
@@ -125,7 +125,7 @@ export class Typography extends Component<TypographyProps> {
 
   static H3 = ({
     children,
-    className,
+    className = '',
     style,
     as
   }: TypographyProps) => {
@@ -138,7 +138,7 @@ export class Typography extends Component<TypographyProps> {
 
   static H4 = ({
     children,
-    className,
+    className = '',
     style,
     as
   }: TypographyProps) => {
@@ -151,7 +151,7 @@ export class Typography extends Component<TypographyProps> {
 
   static H5 = ({
     children,
-    className,
+    className = '',
     style,
     as
   }: TypographyProps) => {
@@ -164,7 +164,7 @@ export class Typography extends Component<TypographyProps> {
 
   static H6 = ({
     children,
-    className,
+    className = '',
     style,
     as
   }: TypographyProps) => {
@@ -177,7 +177,7 @@ export class Typography extends Component<TypographyProps> {
 
   static H7 = ({
     children,
-    className,
+    className = '',
     style,
     as
   }: TypographyProps) => {
@@ -190,7 +190,7 @@ export class Typography extends Component<TypographyProps> {
 
   static Body = ({
     children,
-    className,
+    className = '',
     style,
     href,
     as
@@ -204,7 +204,7 @@ export class Typography extends Component<TypographyProps> {
 
   static Body2 = ({
     children,
-    className,
+    className = '',
     style,
     href,
     as
@@ -218,7 +218,7 @@ export class Typography extends Component<TypographyProps> {
 
   static Title = ({
     children,
-    className,
+    className = '',
     style,
     as
   }: TypographyProps) => {
@@ -231,7 +231,7 @@ export class Typography extends Component<TypographyProps> {
 
   static Title2 = ({
     children,
-    className,
+    className = '',
     style,
     as
   }: TypographyProps) => {
@@ -244,7 +244,7 @@ export class Typography extends Component<TypographyProps> {
 
   static Caption = ({
     children,
-    className,
+    className = '',
     style,
     as
   }: TypographyProps) => {
@@ -257,7 +257,7 @@ export class Typography extends Component<TypographyProps> {
 
   static Caption2 = ({
     children,
-    className,
+    className = '',
     style,
     as
   }: TypographyProps) => {
@@ -270,7 +270,7 @@ export class Typography extends Component<TypographyProps> {
 
   static Label = ({
     children,
-    className,
+    className = '',
     style,
     as
   }: TypographyProps) => {
@@ -283,7 +283,7 @@ export class Typography extends Component<TypographyProps> {
 
   static Link = ({
     children,
-    className,
+    className = '',
     style,
     as,
     href,
