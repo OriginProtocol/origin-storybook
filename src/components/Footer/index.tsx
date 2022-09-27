@@ -16,18 +16,18 @@ export const Footer = () => (
         </div>
       </div>
       <div className="flex flex-col flex-2 space-y-4">
-        <Typography.Body2 classes="font-bold">
+        <Typography.Body2 className="font-bold">
           Organization
         </Typography.Body2>
         <div className="flex flex-row md:flex-col space-x-4 md:space-x-0 md:space-y-4">
-          <Typography.Body2 classes="opacity-75" href='https://google.com'>
+          <Typography.Body2 className="opacity-75" href='https://google.com'>
             Team
           </Typography.Body2>
-          <Typography.Body2 classes="opacity-75" href='https://google.com'>
+          <Typography.Body2 className="opacity-75" href='https://google.com'>
             Products
           </Typography.Body2>
           <div className="flex items-center">
-            <Typography.Body2 classes="opacity-75" href='https://google.com'>
+            <Typography.Body2 className="opacity-75" href='https://google.com'>
               Careers
             </Typography.Body2>
             <a href='https://google.com' target='_blank'>
@@ -39,7 +39,7 @@ export const Footer = () => (
         </div>
       </div>
       <div className="flex flex-col flex-2 space-y-4">
-        <Typography.Body2 classes="font-bold">
+        <Typography.Body2 className="font-bold">
           Products
         </Typography.Body2>
         <div className="flex flex-row md:flex-col space-x-4 md:space-x-0 md:space-y-4 opacity-75">
@@ -52,7 +52,7 @@ export const Footer = () => (
         </div>
       </div>
       <div className="flex flex-col flex-2 space-y-4">
-        <Typography.Body2 classes="font-bold">
+        <Typography.Body2 className="font-bold">
           Resources
         </Typography.Body2>
         <div className="flex flex-row md:flex-col space-x-4 md:space-x-0 md:space-y-4 opacity-75">

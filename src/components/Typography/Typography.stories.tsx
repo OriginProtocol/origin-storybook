@@ -21,7 +21,7 @@ const Template: ComponentStory<typeof Typography> = (args) => (
     </div>
     <br />
     <Typography.H2 {...args} >
-      Typography.H2 with <GradientText webProperty='originprotocol' text='Gradient Text' />
+      Typography.H2 with <br /><GradientText webProperty='originprotocol' text='Gradient Text' />
     </Typography.H2>
     <div className="text-xs opacity-50 mt-2">
       fontSize: 64px / 4rem,  lineHeight: 80px / 5rem, fontWeight: 500, fontFamily: 'Saelic'

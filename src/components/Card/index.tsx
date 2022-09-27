@@ -66,13 +66,13 @@ export const Card = ({
     </div>
     <div className="p-6 w-full relative">
       <div className="space-y-3.5">
-        <Typography.Title classes={`${webProperty === 'launchpad' ? 'mt-3' : 'mt-2'}`}>
+        <Typography.Title className={`${webProperty === 'launchpad' ? 'mt-3' : 'mt-2'}`}>
           {title}
         </Typography.Title>
         <Typography.Body2>
           {body}
         </Typography.Body2>
-        <Typography.Link href={linkHref} classes="mt-1 space-x-4 flex items-center">
+        <Typography.Link href={linkHref} className="mt-1 space-x-4 flex items-center">
           {linkText}
           {
             webProperty === 'story' && (
@@ -83,7 +83,7 @@ export const Card = ({
           }
         </Typography.Link>
         {linkText2 && (
-          <Typography.Link href={linkHref2} classes="mt-1 space-x-4 flex items-center">
+          <Typography.Link href={linkHref2} className="mt-1 space-x-4 flex items-center">
             {linkText2}
           </Typography.Link>
         )}

@@ -76,7 +76,7 @@ module.exports = {
         ],
         '7xl': [
           '4rem', {
-            lineHeight: '5rem'
+            lineHeight: '4.25rem'
           }
         ],
         '8xl': [
