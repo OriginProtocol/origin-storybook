@@ -104,7 +104,7 @@ export class Typography extends Component<TypographyProps> {
     as
   }: TypographyProps) => {
     return (
-      <GenericTypography classes={`font-sansSailec font-bold text-8xl ${classes}`} styles={styles} as={as} defaultAs='h1'>
+      <GenericTypography classes={`font-sansSailec font-bold text-5xl md:text-8xl ${classes}`} styles={styles} as={as} defaultAs='h1'>
         {children}
       </GenericTypography>
     )
@@ -117,7 +117,7 @@ export class Typography extends Component<TypographyProps> {
     as
   }: TypographyProps) => {
     return (
-      <GenericTypography classes={`font-sansSailec font-medium text-7xl ${classes}`} styles={styles} as={as} defaultAs='h2'>
+      <GenericTypography classes={`font-sansSailec font-medium text-4xl md:text-7xl ${classes}`} styles={styles} as={as} defaultAs='h2'>
         {children}
       </GenericTypography>
     )
@@ -130,7 +130,7 @@ export class Typography extends Component<TypographyProps> {
     as
   }: TypographyProps) => {
     return (
-      <GenericTypography classes={`font-sansSailec font-medium text-6xl ${classes}`} styles={styles} as={as} defaultAs='h3'>
+      <GenericTypography classes={`font-sansSailec font-medium text-3xl md:text-6xl ${classes}`} styles={styles} as={as} defaultAs='h3'>
         {children}
       </GenericTypography>
     )
@@ -143,7 +143,7 @@ export class Typography extends Component<TypographyProps> {
     as
   }: TypographyProps) => {
     return (
-      <GenericTypography classes={`font-sansSailec font-medium text-5xl ${classes}`} styles={styles} as={as} defaultAs='h4'>
+      <GenericTypography classes={`font-sansSailec font-medium text-2xl md:text-5xl ${classes}`} styles={styles} as={as} defaultAs='h4'>
         {children}
       </GenericTypography>
     )
@@ -156,7 +156,7 @@ export class Typography extends Component<TypographyProps> {
     as
   }: TypographyProps) => {
     return (
-      <GenericTypography classes={`font-sansSailec font-medium text-4xl ${classes}`} styles={styles} as={as} defaultAs='h5'>
+      <GenericTypography classes={`font-sansSailec font-medium text-xl md:text-4xl ${classes}`} styles={styles} as={as} defaultAs='h5'>
         {children}
       </GenericTypography>
     )
@@ -169,7 +169,7 @@ export class Typography extends Component<TypographyProps> {
     as
   }: TypographyProps) => {
     return (
-      <GenericTypography classes={`font-sansSailec font-medium text-3xl ${classes}`} styles={styles} as={as} defaultAs='h6'>
+      <GenericTypography classes={`font-sansSailec font-medium text-lg md:text-3xl ${classes}`} styles={styles} as={as} defaultAs='h6'>
         {children}
       </GenericTypography>
     )
@@ -182,7 +182,7 @@ export class Typography extends Component<TypographyProps> {
     as
   }: TypographyProps) => {
     return (
-      <GenericTypography classes={`font-sansSailec font-bold text-2xl ${classes}`} styles={styles} as={as} defaultAs='h6'>
+      <GenericTypography classes={`font-sansSailec font-medium text-base md:text-2xl ${classes}`} styles={styles} as={as} defaultAs='h6'>
         {children}
       </GenericTypography>
     )
@@ -196,7 +196,7 @@ export class Typography extends Component<TypographyProps> {
     as
   }: TypographyProps) => {
     return (
-      <GenericTypography classes={`font-sansInter font-normal text-xl ${classes}`} styles={styles} as={as} defaultAs='p' href={href}>
+      <GenericTypography classes={`font-sansInter font-normal text-base md:text-xl ${classes}`} styles={styles} as={as} defaultAs='p' href={href}>
         {children}
       </GenericTypography>
     )
