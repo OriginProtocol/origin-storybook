@@ -6,13 +6,13 @@ export interface TypographyProps {
    */
   children: React.ReactNode
   /**
-   * Additional classes to add onto ones supplied by typography componnent
+   * Additional className to add onto ones supplied by typography componnent
    */
-  classes?: string
+  className?: string
   /**
    * Additional styling to add onto typography component
    */
-  styles?: object
+  style?: object
   /**
    * Tag type to use
    */
@@ -29,8 +29,8 @@ export interface TypographyProps {
 
 const GenericTypography = ({
   children,
-  classes,
-  styles,
+  className,
+  style,
   defaultAs,
   as,
   href,
@@ -42,8 +42,8 @@ const GenericTypography = ({
       <a
         href={href}
         target='_blank'
-        className={`${classes}`}
-        style={{...(styles || {})}}
+        className={`${className}`}
+        style={{...(style || {})}}
       >
         <Tag
         >
@@ -54,8 +54,8 @@ const GenericTypography = ({
   } else {
     return (
       <Tag
-        className={`${classes}`}
-        style={{...(styles || {})}}
+        className={`${className}`}
+        style={{...(style || {})}}
       >
         {children}
       </Tag>
@@ -99,12 +99,12 @@ export const GradientText = ({
 export class Typography extends Component<TypographyProps> {
   static H1 = ({
     children,
-    classes,
-    styles,
+    className,
+    style,
     as
   }: TypographyProps) => {
     return (
-      <GenericTypography classes={`font-sansSailec font-bold text-5xl md:text-8xl ${classes}`} styles={styles} as={as} defaultAs='h1'>
+      <GenericTypography className={`font-sansSailec font-bold text-5xl md:text-8xl ${className}`} style={style} as={as} defaultAs='h1'>
         {children}
       </GenericTypography>
     )
@@ -112,12 +112,12 @@ export class Typography extends Component<TypographyProps> {
 
   static H2 = ({
     children,
-    classes,
-    styles,
+    className,
+    style,
     as
   }: TypographyProps) => {
     return (
-      <GenericTypography classes={`font-sansSailec font-medium text-4xl md:text-7xl ${classes}`} styles={styles} as={as} defaultAs='h2'>
+      <GenericTypography className={`font-sansSailec font-medium text-4xl md:text-7xl ${className}`} style={style} as={as} defaultAs='h2'>
         {children}
       </GenericTypography>
     )
@@ -125,12 +125,12 @@ export class Typography extends Component<TypographyProps> {
 
   static H3 = ({
     children,
-    classes,
-    styles,
+    className,
+    style,
     as
   }: TypographyProps) => {
     return (
-      <GenericTypography classes={`font-sansSailec font-medium text-3xl md:text-6xl ${classes}`} styles={styles} as={as} defaultAs='h3'>
+      <GenericTypography className={`font-sansSailec font-medium text-3xl md:text-6xl ${className}`} style={style} as={as} defaultAs='h3'>
         {children}
       </GenericTypography>
     )
@@ -138,12 +138,12 @@ export class Typography extends Component<TypographyProps> {
 
   static H4 = ({
     children,
-    classes,
-    styles,
+    className,
+    style,
     as
   }: TypographyProps) => {
     return (
-      <GenericTypography classes={`font-sansSailec font-medium text-2xl md:text-5xl ${classes}`} styles={styles} as={as} defaultAs='h4'>
+      <GenericTypography className={`font-sansSailec font-medium text-2xl md:text-5xl ${className}`} style={style} as={as} defaultAs='h4'>
         {children}
       </GenericTypography>
     )
@@ -151,12 +151,12 @@ export class Typography extends Component<TypographyProps> {
 
   static H5 = ({
     children,
-    classes,
-    styles,
+    className,
+    style,
     as
   }: TypographyProps) => {
     return (
-      <GenericTypography classes={`font-sansSailec font-medium text-xl md:text-4xl ${classes}`} styles={styles} as={as} defaultAs='h5'>
+      <GenericTypography className={`font-sansSailec font-medium text-xl md:text-4xl ${className}`} style={style} as={as} defaultAs='h5'>
         {children}
       </GenericTypography>
     )
@@ -164,12 +164,12 @@ export class Typography extends Component<TypographyProps> {
 
   static H6 = ({
     children,
-    classes,
-    styles,
+    className,
+    style,
     as
   }: TypographyProps) => {
     return (
-      <GenericTypography classes={`font-sansSailec font-medium text-lg md:text-3xl ${classes}`} styles={styles} as={as} defaultAs='h6'>
+      <GenericTypography className={`font-sansSailec font-medium text-lg md:text-3xl ${className}`} style={style} as={as} defaultAs='h6'>
         {children}
       </GenericTypography>
     )
@@ -177,12 +177,12 @@ export class Typography extends Component<TypographyProps> {
 
   static H7 = ({
     children,
-    classes,
-    styles,
+    className,
+    style,
     as
   }: TypographyProps) => {
     return (
-      <GenericTypography classes={`font-sansSailec font-medium text-base md:text-2xl ${classes}`} styles={styles} as={as} defaultAs='h6'>
+      <GenericTypography className={`font-sansSailec font-medium text-base md:text-2xl ${className}`} style={style} as={as} defaultAs='h6'>
         {children}
       </GenericTypography>
     )
@@ -190,13 +190,13 @@ export class Typography extends Component<TypographyProps> {
 
   static Body = ({
     children,
-    classes,
-    styles,
+    className,
+    style,
     href,
     as
   }: TypographyProps) => {
     return (
-      <GenericTypography classes={`font-sansInter font-normal text-base md:text-xl ${classes}`} styles={styles} as={as} defaultAs='p' href={href}>
+      <GenericTypography className={`font-sansInter font-normal text-base md:text-xl ${className}`} style={style} as={as} defaultAs='p' href={href}>
         {children}
       </GenericTypography>
     )
@@ -204,13 +204,13 @@ export class Typography extends Component<TypographyProps> {
 
   static Body2 = ({
     children,
-    classes,
-    styles,
+    className,
+    style,
     href,
     as
   }: TypographyProps) => {
     return (
-      <GenericTypography classes={`font-sansInter font-normal text-base ${classes}`} styles={styles} as={as} defaultAs='p' href={href}>
+      <GenericTypography className={`font-sansInter font-normal text-base ${className}`} style={style} as={as} defaultAs='p' href={href}>
         {children}
       </GenericTypography>
     )
@@ -218,12 +218,12 @@ export class Typography extends Component<TypographyProps> {
 
   static Title = ({
     children,
-    classes,
-    styles,
+    className,
+    style,
     as
   }: TypographyProps) => {
     return (
-      <GenericTypography classes={`font-sansInter font-bold text-base ${classes}`} styles={styles} as={as} defaultAs='p'>
+      <GenericTypography className={`font-sansInter font-bold text-base ${className}`} style={style} as={as} defaultAs='p'>
         {children}
       </GenericTypography>
     )
@@ -231,12 +231,12 @@ export class Typography extends Component<TypographyProps> {
 
   static Title2 = ({
     children,
-    classes,
-    styles,
+    className,
+    style,
     as
   }: TypographyProps) => {
     return (
-      <GenericTypography classes={`font-sansInter font-bold text-xs ${classes}`} styles={styles} as={as} defaultAs='p'>
+      <GenericTypography className={`font-sansInter font-bold text-xs ${className}`} style={style} as={as} defaultAs='p'>
         {children}
       </GenericTypography>
     )
@@ -244,12 +244,12 @@ export class Typography extends Component<TypographyProps> {
 
   static Caption = ({
     children,
-    classes,
-    styles,
+    className,
+    style,
     as
   }: TypographyProps) => {
     return (
-      <GenericTypography classes={`font-sansInter font-normal text-sm ${classes}`} styles={styles} as={as} defaultAs='p'>
+      <GenericTypography className={`font-sansInter font-normal text-sm ${className}`} style={style} as={as} defaultAs='p'>
         {children}
       </GenericTypography>
     )
@@ -257,12 +257,12 @@ export class Typography extends Component<TypographyProps> {
 
   static Caption2 = ({
     children,
-    classes,
-    styles,
+    className,
+    style,
     as
   }: TypographyProps) => {
     return (
-      <GenericTypography classes={`font-sansInter font-normal text-xs ${classes}`} styles={styles} as={as} defaultAs='p'>
+      <GenericTypography className={`font-sansInter font-normal text-xs ${className}`} style={style} as={as} defaultAs='p'>
         {children}
       </GenericTypography>
     )
@@ -270,12 +270,12 @@ export class Typography extends Component<TypographyProps> {
 
   static Label = ({
     children,
-    classes,
-    styles,
+    className,
+    style,
     as
   }: TypographyProps) => {
     return (
-      <GenericTypography classes={`font-sansInter font-bold text-sm uppercase ${classes}`} styles={styles} as={as} defaultAs='span'>
+      <GenericTypography className={`font-sansInter font-bold text-sm uppercase ${className}`} style={style} as={as} defaultAs='span'>
         {children}
       </GenericTypography>
     )
@@ -283,13 +283,13 @@ export class Typography extends Component<TypographyProps> {
 
   static Link = ({
     children,
-    classes,
-    styles,
+    className,
+    style,
     as,
     href,
   }: TypographyProps) => {
     return (
-      <GenericTypography classes={`font-sansInter font-bold text-base text-link-blue ${classes}`} styles={styles} as={as} defaultAs='p' href={href}>
+      <GenericTypography className={`font-sansInter font-bold text-base text-link-blue ${className}`} style={style} as={as} defaultAs='p' href={href}>
         {children}
       </GenericTypography>
     )
