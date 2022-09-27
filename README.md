@@ -7,7 +7,7 @@ These components are meant to be used by [originprotocol.com](https://originprot
 ### To use in a consuming React app
 1. Install the npm package.
 ```shell
-npm install origin-storybook
+npm install @originprotocol/origin-storybook
 ```
 
 In a React component, import components:
@@ -16,7 +16,7 @@ import { Card, Header, Footer } from 'origin-storybook'
 ...
 <Header webProperty='originprotocol' />
 
-<Card 
+<Card
   webProperty='originprotocol'
   title="Lucky Ducky NFTs"
   imgSrc="https://placekeanu.com/510/340"
@@ -99,7 +99,7 @@ export * from './components/YourComponent' // add your component here
 
 ### Development notes
 * We use [Tailwindcss v2](https://tailwindcss.com/blog/tailwindcss-v2) for styling
-* We use [HeadlessUI](https://headlessui.com/) for more complex UI interactions like dropdowns. 
+* We use [HeadlessUI](https://headlessui.com/) for more complex UI interactions like dropdowns.
 * The build step will compile image and CSS styling, so consuming apps don't need to have Tailwind or HeadlessUI installed.
 
 ---
