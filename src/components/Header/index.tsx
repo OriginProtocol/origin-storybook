@@ -94,7 +94,9 @@ export const Header = ({ webProperty, mappedLinks, language, }: HeaderProps) => 
     <header>
       <div className="px-9 py-16 w-full flex justify-between items-center max-w-screen-2xl mx-auto">
         <div className="flex h-6">
-          <OriginLogo webProperty={webProperty} />
+          <a href='/'>
+            <OriginLogo webProperty={webProperty} />
+          </a>
         </div>
         <div className="hidden md:block">
           <NavLinks mappedLinks={mappedLinks} webProperty={webProperty} />
