@@ -43,7 +43,7 @@ const NavLinks = ({
             )
           } else {
             return (
-              <Button label={mappedLink.label} type="header" size="small" key={mappedLink.label} webProperty={webProperty} />
+              <Button label={mappedLink.label} type="header" size="small" key={mappedLink.label} href={mappedLink.href} webProperty={webProperty} />
             )
           }
         }
