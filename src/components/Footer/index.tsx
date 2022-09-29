@@ -38,23 +38,17 @@ export const Footer = () => (
           Organization
         </Typography.Body2>
         <div className="flex flex-row md:flex-col space-x-4 md:space-x-0 md:space-y-4">
-          <Typography.Body2 className="opacity-75" href='https://google.com'>
-            <a href='https://www.originprotocol.com/en/team' target='_blank'>
-              Team
-            </a>
+          <Typography.Body2 className="opacity-75" href='https://www.originprotocol.com/en/team'>
+            Team
           </Typography.Body2>
-          <Typography.Body2 className="opacity-75" href='https://google.com'>
-            <a href='https://www.originprotocol.com/en/dashboard' target='_blank'>
-              Products
-            </a>
+          <Typography.Body2 className="opacity-75" href='https://www.originprotocol.com/en/dashboard'>
+            Products
           </Typography.Body2>
           <div className="flex items-center">
-            <Typography.Body2 className="opacity-75" href='https://google.com'>
-              <a href='https://angel.co/company/originprotocol/jobs' target='_blank'>
-                Careers
-              </a>
+            <Typography.Body2 className="opacity-75" href='https://angel.co/company/originprotocol/jobs'>
+              Careers
             </Typography.Body2>
-            <a href='https://google.com' target='_blank'>
+            <a href='https://angel.co/company/originprotocol/jobs' target='_blank'>
               <div className="opacity-100 text-sm ml-2 bg-gray-700 py-1 px-3 rounded-xl font-medium">
                 Hiring!
               </div>
@@ -67,15 +61,11 @@ export const Footer = () => (
           Products
         </Typography.Body2>
         <div className="flex flex-row md:flex-col space-x-4 md:space-x-0 md:space-y-4 opacity-75">
-          <Typography.Body2>
-            <a href='https://story.xyz' target='_blank'>
-              Origin Story
-            </a>
+          <Typography.Body2 href='https://story.xyz'>
+            Origin Story
           </Typography.Body2>
-          <Typography.Body2>
-            <a href='https://ousd.com' target='_blank'>
-              Origin Dollar
-            </a>
+          <Typography.Body2 href='https://ousd.com'>
+            Origin Dollar
           </Typography.Body2>
         </div>
       </div>
@@ -84,25 +74,17 @@ export const Footer = () => (
           Resources
         </Typography.Body2>
         <div className="flex flex-row md:flex-col space-x-4 md:space-x-0 md:space-y-4 opacity-75">
-          <Typography.Body2>
-            <a href='https://www.originprotocol.com/en/litepaper' target='_blank'>
-              Litepaper
-            </a>
+          <Typography.Body2 href='https://www.originprotocol.com/en/litepaper'>
+            Litepaper
           </Typography.Body2>
-          <Typography.Body2>
-            <a href='https://www.originprotocol.com/en/videos' target='_blank'>
-              Videos
-            </a>
+          <Typography.Body2 href='https://www.originprotocol.com/en/videos'>
+            Videos
           </Typography.Body2>
-          <Typography.Body2>
-            <a href='https://github.com/originprotocol' target='_blank'>
-              GitHub
-            </a>
+          <Typography.Body2 href='https://github.com/originprotocol'>
+            GitHub
           </Typography.Body2>
-          <Typography.Body2>
-            <a href='https://vote.originprotocol.com' target='_blank'>
-              Governance
-            </a>
+          <Typography.Body2 href='https://vote.originprotocol.com'>
+            Governance
           </Typography.Body2>
         </div>
       </div>
@@ -112,15 +94,11 @@ export const Footer = () => (
         © 2022 Origin Protocol Inc. All rights reserved.
       </Typography.Body2>
       <div className="flex space-x-6">
-        <Typography.Body2>
-          <a href='https://www.originprotocol.com/en/privacy' target='_blank'>
-            Privacy Policy
-          </a>
+        <Typography.Body2 href='https://www.originprotocol.com/en/privacy'>
+          Privacy Policy
         </Typography.Body2>
-        <Typography.Body2>
-          <a href='https://www.originprotocol.com/en/tos' target='_blank'>
-            Terms of Service
-          </a>
+        <Typography.Body2 href='https://www.originprotocol.com/en/tos'>
+          Terms of Service
         </Typography.Body2>
       </div>
     </div>
