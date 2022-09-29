@@ -66,11 +66,11 @@ export const AltCard = ({
           </Typography.Caption2>
         </div>
         {narrow ? (
-          <Typography.Title2 classes={''}>
+          <Typography.Title2>
             {body}
           </Typography.Title2>
           ) : (
-          <Typography.Title classes={''}>
+          <Typography.Title>
             {body}
           </Typography.Title>
         )}

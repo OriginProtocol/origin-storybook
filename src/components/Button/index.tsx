@@ -20,6 +20,18 @@ export interface ButtonProps {
    */
   onClick?: () => void;
   /**
+   * Optional href
+   */
+  href?: string;
+  /**
+  * Optional target
+  */
+  target?: string;
+  /**
+  * Optional rel
+  */
+  rel?: string;
+  /**
    * What additional classes should be used?
    * Will add onto classes derived from other props.
    */
@@ -39,6 +51,9 @@ export const Button = ({
   webProperty = 'originprotocol',
   size = 'medium',
   label,
+  href,
+  target,
+  rel,
   className = '',
   style = {},
   ...props
@@ -51,7 +66,7 @@ export const Button = ({
     case 'originprotocol':
       background = type === 'primary'
         ? 'bg-gradient-to-r from-origin-protocol-button-start to-origin-protocol-button-end'
-        : 'bg-white'
+        : 'bg-transparent'
       textColor = type === 'primary'
         ? 'text-white'
         : 'text-black'
@@ -129,8 +144,11 @@ export const Button = ({
   }
 
   return (
-    <button
+    <a
       type="button"
+      href={href}
+      target={target}
+      rel={rel}
       className={`
         ${background}
         ${textColor}
@@ -150,6 +168,6 @@ export const Button = ({
       {...props}
     >
       {label}
-    </button>
+    </a>
   );
 };
