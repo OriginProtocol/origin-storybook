@@ -71,7 +71,7 @@ export const Footer = () => (
         </div>
       </div>
     </div>
-    <div className="pt-10 flex flex-col md:flex-row space-y-2 md:space-y-0 justify-between opacity-75 px-9 max-w-screen-2xl mx-auto">
+    <div className="pt-10 flex flex-col md:flex-row space-y-2 md:space-y-0 justify-between opacity-75 px-9 max-w-screen-xl mx-auto">
       <Typography.Body2>
         © 2022 Origin Protocol Inc. All rights reserved.
       </Typography.Body2>
