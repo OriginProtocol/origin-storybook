@@ -60,7 +60,7 @@ export const Card = ({
   thumbnailAlt,
   webProperty,
 }: CardProps) => (
-  <div className={`rounded-xl w-full shadow overflow-hidden ${webProperty === 'ousd' ? 'text-white border-white border-2' : 'text-black'}`}>
+  <div className={`rounded-xl w-full shadow overflow-hidden ${webProperty === 'ousd' ? 'text-white border-white border-2' : 'text-black'} bg-white`}>
     <div className="w-full">
       <img src={imgSrc} alt={imgAlt} className="w-full h-auto" />
     </div>

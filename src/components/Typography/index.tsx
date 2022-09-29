@@ -77,10 +77,12 @@ const gradients = {
 
 export const GradientText = ({
   webProperty,
-  text
+  children,
+  text,
 }: {
-  webProperty: 'originprotocol' | 'ousd' | 'story',
-  text: string,
+  webProperty: 'originprotocol' | 'ousd' | 'story'
+  children?: React.ReactNode
+  text?: string
 }) => {
   return (
     <span
@@ -92,6 +94,7 @@ export const GradientText = ({
       className="font-black"
     >
       {text}
+      {children}
     </span>
   )
 }
