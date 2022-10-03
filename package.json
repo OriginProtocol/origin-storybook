@@ -67,5 +67,8 @@
   },
   "files": [
     "/lib"
-  ]
+  ],
+  "dependencies": {
+    "@heroicons/react": "^2.0.11"
+  }
 }

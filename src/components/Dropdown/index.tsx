@@ -1,6 +1,7 @@
 import { Fragment } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import { DownCaret } from '../Icons'
+import { useState } from '@storybook/addons'
 
 type Option = {
   label: string,
@@ -59,6 +60,8 @@ export const Dropdown = ({
   classes,
   style,
 }: DropdownProps) => {
+  const [selectedItem, setSelectedItem] = useState(0)
+
   return (
     <Menu
       as="div"
