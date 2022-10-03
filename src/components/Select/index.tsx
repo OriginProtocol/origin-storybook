@@ -14,17 +14,24 @@ type Option = {
 
 type Props = {
   label: string
+  onSelect: (value: Option) => void
   options: Option[]
 }
 
 export function Select ({
   label,
+  onSelect,
   options
 }: Props) {
   const [selected, setSelected] = useState(options[0])
 
+  const onChange = (value: Option) => {
+    onSelect(value)
+    setSelected(value)
+  }
+
   return (
-    <Listbox value={selected} onChange={setSelected}>
+    <Listbox value={selected} onChange={onChange}>
       {({ open }) => (
         <>
           <Listbox.Label className="block text-sm font-medium text-gray-700">{label}</Listbox.Label>
