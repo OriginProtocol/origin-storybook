@@ -1,7 +1,6 @@
-import { Fragment } from 'react'
+import { Fragment, useState } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import { DownCaret } from '../Icons'
-import { useState } from '@storybook/addons'
 
 type Option = {
   label: string,
