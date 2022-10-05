@@ -69,6 +69,7 @@
     "/lib"
   ],
   "dependencies": {
-    "@heroicons/react": "^2.0.11"
+    "@heroicons/react": "^2.0.11",
+    "rollup-plugin-copy": "^3.4.0"
   }
 }

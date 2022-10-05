@@ -4,9 +4,9 @@ import commonjs from "@rollup/plugin-commonjs";
 import typescript from "rollup-plugin-typescript2";
 import postcss from "rollup-plugin-postcss";
 import svg from 'rollup-plugin-svg';
+import copy from 'rollup-plugin-copy'
 import cssnano from 'cssnano';
 const packageJson = require('./package.json');
-
 
 export default {
   input: 'src/index.ts',
@@ -27,7 +27,7 @@ export default {
     resolve(),
     commonjs(),
     svg(),
-    typescript({ 
+    typescript({
       useTsconfigDeclarationDir: true,
       exclude: [
         "**/__tests__",
@@ -41,5 +41,13 @@ export default {
       ],
       extensions: ['.css'],
     }),
+    copy({
+      targets: [
+        {
+          src: './tailwind.config.js',
+          dest: 'lib'
+        }
+      ]
+    })
   ]
 };
