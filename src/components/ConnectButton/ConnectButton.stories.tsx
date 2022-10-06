@@ -8,9 +8,16 @@ import { ConnectClient } from './ConnectClient';
 export default {
   title: 'Origin/ConnectButton',
   component: ConnectButton,
+  subcomponents: {
+    ConnectClient
+  },
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-
+    startOpen: {
+      table: {
+        disable: true
+      }
+    }
   },
 } as ComponentMeta<typeof ConnectButton>;
 
@@ -26,5 +33,11 @@ const Template: ComponentStory<typeof ConnectButton> = (args) => (
 export const SimpleConnectButton = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 SimpleConnectButton.args = {
-  alchemyKey: process.env.ALCHEMY_API_KEY
+  startOpen: false
+};
+
+export const OpenConnectButton = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+OpenConnectButton.args = {
+  startOpen: true
 };

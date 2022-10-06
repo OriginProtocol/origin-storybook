@@ -10,14 +10,14 @@ import { Button } from '../Button'
 import Modal from '../Modal'
 
 /**
- * Alchemy API key
+ * Default starting prop passed through to state, for testing / component Storybook
  */
 export interface ConnectButtonProps {
-  alchemyKey: string
+  startOpen: boolean
 }
 
 export const ConnectButton = ({
-  alchemyKey = 'E2-BO7ZXAQ646xUmIKFPQcn7kUEi_zSC'
+  startOpen = false
 }: ConnectButtonProps) => {
   const { address, connector, isConnected } = useAccount()
   const { data: ensAvatar } = useEnsAvatar({ addressOrName: address })
@@ -25,7 +25,7 @@ export const ConnectButton = ({
   const { connect, connectors, error, isLoading, pendingConnector } =
     useConnect()
   const { disconnect } = useDisconnect()
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(startOpen)
 
   if (isConnected && connector) {
     return (
