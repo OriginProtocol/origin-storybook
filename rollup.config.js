@@ -1,11 +1,11 @@
-import peerDepsExternal from "rollup-plugin-peer-deps-external";
-import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
-import typescript from "rollup-plugin-typescript2";
+import resolve from "@rollup/plugin-node-resolve";
+import cssnano from 'cssnano';
+import copy from 'rollup-plugin-copy';
+import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import postcss from "rollup-plugin-postcss";
 import svg from 'rollup-plugin-svg';
-import copy from 'rollup-plugin-copy'
-import cssnano from 'cssnano';
+import typescript from "rollup-plugin-typescript2";
 const packageJson = require('./package.json');
 
 export default {
@@ -40,12 +40,17 @@ export default {
         cssnano()
       ],
       extensions: ['.css'],
+      extract: 'styles.css',
     }),
     copy({
       targets: [
         {
           src: './tailwind.config.js',
           dest: 'lib'
+        },
+        {
+          src: './src/fonts/**/*',
+          dest: 'lib/fonts'
         }
       ]
     })
