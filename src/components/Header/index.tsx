@@ -82,8 +82,17 @@ const Hamburger = ({
 )
 
 export interface HeaderProps {
+  /**
+   * webProperty that header will be used on, changes logo on left side
+   */
   webProperty: 'originprotocol' | 'ousd' | 'story'
+  /**
+   * Array of link objects the header will use to create dropdowns and buttons
+   */
   mappedLinks: MappedLink<LinkFormatted<IconFormatted>>[]
+  /**
+   * Language option for i18n
+   */
   language?: string
 }
 

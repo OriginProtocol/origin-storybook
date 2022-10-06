@@ -187,6 +187,7 @@ export const Button = ({
         animate-gradient
         background-gradient-oversized
         cursor-pointer
+        whitespace-nowrap
         ${className}
       `}
       style={style}
