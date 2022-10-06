@@ -13,7 +13,7 @@ import Modal from '../Modal'
  * Default starting prop passed through to state, for testing / component Storybook
  */
 export interface ConnectButtonProps {
-  startOpen: boolean
+  startOpen?: boolean
 }
 
 export const ConnectButton = ({
