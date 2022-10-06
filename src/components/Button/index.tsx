@@ -1,3 +1,5 @@
+import React, { Children } from "react";
+
 export interface ButtonProps {
   /**
    * What type of button is this?
@@ -14,7 +16,11 @@ export interface ButtonProps {
   /**
    * Button contents
    */
-  label: string;
+  label?: string;
+  /**
+   * Optional children to use instead of a label
+   */
+  children?: React.ReactNode
   /**
    * Optional click handler
    */
@@ -41,6 +47,10 @@ export interface ButtonProps {
    * Will override background colors/gradients derived from other props.
    */
    style?: object;
+   /**
+    * Disables the button
+    */
+   disabled?: boolean
 }
 
 /**
@@ -51,11 +61,14 @@ export const Button = ({
   webProperty = 'originprotocol',
   size = 'medium',
   label,
+  children,
   href,
   target,
   rel,
   className = '',
   style = {},
+  disabled,
+  onClick,
   ...props
 }: ButtonProps) => {
   let background
@@ -143,6 +156,17 @@ export const Button = ({
       break
   }
 
+  const handleClick = (e: React.SyntheticEvent) => {
+    if (disabled) {
+      e.preventDefault()
+      return;
+    }
+
+    if (onClick) {
+      onClick()
+    }
+  }
+
   return (
     <a
       type="button"
@@ -162,12 +186,15 @@ export const Button = ({
         font-sans
         animate-gradient
         background-gradient-oversized
+        cursor-pointer
         ${className}
       `}
       style={style}
+      onClick={handleClick}
       {...props}
     >
       {label}
+      {children}
     </a>
   );
 };
