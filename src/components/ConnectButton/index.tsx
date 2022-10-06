@@ -45,7 +45,7 @@ export const ConnectButton = ({
         Connect Wallet
       </Button>
       <Modal open={open} setOpen={setOpen} closeButtonLabel='Close'>
-        <div className='flex flex-col space-y-2 items-start'>
+        <div className='flex flex-col space-y-2 w-full'>
           {connectors.map((connector) => (
             <Button
               disabled={!connector.ready}
