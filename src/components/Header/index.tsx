@@ -59,7 +59,7 @@ const NavLinks = ({
         mappedLinks.map((mappedLink) => {
           if (mappedLink.isButton) {
             return (
-              <Button size="small" label={mappedLink.label} webProperty="story" />
+              <Button size="small" label={mappedLink.label} href={mappedLink.href} target='_blank' webProperty="story" />
             )
           }
         })
