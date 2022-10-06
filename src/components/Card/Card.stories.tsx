@@ -14,7 +14,7 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof Card> = (args) => (
-  <div className="space-y-4 md:space-y-0 md:grid md:grid-cols-3 gap-10">
+  <div className="space-y-4 md:space-y-0 md:grid md:grid-cols-3 gap-10 max-w-screen-xl">
     <Card {...args} />
     <Card {...args} />
     <Card {...args} />
