@@ -6,6 +6,8 @@ import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import postcss from "rollup-plugin-postcss";
 import svg from 'rollup-plugin-svg';
 import typescript from "rollup-plugin-typescript2";
+import json from '@rollup/plugin-json'
+
 const packageJson = require('./package.json');
 
 export default {
@@ -14,12 +16,14 @@ export default {
     {
       file: packageJson.main,
       format: "cjs",
-      sourcemap: true
+      sourcemap: true,
+      inlineDynamicImports: true
     },
     {
-      file: packageJson.module,
+      dir: "lib/esm/src/",
       format: "esm",
       sourcemap: true,
+      inlineDynamicImports: true
     }
   ],
   plugins: [
@@ -53,6 +57,7 @@ export default {
           dest: 'lib/fonts'
         }
       ]
-    })
+    }),
+    json(),
   ]
 };
