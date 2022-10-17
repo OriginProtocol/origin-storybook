@@ -49,11 +49,6 @@ const NavLinks = ({
         }
       })
     }
-    {webProperty === 'originprotocol' && (
-      <div className='self-center'>
-        <Dropdown label='English' options={LanguageOptions}  alignRight bolding='selection' />
-      </div>
-    )}
     <div className='flex flex-col md:flex-row md:space-x-5 md:pl-4 items-center justify-center space-y-4 md:space-y-0'>
       {
         mappedLinks.map((mappedLink) => {
