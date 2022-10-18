@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { Typography } from "../Typography"
 
 export interface CardProps {
@@ -61,8 +62,8 @@ export const Card = ({
   webProperty,
 }: CardProps) => (
   <div className={`rounded-xl w-full shadow overflow-hidden ${webProperty === 'ousd' ? 'text-white border-white border-2' : 'text-black'} bg-white`}>
-    <div className="w-full">
-      <img src={imgSrc} alt={imgAlt} className="w-full h-auto" />
+    <div className="w-full h-48 relative">
+      <Image src={imgSrc} alt={imgAlt} className="w-full h-auto" layout='fill' objectFit="cover" />
     </div>
     <div className="p-6 w-full relative">
       <div className="space-y-3.5">
@@ -90,7 +91,9 @@ export const Card = ({
       </div>
       { thumbnailSrc && (webProperty === 'story' || webProperty === 'launchpad') && (
         <div className={`absolute top-0 mt-0 transform overflow-hidden ${webProperty === 'story' ? 'right-6 -translate-y-1/2 rounded-full border-4 border-white' : 'left-6 -translate-y-2/3 rounded-xl'}`}>
-          <img src={thumbnailSrc} alt={thumbnailAlt} className="w-full h-auto max-h-20 md:max-h-24" />
+          <div className="w-24 h-24 relative">
+            <Image src={thumbnailSrc} alt={thumbnailAlt} layout="fill" objectFit="cover" />
+          </div>
         </div>
       )}
     </div>
