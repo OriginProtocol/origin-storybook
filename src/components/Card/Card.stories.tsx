@@ -1,4 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import Image from 'next/image';
 
 import { Card } from '.';
 
@@ -28,28 +29,24 @@ export const OriginProtocolCard = Template.bind({});
 OriginProtocolCard.args = {
   webProperty: 'originprotocol',
   title: 'Lucky Ducky NFTs',
-  imgSrc: 'https://placekeanu.com/510/340',
-  imgAlt: 'keanu banner',
+  img: <Image src='https://placekeanu.com/510/340' alt='keanu banner' layout='fill' objectFit='cover' />,
+  thumbnail: <Image src='https://placekeanu.com/128/128' alt='keanu face' layout='fill' objectFit='cover' />,
   body: '7,777 Lucky Duckies have left the pond and are getting into mischief!',
   linkText: 'Visit luckyducky.xyz/market',
   linkHref: 'https://google.com',
   linkText2: 'Visit luckyducky.xyz/market',
   linkHref2: 'https://google.com',
-  thumbnailSrc: 'https://placekeanu.com/128/128',
-  thumbnailAlt: 'Keanu face'
 };
 
 export const OUSDCard = Template.bind({});
 OUSDCard.args = {
   webProperty: 'ousd',
   title: 'Lucky Ducky NFTs',
-  imgSrc: 'https://placekeanu.com/510/340',
-  imgAlt: 'keanu banner',
+  img: <Image src='https://placekeanu.com/510/340' alt='keanu banner' layout='fill' objectFit='cover' />,
+  thumbnail: <Image src='https://placekeanu.com/128/128' alt='keanu face' layout='fill' objectFit='cover' />,
   body: '7,777 Lucky Duckies have left the pond and are getting into mischief!',
   linkText: 'Visit luckyducky.xyz/market',
   linkHref: 'https://google.com',
-  thumbnailSrc: 'https://placekeanu.com/128/128',
-  thumbnailAlt: 'Keanu face'
 };
 OUSDCard.parameters = {
   backgrounds: {
@@ -61,24 +58,20 @@ export const StoryCard = Template.bind({});
 StoryCard.args = {
   webProperty: 'story',
   title: 'Lucky Ducky NFTs',
-  imgSrc: 'https://placekeanu.com/510/340',
-  imgAlt: 'keanu banner',
+  img: <Image src='https://placekeanu.com/510/340' alt='keanu banner' layout='fill' objectFit='cover' />,
+  thumbnail: <Image src='https://placekeanu.com/128/128' alt='keanu face' layout='fill' objectFit='cover' />,
   body: '7,777 Lucky Duckies have left the pond and are getting into mischief!',
   linkText: 'Visit luckyducky.xyz/market',
   linkHref: 'https://google.com',
-  thumbnailSrc: 'https://placekeanu.com/128/128',
-  thumbnailAlt: 'Keanu face'
 };
 
 export const LaunchpadCard = Template.bind({});
 LaunchpadCard.args = {
   webProperty: 'launchpad',
   title: 'Lucky Ducky NFTs',
-  imgSrc: 'https://placekeanu.com/510/340',
-  imgAlt: 'keanu banner',
+  img: <Image src='https://placekeanu.com/510/340' alt='keanu banner' layout='fill' objectFit='cover' />,
+  thumbnail: <Image src='https://placekeanu.com/128/128' alt='keanu face' layout='fill' objectFit='cover' />,
   body: '7,777 Lucky Duckies have left the pond and are getting into mischief!',
   linkText: 'Visit luckyducky.xyz/market',
   linkHref: 'https://google.com',
-  thumbnailSrc: 'https://placekeanu.com/128/128',
-  thumbnailAlt: 'Keanu face'
 };

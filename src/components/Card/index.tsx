@@ -1,4 +1,3 @@
-import Image from "next/image"
 import { Typography } from "../Typography"
 
 export interface CardProps {
@@ -31,39 +30,29 @@ export interface CardProps {
     */
    linkHref2?: string
   /**
-   * Src for image at top of card
+   * Image component to fill in top of card
    */
-  imgSrc: string
+  img: React.ReactNode
   /**
-   * Src for alt at top of card
+   * Image component for thumbnail at top of card, only for story cards
    */
-  imgAlt: string
-  /**
-   * Src for image in thumbnail at top of card, only for story cards
-   */
-  thumbnailSrc?: string
-  /**
-   * Alt for image in thumbnail at top of card, only for story cards
-   */
-  thumbnailAlt?: string
+  thumbnail?: React.ReactNode
 }
 
 export const Card = ({
   body,
-  imgSrc,
-  imgAlt,
+  img,
+  thumbnail,
   title,
   linkText,
   linkHref,
   linkText2,
   linkHref2,
-  thumbnailSrc,
-  thumbnailAlt,
   webProperty,
 }: CardProps) => (
   <div className={`rounded-xl w-full shadow overflow-hidden ${webProperty === 'ousd' ? 'text-white border-white border-2' : 'text-black'} bg-white`}>
     <div className="w-full h-48 relative">
-      <Image src={imgSrc} alt={imgAlt} className="w-full h-auto" layout='fill' objectFit="cover" />
+      {img}
     </div>
     <div className="p-6 w-full relative">
       <div className="space-y-3.5">
@@ -89,10 +78,10 @@ export const Card = ({
           </Typography.Link>
         )}
       </div>
-      { thumbnailSrc && (webProperty === 'story' || webProperty === 'launchpad') && (
+      { thumbnail && (webProperty === 'story' || webProperty === 'launchpad') && (
         <div className={`absolute top-0 mt-0 transform overflow-hidden ${webProperty === 'story' ? 'right-6 -translate-y-1/2 rounded-full border-4 border-white' : 'left-6 -translate-y-2/3 rounded-xl'}`}>
           <div className="w-24 h-24 relative">
-            <Image src={thumbnailSrc} alt={thumbnailAlt} layout="fill" objectFit="cover" />
+            {thumbnail}
           </div>
         </div>
       )}
