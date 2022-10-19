@@ -46,6 +46,7 @@ const GenericTypography = ({
         style={{...(style || {})}}
       >
         <Tag
+          className='flex items-center'
         >
           {children}
         </Tag>

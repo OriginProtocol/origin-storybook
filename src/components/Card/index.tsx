@@ -65,7 +65,7 @@ export const Card = ({
         <Typography.Link href={linkHref} className="mt-1 space-x-4 flex items-center">
           {linkText}
           {
-            webProperty === 'story' && (
+            webProperty === 'story' || webProperty ==='launchpad' && (
               <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" className="ml-2">
                 <path d="M12.9628 14.6C13.4058 14.6 13.791 14.4363 14.1088 14.1088C14.4266 13.7814 14.6 13.4058 14.6 12.9628V7.3H12.9628V12.9628H1.6372V1.6372H7.3V0H1.6372C1.18456 0 0.79934 0.16372 0.48153 0.491161C0.16372 0.808971 0 1.1942 0 1.6372V12.9628C0 13.4058 0.16372 13.791 0.48153 14.1088C0.79934 14.4266 1.18456 14.6 1.6372 14.6H12.9628ZM5.01755 10.7285L12.9628 2.78325V5.6628H14.6V0H8.9372V1.6372H11.8168L3.8715 9.57282L5.01755 10.7285Z" fill="#0074F0"/>
               </svg>
