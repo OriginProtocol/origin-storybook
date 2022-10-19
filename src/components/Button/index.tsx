@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React, { Children } from "react";
 
 export interface ButtonProps {
@@ -167,10 +168,12 @@ export const Button = ({
     }
   }
 
+  const Component = target === '_self' && href?.startsWith('/') ? Link : 'span'
+
   return (
     <a
       type="button"
-      href={href}
+      href={href || ''}
       target={target}
       rel={rel}
       className={`
@@ -194,8 +197,12 @@ export const Button = ({
       onClick={handleClick}
       {...props}
     >
-      {label}
-      {children}
+      <Component href={href || ''} target={target}>
+        <>
+          {label}
+          {children}
+        </>
+      </Component>
     </a>
   );
 };

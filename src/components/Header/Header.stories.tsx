@@ -20,11 +20,13 @@ OriginProtocol.args = {
     {
       label: 'Products',
       isButton: false,
+      target: '_blank',
       order: 1,
       links: [
         {
           href: "https://ousd.com",
           label: 'Lorem ipsum dolor sit amet, consectetu',
+          target: '_blank',
           icon: {
             alternativeText: "origin-dollar.svg",
             caption: "origin-dollar.svg",
@@ -34,6 +36,7 @@ OriginProtocol.args = {
         {
           href: "https://story.xyz",
           label: 'Lorem ipsum dolor sit amet, consectetu 2',
+          target: '_blank',
           icon: {
             alternativeText: "origin-story.svg",
             caption: "origin-story.svg",
@@ -43,23 +46,17 @@ OriginProtocol.args = {
       ]
     },
     {
-      label: 'Company',
       isButton: false,
+      label: 'Company',
+      target: '_self',
+      href: '/company',
       order: 2,
-      links: [
-        {
-          href: "http://nft.parishilton.com/",
-          label: "Some link"
-        },
-        {
-          href: "https://nft.3lau.com/#/auction",
-          label: "Some link 2"
-        }
-      ]
+      links: []
     },
     {
-      href: 'https://story.xyz',
+      href: '/company',
       label: 'Community',
+      target: '_self',
       isButton: false,
       order: 3,
       links: []
@@ -127,6 +124,7 @@ Story.args = {
         {
           href: "https://ousd.com",
           label: 'Lorem ipsum dolor sit amet, consectetu',
+          target: '_blank',
           icon: {
             alternativeText: "origin-dollar.svg",
             caption: "origin-dollar.svg",
@@ -136,6 +134,7 @@ Story.args = {
         {
           href: "https://story.xyz",
           label: 'Lorem ipsum dolor sit amet, consectetu 2',
+          target: '_blank',
           icon: {
             alternativeText: "origin-story.svg",
             caption: "origin-story.svg",
@@ -151,11 +150,13 @@ Story.args = {
       links: [
         {
           href: "http://nft.parishilton.com/",
-          label: "Paris Hilton - Past Lives New Beginnings"
+          label: "Paris Hilton - Past Lives New Beginnings",
+          target: '_blank',
         },
         {
           href: "https://nft.3lau.com/#/auction",
-          label: "3Lau - Ultraviolet"
+          label: "3Lau - Ultraviolet",
+          target: '_blank',
         }
       ]
     },
@@ -174,11 +175,13 @@ Story.args = {
       links: [
         {
           href: "https://www.originprotocol.com/en/dashboard",
-          label: "Dashboard"
+          label: "Dashboard",
+          target: '_blank',
         },
         {
           href: "https://story.xyz/stake",
           label: "Rewards",
+          target: '_blank',
           highlight: true
         }
       ]

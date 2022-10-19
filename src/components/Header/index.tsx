@@ -10,6 +10,7 @@ export type MappedLink<Link> = {
   isButton: boolean
   highlightText?: string
   order: number
+  target?: string
   links?: Link[]
 }
 
@@ -17,6 +18,7 @@ export type LinkFormatted<IconFormatted> = {
   label: string
   href: string
   highlight?: boolean
+  target: string
   icon?: IconFormatted
 }
 
@@ -43,7 +45,7 @@ const NavLinks = ({
             )
           } else {
             return (
-              <Button label={mappedLink.label} type="header" size="small" key={mappedLink.label} href={mappedLink.href} webProperty={webProperty} target="_blank" rel="nofollow" />
+              <Button label={mappedLink.label} type="header" size="small" key={mappedLink.label} href={mappedLink.href} webProperty={webProperty} target={mappedLink.target} rel="nofollow" />
             )
           }
         }
@@ -54,7 +56,7 @@ const NavLinks = ({
         mappedLinks.map((mappedLink) => {
           if (mappedLink.isButton) {
             return (
-              <Button size="small" label={mappedLink.label} href={mappedLink.href} target='_blank' webProperty="story" />
+              <Button size="small" label={mappedLink.label} href={mappedLink.href} target={mappedLink.target} webProperty="story" />
             )
           }
         })
