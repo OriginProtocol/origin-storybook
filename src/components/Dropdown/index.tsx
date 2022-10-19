@@ -1,6 +1,7 @@
 import { Fragment, useState } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import { DownCaret } from '../Icons'
+import Image from 'next/image'
 
 type Option = {
   label: string,
@@ -120,7 +121,6 @@ export const Dropdown = ({
           tabIndex={-1}
         >
           <div className="py-1 flex flex-wrap" role="none">
-            {/* <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" --> */}
             {
               options.map(({label: optionLabel, href, highlight, icon}) => (
                 <DropdownOption
@@ -180,7 +180,9 @@ const DropdownOption = ({
           )}
         >
           {icon && (
-            <img src={icon.url} alt={icon.alternativeText} className='py-2'/>
+            <div className='relative w-full h-6 text-left'>
+              <Image src={icon.url} alt={icon.alternativeText} className='py-2' layout='fill' objectFit='contain' objectPosition={'0 50%'} priority />
+            </div>
           )}
           {label}
         </a>

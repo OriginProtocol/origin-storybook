@@ -28,7 +28,7 @@ OriginProtocol.args = {
           icon: {
             alternativeText: "origin-dollar.svg",
             caption: "origin-dollar.svg",
-            url: "https://cmsmediaproduction.s3.amazonaws.com/origin_dollar_a31b75ef3e.svg"
+            url: "https://cmsmediaproduction.s3.amazonaws.com/origindollar_6e44c141bc.svg"
           }
         },
         {
@@ -37,7 +37,7 @@ OriginProtocol.args = {
           icon: {
             alternativeText: "origin-story.svg",
             caption: "origin-story.svg",
-            url: "https://cmsmediaproduction.s3.amazonaws.com/origin_story_8c05dcae2f.svg"
+            url: "https://cmsmediaproduction.s3.amazonaws.com/Origin_Story_47691d64ac.svg"
           }
         }
       ]
