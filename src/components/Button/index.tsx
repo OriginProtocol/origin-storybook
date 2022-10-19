@@ -126,12 +126,12 @@ export const Button = ({
 
     case 'medium':
       textSize = 'text-base'
-      padding = 'px-6 py-1'
+      padding = 'px-12 py-4'
       break
 
     case 'large':
       textSize = 'text-2xl'
-      padding = 'py-6 px-12'
+      padding = 'px-12 py-6'
       break
 
     default:
