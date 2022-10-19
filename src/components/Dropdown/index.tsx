@@ -167,6 +167,8 @@ const DropdownOption = ({
       {({ active }) => (
         <a
           href={href}
+          target='_blank'
+          rel='nofollow'
           className={classNames(
             active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
             highlight ? 'text-story-pink' : 'text-gray-700',

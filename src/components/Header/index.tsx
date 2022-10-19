@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Button } from '../Button';
 import { Dropdown } from '../Dropdown';
 import { LanguageOptions, OgnDropdownOptions, ProductsOptions } from './HeaderOptions';
-import { OriginLogo } from '../Icons';
+import { OriginDollarLogo, OriginLogo, OriginStoryLogo } from '../Icons';
 
 export type MappedLink<Link> = {
   href?: string
@@ -43,7 +43,7 @@ const NavLinks = ({
             )
           } else {
             return (
-              <Button label={mappedLink.label} type="header" size="small" key={mappedLink.label} href={mappedLink.href} webProperty={webProperty} />
+              <Button label={mappedLink.label} type="header" size="small" key={mappedLink.label} href={mappedLink.href} webProperty={webProperty} target="_blank" rel="nofollow" />
             )
           }
         }
@@ -99,7 +99,9 @@ export const Header = ({ webProperty, mappedLinks, language, }: HeaderProps) => 
       <div className="px-9 py-16 w-full flex justify-between items-center max-w-screen-xl mx-auto">
         <div className="flex h-6">
           <a href='/'>
-            <OriginLogo webProperty={webProperty} />
+            {webProperty === 'originprotocol' && <OriginLogo />}
+            {webProperty === 'ousd' && <OriginDollarLogo theme='dark' />}
+            {webProperty === 'story' && <OriginStoryLogo />}
           </a>
         </div>
         <div className="hidden md:block">
