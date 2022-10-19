@@ -41,9 +41,6 @@ export const Footer = () => (
           <Typography.Body2 className="opacity-75" href='/community'>
             Team
           </Typography.Body2>
-          <Typography.Body2 className="opacity-75" href='https://api.originprotocol.com/en/dashboard'>
-            Products
-          </Typography.Body2>
           <div className="flex items-center">
             <Typography.Body2 className="opacity-75" href='https://angel.co/company/originprotocol/jobs'>
               Careers
@@ -74,9 +71,6 @@ export const Footer = () => (
           Resources
         </Typography.Body2>
         <div className="flex flex-row md:flex-col space-x-4 md:space-x-0 md:space-y-4 opacity-75">
-          <Typography.Body2 href='https://api.originprotocol.com/en/litepaper'>
-            Litepaper
-          </Typography.Body2>
           <Typography.Body2 href='https://api.originprotocol.com/en/videos'>
             Videos
           </Typography.Body2>
