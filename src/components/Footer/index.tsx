@@ -5,7 +5,7 @@ export const Footer = () => (
   <div className="w-full bg-gradient-to-r from-black to-footer-end py-10 md:py-20 text-white">
     <div className="border-b flex flex-col md:flex-row space-y-12 md:space-y-0 pb-12 md:pb-7 px-9 max-w-screen-xl mx-auto" style={{borderBottomColor: 'rgba(255,255,25,0.2)'}}>
       <div className="flex flex-col md:justify-between space-y-6 md:space-y-0 flex-6">
-        <OriginLogo webProperty="originprotocol" theme="dark" />
+        <OriginLogo theme="dark" />
         <div className="flex space-x-6 items-center">
           <a href='https://twitter.com/OriginProtocol' target='_blank'>
             <Twitter />
@@ -38,10 +38,10 @@ export const Footer = () => (
           Organization
         </Typography.Body2>
         <div className="flex flex-row md:flex-col space-x-4 md:space-x-0 md:space-y-4">
-          <Typography.Body2 className="opacity-75" href='https://www.originprotocol.com/en/team'>
+          <Typography.Body2 className="opacity-75" href='/community'>
             Team
           </Typography.Body2>
-          <Typography.Body2 className="opacity-75" href='https://www.originprotocol.com/en/dashboard'>
+          <Typography.Body2 className="opacity-75" href='https://api.originprotocol.com/en/dashboard'>
             Products
           </Typography.Body2>
           <div className="flex items-center">
@@ -74,10 +74,10 @@ export const Footer = () => (
           Resources
         </Typography.Body2>
         <div className="flex flex-row md:flex-col space-x-4 md:space-x-0 md:space-y-4 opacity-75">
-          <Typography.Body2 href='https://www.originprotocol.com/en/litepaper'>
+          <Typography.Body2 href='https://api.originprotocol.com/en/litepaper'>
             Litepaper
           </Typography.Body2>
-          <Typography.Body2 href='https://www.originprotocol.com/en/videos'>
+          <Typography.Body2 href='https://api.originprotocol.com/en/videos'>
             Videos
           </Typography.Body2>
           <Typography.Body2 href='https://github.com/originprotocol'>
@@ -94,10 +94,10 @@ export const Footer = () => (
         © 2022 Origin Protocol Inc. All rights reserved.
       </Typography.Body2>
       <div className="flex space-x-6">
-        <Typography.Body2 href='https://www.originprotocol.com/en/privacy'>
+        <Typography.Body2 href='/privacy'>
           Privacy Policy
         </Typography.Body2>
-        <Typography.Body2 href='https://www.originprotocol.com/en/tos'>
+        <Typography.Body2 href='/tos'>
           Terms of Service
         </Typography.Body2>
       </div>
