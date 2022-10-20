@@ -55,10 +55,8 @@
     "typescript": "^4.8.3"
   },
   "peerDependencies": {
-    "ethers": "^5.7.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "wagmi": "^0.6.8"
+    "react-dom": "^18.2.0"
   },
   "scripts": {
     "storybook": "start-storybook -p 6006",
@@ -73,9 +71,7 @@
   ],
   "dependencies": {
     "@heroicons/react": "^2.0.11",
-    "ethers": "^5.7.1",
     "next": "^12.3.1",
-    "rollup-plugin-copy": "^3.4.0",
-    "wagmi": "^0.6.8"
+    "rollup-plugin-copy": "^3.4.0"
   }
 }
