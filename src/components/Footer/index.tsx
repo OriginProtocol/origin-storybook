@@ -77,9 +77,6 @@ export const Footer = () => (
           <Typography.Body2 href='https://github.com/originprotocol'>
             GitHub
           </Typography.Body2>
-          <Typography.Body2 href='https://vote.originprotocol.com'>
-            Governance
-          </Typography.Body2>
         </div>
       </div>
     </div>
