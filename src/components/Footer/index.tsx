@@ -25,7 +25,7 @@ export const Footer = () => (
           <a href='https://discord.com/invite/ogn' target='_blank'>
             <Discord />
           </a>
-          <a href='https://www.facebook.com/originprotocol/' target='_blank'>
+          <a href='https://www.reddit.com/r/originprotocol/' target='_blank'>
             <RedditIcon />
           </a>
           <a href='https://blockfolio.com/coin/OGN' target='_blank'>
@@ -71,9 +71,6 @@ export const Footer = () => (
           Resources
         </Typography.Body2>
         <div className="flex flex-row md:flex-col space-x-4 md:space-x-0 md:space-y-4 opacity-75">
-          <Typography.Body2 href='https://api.originprotocol.com/en/videos'>
-            Videos
-          </Typography.Body2>
           <Typography.Body2 href='https://github.com/originprotocol'>
             GitHub
           </Typography.Body2>
