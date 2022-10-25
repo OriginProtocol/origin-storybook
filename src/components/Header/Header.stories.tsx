@@ -25,23 +25,13 @@ OriginProtocol.args = {
       links: [
         {
           href: "https://ousd.com",
-          label: 'Lorem ipsum dolor sit amet, consectetu',
+          label: 'Origin Dollar',
           target: '_blank',
-          icon: {
-            alternativeText: "origin-dollar.svg",
-            caption: "origin-dollar.svg",
-            url: "https://cmsmediaproduction.s3.amazonaws.com/origindollar_6e44c141bc.svg"
-          }
         },
         {
           href: "https://story.xyz",
-          label: 'Lorem ipsum dolor sit amet, consectetu 2',
+          label: 'Origin Story',
           target: '_blank',
-          icon: {
-            alternativeText: "origin-story.svg",
-            caption: "origin-story.svg",
-            url: "https://cmsmediaproduction.s3.amazonaws.com/Origin_Story_47691d64ac.svg"
-          }
         }
       ]
     },
@@ -123,23 +113,13 @@ Story.args = {
       links: [
         {
           href: "https://ousd.com",
-          label: 'Lorem ipsum dolor sit amet, consectetu',
+          label: 'Origin Dollar',
           target: '_blank',
-          icon: {
-            alternativeText: "origin-dollar.svg",
-            caption: "origin-dollar.svg",
-            url: "https://cmsmediaproduction.s3.amazonaws.com/origin_dollar_a31b75ef3e.svg"
-          }
         },
         {
           href: "https://story.xyz",
-          label: 'Lorem ipsum dolor sit amet, consectetu 2',
+          label: 'Origin Story',
           target: '_blank',
-          icon: {
-            alternativeText: "origin-story.svg",
-            caption: "origin-story.svg",
-            url: "https://cmsmediaproduction.s3.amazonaws.com/origin_story_8c05dcae2f.svg"
-          }
         }
       ]
     },

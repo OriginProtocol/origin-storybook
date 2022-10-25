@@ -41,7 +41,7 @@ const NavLinks = ({
         if (!mappedLink.isButton && mappedLink.links) {
           if (mappedLink.links.length > 0) {
             return (
-              <Dropdown label={mappedLink.label} highlightText={mappedLink.highlightText} options={mappedLink.links} key={mappedLink.label} />
+              <Dropdown label={mappedLink.label} highlightText={mappedLink.highlightText} options={mappedLink.links} key={mappedLink.label} bolding='none' />
             )
           } else {
             return (
