@@ -57,11 +57,11 @@ OUSDCard.parameters = {
 export const StoryCard = Template.bind({});
 StoryCard.args = {
   webProperty: 'story',
-  title: 'Lucky Ducky NFTs',
+  title: 'Past lives, new beginnings by Paris Hilton',
   img: <Image src='https://placekeanu.com/510/340' alt='keanu banner' layout='fill' objectFit='cover' />,
   thumbnail: <Image src='https://placekeanu.com/128/128' alt='keanu face' layout='fill' objectFit='cover' />,
-  body: '7,777 Lucky Duckies have left the pond and are getting into mischief!',
-  linkText: 'Visit luckyducky.xyz/market',
+  body: "3LAU's sale on Origin generated $11.7M in sales and holds the world record for the most successful music NFT of all time. Global media covered the historic event, with Forbes, Business Insider, Coindesk, and many other outlets heralding in the new age of NFTs with their coverage.",
+  linkText: '$11.7 million dollars sale. First music NFT on the blockchain',
   linkHref: 'https://google.com',
 };
 
