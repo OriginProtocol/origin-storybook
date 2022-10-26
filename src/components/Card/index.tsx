@@ -1,5 +1,4 @@
 import Image from "next/image"
-import { linkIcon } from "../Icons"
 import { Typography } from "../Typography"
 
 export interface CardProps {
