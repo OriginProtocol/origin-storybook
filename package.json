@@ -1,6 +1,6 @@
 {
   "name": "@originprotocol/origin-storybook",
-  "version": "0.19.19",
+  "version": "0.20.0",
   "description": "Component library for Origin Protocol, using Storybook",
   "main": "lib/index.js",
   "dir": "lib",
