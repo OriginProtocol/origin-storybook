@@ -29,7 +29,7 @@ export const OriginProtocolCard = Template.bind({});
 OriginProtocolCard.args = {
   webProperty: 'originprotocol',
   title: 'Lucky Ducky NFTs',
-  img: <Image src='https://placekeanu.com/510/340' alt='keanu banner' layout='fill' objectFit='cover' />,
+  img: <Image src='https://placekeanu.com/381/192' alt='keanu banner' width='400' height='200' />,
   thumbnail: <Image src='https://placekeanu.com/128/128' alt='keanu face' layout='fill' objectFit='cover' />,
   body: '7,777 Lucky Duckies have left the pond and are getting into mischief!',
   linkText: 'Visit luckyducky.xyz/market',
@@ -42,7 +42,7 @@ export const OUSDCard = Template.bind({});
 OUSDCard.args = {
   webProperty: 'ousd',
   title: 'Lucky Ducky NFTs',
-  img: <Image src='https://placekeanu.com/510/340' alt='keanu banner' layout='fill' objectFit='cover' />,
+  img: <Image src='https://placekeanu.com/381/192' alt='keanu banner'  width='400' height='200' />,
   thumbnail: <Image src='https://placekeanu.com/128/128' alt='keanu face' layout='fill' objectFit='cover' />,
   body: '7,777 Lucky Duckies have left the pond and are getting into mischief!',
   linkText: 'Visit luckyducky.xyz/market',
@@ -58,7 +58,7 @@ export const StoryCard = Template.bind({});
 StoryCard.args = {
   webProperty: 'story',
   title: 'Past lives, new beginnings by Paris Hilton',
-  img: <Image src='https://placekeanu.com/510/340' alt='keanu banner' layout='fill' objectFit='cover' />,
+  img: <Image src='https://placekeanu.com/381/192' alt='keanu banner'  width='400' height='200' />,
   thumbnail: <Image src='https://placekeanu.com/128/128' alt='keanu face' layout='fill' objectFit='cover' />,
   body: "3LAU's sale on Origin generated $11.7M in sales and holds the world record for the most successful music NFT of all time. Global media covered the historic event, with Forbes, Business Insider, Coindesk, and many other outlets heralding in the new age of NFTs with their coverage.",
   linkText: '$11.7 million dollars sale. First music NFT on the blockchain',
@@ -69,7 +69,7 @@ export const LaunchpadCard = Template.bind({});
 LaunchpadCard.args = {
   webProperty: 'launchpad',
   title: 'Lucky Ducky NFTs',
-  img: <Image src='https://placekeanu.com/510/340' alt='keanu banner' layout='fill' objectFit='cover' />,
+  img: <Image src='https://placekeanu.com/381/192' alt='keanu banner'  width='400' height='200' />,
   thumbnail: <Image src='https://placekeanu.com/128/128' alt='keanu face' layout='fill' objectFit='cover' />,
   body: '7,777 Lucky Duckies have left the pond and are getting into mischief!',
   linkText: 'Visit luckyducky.xyz/market',
