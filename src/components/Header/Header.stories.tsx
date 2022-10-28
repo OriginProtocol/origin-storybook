@@ -1,13 +1,13 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import { Header } from '.';
+import { Header } from ".";
 
 export default {
-  title: 'Origin/Header',
+  title: "Origin/Header",
   component: Header,
   parameters: {
     // More on Story layout: https://storybook.js.org/docs/react/configure/story-layout
-    layout: 'fullscreen',
+    layout: "fullscreen",
   },
 } as ComponentMeta<typeof Header>;
 
@@ -15,170 +15,170 @@ const Template: ComponentStory<typeof Header> = (args) => <Header {...args} />;
 
 export const OriginProtocol = Template.bind({});
 OriginProtocol.args = {
-  webProperty: 'originprotocol',
+  webProperty: "originprotocol",
   mappedLinks: [
     {
-      label: 'Products',
+      label: "Products",
       isButton: false,
-      target: '_blank',
+      target: "_blank",
       order: 1,
       links: [
         {
           href: "https://ousd.com",
-          label: 'Origin Dollar',
-          target: '_blank',
+          label: "Origin Dollar",
+          target: "_blank",
         },
         {
           href: "https://story.xyz",
-          label: 'Origin Story',
-          target: '_blank',
-        }
-      ]
+          label: "Origin Story",
+          target: "_blank",
+        },
+      ],
     },
     {
       isButton: false,
-      label: 'Company',
-      target: '_self',
-      href: '/company',
+      label: "Company",
+      target: "_self",
+      href: "/company",
       order: 2,
-      links: []
+      links: [],
     },
     {
-      href: '/company',
-      label: 'Community',
-      target: '_self',
+      href: "/company",
+      label: "Community",
+      target: "_self",
       isButton: false,
       order: 3,
-      links: []
+      links: [],
     },
-  ]
+  ],
 };
 
 export const OUSD = Template.bind({});
 OUSD.args = {
-  webProperty: 'ousd',
+  webProperty: "ousd",
   mappedLinks: [
     {
-      href: 'https://ousd.com',
-      label: 'Governance',
+      href: "https://ousd.com",
+      label: "Governance",
       isButton: false,
       order: 1,
-      links: []
+      links: [],
     },
     {
-      href: 'https://ousd.com',
-      label: 'Docs',
+      href: "https://ousd.com",
+      label: "Docs",
       isButton: false,
       order: 3,
-      links: []
+      links: [],
     },
     {
-      href: 'https://ousd.com',
-      label: 'FAQ',
+      href: "https://ousd.com",
+      label: "FAQ",
       isButton: false,
       order: 3,
-      links: []
+      links: [],
     },
     {
-      href: 'https://ousd.com',
-      label: 'OGV',
+      href: "https://ousd.com",
+      label: "OGV",
       isButton: false,
       order: 5,
-      links: []
+      links: [],
     },
     {
-      href: 'https://google.com',
-      label: 'Connect Wallet',
+      href: "https://google.com",
+      label: "Connect Wallet",
       isButton: true,
       order: 6,
-      links: []
-    }
-  ]
-}
+      links: [],
+    },
+  ],
+};
 
 OUSD.parameters = {
   backgrounds: {
-    default: 'dark'
-  }
-}
+    default: "dark",
+  },
+};
 
 export const Story = Template.bind({});
 Story.args = {
-  webProperty: 'story',
+  webProperty: "story",
   mappedLinks: [
     {
-      label: 'Products',
+      label: "Products",
       isButton: false,
       order: 1,
       links: [
         {
           href: "https://ousd.com",
-          label: 'Origin Dollar',
-          target: '_blank',
+          label: "Origin Dollar",
+          target: "_blank",
         },
         {
           href: "https://story.xyz",
-          label: 'Origin Story',
-          target: '_blank',
-        }
-      ]
+          label: "Origin Story",
+          target: "_blank",
+        },
+      ],
     },
     {
-      label: 'Drops',
+      label: "Drops",
       isButton: false,
       order: 2,
       links: [
         {
           href: "http://nft.parishilton.com/",
           label: "Paris Hilton - Past Lives New Beginnings",
-          target: '_blank',
+          target: "_blank",
         },
         {
           href: "https://nft.3lau.com/#/auction",
           label: "3Lau - Ultraviolet",
-          target: '_blank',
-        }
-      ]
+          target: "_blank",
+        },
+      ],
     },
     {
-      href: 'https://story.xyz',
-      label: 'Docs',
+      href: "https://story.xyz",
+      label: "Docs",
       isButton: false,
       order: 3,
-      links: []
+      links: [],
     },
     {
-      label: 'OGN',
+      label: "OGN",
       isButton: false,
-      highlightText: 'Rewards',
+      highlightText: "Rewards",
       order: 4,
       links: [
         {
           href: "https://www.originprotocol.com/en/dashboard",
           label: "Dashboard",
-          target: '_blank',
+          target: "_blank",
         },
         {
           href: "https://story.xyz/stake",
           label: "Rewards",
-          target: '_blank',
-          highlight: true
-        }
-      ]
+          target: "_blank",
+          highlight: true,
+        },
+      ],
     },
     {
-      href: 'https://www.originprotocol.com/en/dashboard',
-      label: 'Buy OGN',
+      href: "https://www.originprotocol.com/en/dashboard",
+      label: "Buy OGN",
       isButton: true,
       order: 5,
-      links: []
+      links: [],
     },
     {
-      href: 'https://google.com',
-      label: 'Connect Wallet',
+      href: "https://google.com",
+      label: "Connect Wallet",
       isButton: true,
       order: 6,
-      links: []
-    }
-  ]
+      links: [],
+    },
+  ],
 };

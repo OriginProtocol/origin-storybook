@@ -1,32 +1,58 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
-export { GradientText } from './GradientText';
+export { GradientText } from "./GradientText";
 
 export interface TypographyProps {
   /**
    * Children to wrap with typography styling
    */
-  children: React.ReactNode
+  children: React.ReactNode;
   /**
    * Additional className to add onto ones supplied by typography componnent
    */
-  className?: string
+  className?: string;
   /**
    * Additional styling to add onto typography component
    */
-  style?: object
+  style?: object;
   /**
    * Tag type to use
    */
-  as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span' | 'blockquote' | 'q' | 'code' | 'a' | 'div'
+  as?:
+    | "h1"
+    | "h2"
+    | "h3"
+    | "h4"
+    | "h5"
+    | "h6"
+    | "p"
+    | "span"
+    | "blockquote"
+    | "q"
+    | "code"
+    | "a"
+    | "div";
   /**
    * Tag type to default to if not tag type supplied
    */
-  defaultAs?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span' | 'blockquote' | 'q' | 'code' | 'a' | 'div'
+  defaultAs?:
+    | "h1"
+    | "h2"
+    | "h3"
+    | "h4"
+    | "h5"
+    | "h6"
+    | "p"
+    | "span"
+    | "blockquote"
+    | "q"
+    | "code"
+    | "a"
+    | "div";
   /**
    * Href for links
    */
-  href?: string
+  href?: string;
 }
 
 const GenericTypography = ({
@@ -37,236 +63,260 @@ const GenericTypography = ({
   as,
   href,
 }: TypographyProps) => {
-  const Tag = `${as || defaultAs || 'span'}` as keyof JSX.IntrinsicElements
+  const Tag = `${as || defaultAs || "span"}` as keyof JSX.IntrinsicElements;
 
   if (href) {
     return (
       <a
         href={href}
-        target='_blank'
+        target="_blank"
         className={`${className}`}
-        style={{...(style || {})}}
+        style={{ ...(style || {}) }}
       >
-        <Tag
-          className='flex items-center'
-        >
-          {children}
-        </Tag>
+        <Tag className="flex items-center">{children}</Tag>
       </a>
-    )
+    );
   } else {
     return (
-      <Tag
-        className={`${className}`}
-        style={{...(style || {})}}
-      >
+      <Tag className={`${className}`} style={{ ...(style || {}) }}>
         {children}
       </Tag>
-    )
+    );
   }
-}
+};
 export class Typography extends Component<TypographyProps> {
-  static H1 = ({
-    children,
-    className = '',
-    style,
-    as
-  }: TypographyProps) => {
+  static H1 = ({ children, className = "", style, as }: TypographyProps) => {
     return (
-      <GenericTypography className={`font-sansSailec font-bold text-5xl md:text-8xl ${className}`} style={style} as={as} defaultAs='h1'>
+      <GenericTypography
+        className={`font-sansSailec font-bold text-5xl md:text-8xl ${className}`}
+        style={style}
+        as={as}
+        defaultAs="h1"
+      >
         {children}
       </GenericTypography>
-    )
-  }
+    );
+  };
 
-  static H2 = ({
-    children,
-    className = '',
-    style,
-    as
-  }: TypographyProps) => {
+  static H2 = ({ children, className = "", style, as }: TypographyProps) => {
     return (
-      <GenericTypography className={`font-sansSailec font-medium text-4xl md:text-7xl ${className}`} style={style} as={as} defaultAs='h2'>
+      <GenericTypography
+        className={`font-sansSailec font-medium text-4xl md:text-7xl ${className}`}
+        style={style}
+        as={as}
+        defaultAs="h2"
+      >
         {children}
       </GenericTypography>
-    )
-  }
+    );
+  };
 
-  static H3 = ({
-    children,
-    className = '',
-    style,
-    as
-  }: TypographyProps) => {
+  static H3 = ({ children, className = "", style, as }: TypographyProps) => {
     return (
-      <GenericTypography className={`font-sansSailec font-medium text-3xl md:text-6xl ${className}`} style={style} as={as} defaultAs='h3'>
+      <GenericTypography
+        className={`font-sansSailec font-medium text-3xl md:text-6xl ${className}`}
+        style={style}
+        as={as}
+        defaultAs="h3"
+      >
         {children}
       </GenericTypography>
-    )
-  }
+    );
+  };
 
-  static H4 = ({
-    children,
-    className = '',
-    style,
-    as
-  }: TypographyProps) => {
+  static H4 = ({ children, className = "", style, as }: TypographyProps) => {
     return (
-      <GenericTypography className={`font-sansSailec font-medium text-2xl md:text-5xl ${className}`} style={style} as={as} defaultAs='h4'>
+      <GenericTypography
+        className={`font-sansSailec font-medium text-2xl md:text-5xl ${className}`}
+        style={style}
+        as={as}
+        defaultAs="h4"
+      >
         {children}
       </GenericTypography>
-    )
-  }
+    );
+  };
 
-  static H5 = ({
-    children,
-    className = '',
-    style,
-    as
-  }: TypographyProps) => {
+  static H5 = ({ children, className = "", style, as }: TypographyProps) => {
     return (
-      <GenericTypography className={`font-sansSailec font-medium text-xl md:text-4xl ${className}`} style={style} as={as} defaultAs='h5'>
+      <GenericTypography
+        className={`font-sansSailec font-medium text-xl md:text-4xl ${className}`}
+        style={style}
+        as={as}
+        defaultAs="h5"
+      >
         {children}
       </GenericTypography>
-    )
-  }
+    );
+  };
 
-  static H6 = ({
-    children,
-    className = '',
-    style,
-    as
-  }: TypographyProps) => {
+  static H6 = ({ children, className = "", style, as }: TypographyProps) => {
     return (
-      <GenericTypography className={`font-sansSailec font-medium text-lg md:text-3xl ${className}`} style={style} as={as} defaultAs='h6'>
+      <GenericTypography
+        className={`font-sansSailec font-medium text-lg md:text-3xl ${className}`}
+        style={style}
+        as={as}
+        defaultAs="h6"
+      >
         {children}
       </GenericTypography>
-    )
-  }
+    );
+  };
 
-  static H7 = ({
-    children,
-    className = '',
-    style,
-    as
-  }: TypographyProps) => {
+  static H7 = ({ children, className = "", style, as }: TypographyProps) => {
     return (
-      <GenericTypography className={`font-sansSailec font-medium text-base md:text-2xl ${className}`} style={style} as={as} defaultAs='h6'>
+      <GenericTypography
+        className={`font-sansSailec font-medium text-base md:text-2xl ${className}`}
+        style={style}
+        as={as}
+        defaultAs="h6"
+      >
         {children}
       </GenericTypography>
-    )
-  }
+    );
+  };
 
   static Body = ({
     children,
-    className = '',
+    className = "",
     style,
     href,
-    as
+    as,
   }: TypographyProps) => {
     return (
-      <GenericTypography className={`font-sansInter font-normal text-base md:text-xl ${className}`} style={style} as={as} defaultAs='p' href={href}>
+      <GenericTypography
+        className={`font-sansInter font-normal text-base md:text-xl ${className}`}
+        style={style}
+        as={as}
+        defaultAs="p"
+        href={href}
+      >
         {children}
       </GenericTypography>
-    )
-  }
+    );
+  };
 
   static Body2 = ({
     children,
-    className = '',
+    className = "",
     style,
     href,
-    as
+    as,
   }: TypographyProps) => {
     return (
-      <GenericTypography className={`font-sansInter font-normal text-base ${className}`} style={style} as={as} defaultAs='p' href={href}>
+      <GenericTypography
+        className={`font-sansInter font-normal text-base ${className}`}
+        style={style}
+        as={as}
+        defaultAs="p"
+        href={href}
+      >
         {children}
       </GenericTypography>
-    )
-  }
+    );
+  };
 
-  static Title = ({
-    children,
-    className = '',
-    style,
-    as
-  }: TypographyProps) => {
+  static Title = ({ children, className = "", style, as }: TypographyProps) => {
     return (
-      <GenericTypography className={`font-sansInter font-bold text-base ${className}`} style={style} as={as} defaultAs='p'>
+      <GenericTypography
+        className={`font-sansInter font-bold text-base ${className}`}
+        style={style}
+        as={as}
+        defaultAs="p"
+      >
         {children}
       </GenericTypography>
-    )
-  }
+    );
+  };
 
   static Title2 = ({
     children,
-    className = '',
+    className = "",
     style,
-    as
+    as,
   }: TypographyProps) => {
     return (
-      <GenericTypography className={`font-sansInter font-bold text-xs ${className}`} style={style} as={as} defaultAs='p'>
+      <GenericTypography
+        className={`font-sansInter font-bold text-xs ${className}`}
+        style={style}
+        as={as}
+        defaultAs="p"
+      >
         {children}
       </GenericTypography>
-    )
-  }
+    );
+  };
 
   static Caption = ({
     children,
-    className = '',
+    className = "",
     style,
-    as
+    as,
   }: TypographyProps) => {
     return (
-      <GenericTypography className={`font-sansInter font-normal text-sm ${className}`} style={style} as={as} defaultAs='p'>
+      <GenericTypography
+        className={`font-sansInter font-normal text-sm ${className}`}
+        style={style}
+        as={as}
+        defaultAs="p"
+      >
         {children}
       </GenericTypography>
-    )
-  }
+    );
+  };
 
   static Caption2 = ({
     children,
-    className = '',
+    className = "",
     style,
-    as
+    as,
   }: TypographyProps) => {
     return (
-      <GenericTypography className={`font-sansInter font-normal text-xs ${className}`} style={style} as={as} defaultAs='p'>
+      <GenericTypography
+        className={`font-sansInter font-normal text-xs ${className}`}
+        style={style}
+        as={as}
+        defaultAs="p"
+      >
         {children}
       </GenericTypography>
-    )
-  }
+    );
+  };
 
-  static Label = ({
-    children,
-    className = '',
-    style,
-    as
-  }: TypographyProps) => {
+  static Label = ({ children, className = "", style, as }: TypographyProps) => {
     return (
-      <GenericTypography className={`font-sansInter font-bold text-sm uppercase ${className}`} style={style} as={as} defaultAs='span'>
+      <GenericTypography
+        className={`font-sansInter font-bold text-sm uppercase ${className}`}
+        style={style}
+        as={as}
+        defaultAs="span"
+      >
         {children}
       </GenericTypography>
-    )
-  }
+    );
+  };
 
   static Link = ({
     children,
-    className = '',
+    className = "",
     style,
     as,
     href,
   }: TypographyProps) => {
     return (
-      <GenericTypography className={`font-sansInter font-bold text-base text-link-blue ${className}`} style={style} as={as} defaultAs='p' href={href}>
+      <GenericTypography
+        className={`font-sansInter font-bold text-base text-link-blue ${className}`}
+        style={style}
+        as={as}
+        defaultAs="p"
+        href={href}
+      >
         {children}
       </GenericTypography>
-    )
-  }
+    );
+  };
 
-  render () {
-    return (
-      <Typography.Body {...this.props} />
-    )
+  render() {
+    return <Typography.Body {...this.props} />;
   }
 }

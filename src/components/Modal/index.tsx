@@ -1,37 +1,42 @@
-import { Dialog, Transition } from '@headlessui/react'
-import { Fragment, useRef } from 'react'
-import { Button } from '../Button'
+import { Dialog, Transition } from "@headlessui/react";
+import { Fragment, useRef } from "react";
+import { Button } from "../Button";
 
 interface ModalProps {
   /**
    * Children to display within the Modal
    */
-  children: React.ReactNode
+  children: React.ReactNode;
   /**
    * Label to use for button to close modal
    */
-   closeButtonLabel: string
-   /**
-    * Boolean for whether modal is open or closed
-    */
-   open: boolean
-   /**
-    * Function to open or close the modal
-    */
-   setOpen: React.Dispatch<React.SetStateAction<boolean>>
+  closeButtonLabel: string;
+  /**
+   * Boolean for whether modal is open or closed
+   */
+  open: boolean;
+  /**
+   * Function to open or close the modal
+   */
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export default function Modal({
   children,
   closeButtonLabel,
   open,
-  setOpen
+  setOpen,
 }: ModalProps) {
-  const cancelButtonRef = useRef(null)
+  const cancelButtonRef = useRef(null);
 
   return (
     <Transition.Root show={open} as={Fragment}>
-      <Dialog as="div" className="relative z-10" initialFocus={cancelButtonRef} onClose={setOpen}>
+      <Dialog
+        as="div"
+        className="relative z-10"
+        initialFocus={cancelButtonRef}
+        onClose={setOpen}
+      >
         <Transition.Child
           as={Fragment}
           enter="ease-out duration-300"
@@ -64,9 +69,7 @@ export default function Modal({
                   </div>
                 </div>
                 <div className="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
-                  <Button
-                    onClick={() => setOpen(false)}
-                  >
+                  <Button onClick={() => setOpen(false)}>
                     {closeButtonLabel}
                   </Button>
                 </div>
@@ -76,5 +79,5 @@ export default function Modal({
         </div>
       </Dialog>
     </Transition.Root>
-  )
+  );
 }
