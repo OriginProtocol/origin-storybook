@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+export { GradientText } from './GradientText';
+
 export interface TypographyProps {
   /**
    * Children to wrap with typography styling
@@ -63,43 +65,6 @@ const GenericTypography = ({
     )
   }
 }
-
-const gradients = {
-  'originprotocol-gradient-start': '#8C66FC',
-  'originprotocol-gradient-middle': '#5C2EFF',
-  'originprotocol-gradient-end': '#0274F1',
-  'ousd-gradient-start': '#8C66FC',
-  'ousd-gradient-middle': '#0274F1',
-  'ousd-gradient-end': '#0274F1',
-  'story-gradient-start': '#CB6FDE',
-  'story-gradient-middle': '#5C2EFF',
-  'story-gradient-end': '#0074F0',
-}
-
-export const GradientText = ({
-  webProperty,
-  children,
-  text,
-}: {
-  webProperty: 'originprotocol' | 'ousd' | 'story'
-  children?: React.ReactNode
-  text?: string
-}) => {
-  return (
-    <span
-      style={{
-        background: `-webkit-linear-gradient(0deg, ${gradients[`${webProperty}-gradient-start`]}, ${gradients[`${webProperty}-gradient-middle`]}, ${gradients[`${webProperty}-gradient-end`]})`,
-        WebkitBackgroundClip: 'text',
-        WebkitTextFillColor: 'transparent',
-      }}
-      className="font-black"
-    >
-      {text}
-      {children}
-    </span>
-  )
-}
-
 export class Typography extends Component<TypographyProps> {
   static H1 = ({
     children,

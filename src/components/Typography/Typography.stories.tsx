@@ -1,6 +1,7 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { Typography, GradientText } from '.';
+import { GradientTextProps } from './GradientText';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -99,8 +100,54 @@ const Template: ComponentStory<typeof Typography> = (args) => (
     <Typography {...args} children='Typography base (uses body)' />
   </div>
 )
-export const TypographyTypes = Template.bind({});
+export const Types = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-TypographyTypes.args = {
+Types.args = {
   children: 'Heading 1',
 };
+
+const GradientTextDisplay = ({textOptions}: {textOptions: GradientTextProps[]}) => (
+  <div>
+    {textOptions.map((gradientTextProps) => (
+      <Typography.Body>
+        Some text with <GradientText {...gradientTextProps} />
+      </Typography.Body>
+    ))}
+  </div>
+)
+
+const textOptions: GradientTextProps[] = [
+  {
+    text: 'Gradient text default for originprotocol',
+    webProperty: 'originprotocol'
+  },
+  {
+    text: 'Gradient text default for ousd',
+    webProperty: 'ousd'
+  },
+  {
+    text: 'Gradient text default for story',
+    webProperty: 'story'
+  },
+  {
+    text: 'Gradient text with custom gradient colors',
+    webProperty: 'story',
+    gradients: ['#AFA1FF', '#F68BFF', '#FD9AC2']
+  }
+]
+
+const GradientTemplate: ComponentStory<typeof GradientText> = (args) => (
+  <div>
+    {textOptions.map((gradientTextProps) => (
+      <Typography.Body>
+        Some text with <GradientText {...gradientTextProps} />
+      </Typography.Body>
+    ))}
+  </div>
+)
+
+export const Gradients = GradientTemplate.bind({})
+Gradients.args = {
+  text: 'Ignore this, it\'s not being used',
+  webProperty: 'originprotocol'
+}
