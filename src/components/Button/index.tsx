@@ -148,7 +148,7 @@ export const Button = ({
   let rounding;
   switch (type) {
     case "header":
-      fontWeight = "font-normal";
+      fontWeight = "font-light";
       shadow = "";
       rounding = "";
       padding = "px-4 py-1";
