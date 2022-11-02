@@ -205,7 +205,27 @@ export class Typography extends Component<TypographyProps> {
   }: TypographyProps) => {
     return (
       <GenericTypography
-        className={`font-sansInter font-normal text-base ${className}`}
+        className={`font-sansInter font-normal text-base leading-7 text-slate-600 ${className}`}
+        style={style}
+        as={as}
+        defaultAs="p"
+        href={href}
+      >
+        {children}
+      </GenericTypography>
+    );
+  };
+
+  static Body3 = ({
+    children,
+    className = "",
+    style,
+    href,
+    as,
+  }: TypographyProps) => {
+    return (
+      <GenericTypography
+        className={`font-sansInter font-normal text-base leading-7 ${className}`}
         style={style}
         as={as}
         defaultAs="p"
@@ -219,7 +239,7 @@ export class Typography extends Component<TypographyProps> {
   static Title = ({ children, className = "", style, as }: TypographyProps) => {
     return (
       <GenericTypography
-        className={`font-sansInter font-bold text-base ${className}`}
+        className={`font-sansInter font-bold text-xl ${className}`}
         style={style}
         as={as}
         defaultAs="p"
