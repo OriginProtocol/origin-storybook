@@ -106,6 +106,7 @@ module.exports = {
         'story-blue': '#2B70F5',
         'story-pink': '#FC28F1',
         'link-blue': '#0074F0',
+        'slate-600': '#475569',
       },
     },
   },

@@ -46,7 +46,7 @@ export const AltCard = ({
   thumbnailAlt,
 }: AltCardProps) => (
   <a href={linkHref} target="_blank" rel="noopener noreferrer">
-    <div className="bg-gray-100 p-6 rounded-xl w-full shadow overflow-hidden text-black">
+    <div className="p-6 rounded-xl w-full border-gray-100 border-2 shadow-lg overflow-hidden text-black">
       <div className="relative justify-self-start mb-3">
         <img src={imgSrc} alt={imgAlt} className="h-10" />
         {thumbnailSrc && (
@@ -60,9 +60,7 @@ export const AltCard = ({
         )}
       </div>
       <div className="clear-both">
-        <div className="text-blue-500">
-          <Typography.Caption2>{title}</Typography.Caption2>
-        </div>
+        <Typography.Caption2 className='text-blue-500 font-bold mb-1'>{title}</Typography.Caption2>
         {narrow ? (
           <Typography.Title2>{body}</Typography.Title2>
         ) : (
