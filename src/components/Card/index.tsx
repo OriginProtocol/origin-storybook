@@ -55,7 +55,7 @@ export const Card = ({
     href={linkHref}
   >
     <div className={`rounded-xl w-full shadow overflow-hidden ${webProperty === 'ousd' ? 'text-white border-white border-2' : 'text-black'} bg-white`}>
-      <div className="w-full h-48 relative">
+      <div className="w-full h-48 relative overflow-hidden">
         {img}
       </div>
       <div className="px-6 py-8 w-full relative">

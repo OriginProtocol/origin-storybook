@@ -17,7 +17,7 @@ export default {
 const Template: ComponentStory<typeof Card> = (args) => (
   <div className="space-y-4 md:space-y-0 md:grid md:grid-cols-3 gap-10 max-w-screen-xl">
     <Card {...args} />
-    <Card {...args} />
+    <Card {...args} title='some other title' img={<Image src='https://placekeanu.com/381/192' alt='keanu banner' height='500' width='200' />} />
     <Card {...args} />
     <Card {...args} />
     <Card {...args} />
