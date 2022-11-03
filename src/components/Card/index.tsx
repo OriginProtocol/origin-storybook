@@ -50,11 +50,12 @@ export const Card = ({
   linkText2,
   linkHref2,
   webProperty,
-}: CardProps) => (
-  <a
-    href={linkHref}
-  >
-    <div className={`rounded-xl w-full shadow overflow-hidden ${webProperty === 'ousd' ? 'text-white border-white border-2' : 'text-black'} bg-white`}>
+}: CardProps) => {
+  const Wrapper = linkHref2 ? 'div' : 'a'; // You can't wrap a <a> within an <a>, and if there are 2 links anyway we're going to not want to wrap the entire card in an anchor tag.
+  const Link1Tag = linkHref2 ? 'a' : 'p'
+
+  return (
+    <Wrapper href={linkHref} className={`rounded-xl w-full shadow overflow-hidden ${webProperty === 'ousd' ? 'text-white border-white border-2' : 'text-black'} bg-white`}>
       <div className="w-full h-48 relative overflow-hidden">
         {img}
       </div>
@@ -71,7 +72,7 @@ export const Card = ({
             </Typography.Body2>
           </div>
           <div className="space-y-2.5">
-            <a href={linkHref} className='font-sansInter font-bold text-base text-link-blue mr-1.5'>
+            <Link1Tag href={linkHref} className='font-sansInter font-bold text-base text-link-blue mr-1.5'>
               {linkText}
               {
                 (webProperty === 'story' || webProperty ==='launchpad') && (
@@ -83,9 +84,9 @@ export const Card = ({
                   </>
                 )
               }
-            </a>
+            </Link1Tag>
             {linkText2 && (
-              <Typography.Link href={linkHref2} className="space-x-4 flex items-center">
+              <Typography.Link href={linkHref2} className="space-x-4 flex items-center" as='p'>
                 {linkText2}
               </Typography.Link>
             )}
@@ -99,6 +100,6 @@ export const Card = ({
           </div>
         )}
       </div>
-    </div>
-  </a>
-)
+    </Wrapper>
+  )
+}
