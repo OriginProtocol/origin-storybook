@@ -67,7 +67,7 @@ export const Card = ({
                 {title}
               </Typography.Title>
             </div>
-            <Typography.Body2>
+            <Typography.Body2 className="text-slate-600">
               {body}
             </Typography.Body2>
           </div>
