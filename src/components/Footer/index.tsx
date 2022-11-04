@@ -15,7 +15,7 @@ import { Typography } from "../Typography";
 export const Footer = () => (
   <div className="w-full bg-gradient-to-r from-black to-footer-end py-10 md:py-20 text-white">
     <div
-      className="border-b flex flex-col md:flex-row space-y-12 md:space-y-0 pb-12 md:pb-7 max-w-screen-xl mx-9"
+      className="border-b flex flex-col md:flex-row space-y-12 md:space-y-0 pb-12 md:pb-7 max-w-screen-xl mx-auto"
       style={{ borderBottomColor: "rgba(255,255,25,0.2)" }}
     >
       <div className="flex flex-col md:justify-between space-y-6 md:space-y-0 flex-6">
