@@ -55,7 +55,7 @@ export const Card = ({
   const Link1Tag = linkHref2 ? 'a' : 'p'
 
   return (
-    <Wrapper href={linkHref} className={`rounded-xl w-full shadow overflow-hidden ${webProperty === 'ousd' ? 'text-white border-white border-2' : 'text-black'} bg-white`}>
+    <Wrapper href={linkHref} className={`rounded-xl inline-block w-full shadow overflow-hidden ${webProperty === 'ousd' ? 'text-white border-white border-2' : 'text-black'} bg-white`}>
       <div className="w-full h-48 relative overflow-hidden">
         {img}
       </div>
