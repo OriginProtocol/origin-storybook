@@ -205,7 +205,7 @@ export class Typography extends Component<TypographyProps> {
   }: TypographyProps) => {
     return (
       <GenericTypography
-        className={`font-sansInter font-normal text-base leading-7 text-slate-600 ${className}`}
+        className={`font-sansInter font-normal text-base leading-7 ${className}`}
         style={style}
         as={as}
         defaultAs="p"
