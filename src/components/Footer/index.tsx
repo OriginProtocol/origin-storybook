@@ -14,8 +14,9 @@ import { Typography } from "../Typography";
 
 export const Footer = () => (
   <div className="w-full bg-gradient-to-r from-black to-footer-end py-10 md:py-20 text-white">
+    <div className='max-w-screen-xl mx-auto'>
     <div
-      className="border-b flex flex-col md:flex-row space-y-12 md:space-y-0 pb-12 md:pb-7 max-w-screen-xl mx-auto"
+      className="border-b flex flex-col md:flex-row space-y-12 md:space-y-0 pb-12 md:pb-7 mx-9"
       style={{ borderBottomColor: "rgba(255,255,25,0.2)" }}
     >
       <div className="flex flex-col md:justify-between space-y-6 md:space-y-0 flex-6">
@@ -50,16 +51,25 @@ export const Footer = () => (
       <div className="flex flex-col flex-2 space-y-4">
         <Typography.Body3 className="font-semibold">Organization</Typography.Body3>
         <div className="flex flex-row md:flex-col space-x-4 md:space-x-0 md:space-y-4">
-          <Typography.Caption className="opacity-75" href="/community">
-            Team
-          </Typography.Caption>
-          <div className="flex items-center">
-            <Typography.Caption
-              className="opacity-75"
-              href="https://angel.co/company/originprotocol/jobs"
-            >
-              Careers
+          <a
+            href="/community"
+            target="_blank"
+          >
+            <Typography.Caption className="opacity-75">
+              Community
             </Typography.Caption>
+          </a>
+          <div className="flex items-center">
+            <a
+              href="https://angel.co/company/originprotocol/jobs"
+              target="_blank"
+            >
+              <Typography.Caption
+                className="opacity-75"
+              >
+                Careers
+              </Typography.Caption>
+            </a>
             <a
               href="https://angel.co/company/originprotocol/jobs"
               target="_blank"
@@ -74,20 +84,35 @@ export const Footer = () => (
       <div className="flex flex-col flex-2 space-y-4">
         <Typography.Body3 className="font-bold">Products</Typography.Body3>
         <div className="flex flex-row md:flex-col space-x-4 md:space-x-0 md:space-y-4 opacity-75">
-          <Typography.Caption href="https://story.xyz">
-            Origin Story
-          </Typography.Caption>
-          <Typography.Caption href="https://ousd.com">
-            Origin Dollar
-          </Typography.Caption>
+          <a
+            href="https://story.xyz"
+            target="_blank"
+          >
+            <Typography.Caption>
+              Origin Story
+            </Typography.Caption>
+          </a>
+          <a
+            href="https://ousd.com"
+            target="_blank"
+          >
+            <Typography.Caption>
+              Origin Dollar
+            </Typography.Caption>
+          </a>
         </div>
       </div>
       <div className="flex flex-col flex-2 space-y-4">
         <Typography.Body3 className="font-bold">Resources</Typography.Body3>
         <div className="flex flex-row md:flex-col space-x-4 md:space-x-0 md:space-y-4 opacity-75">
-          <Typography.Caption href="https://github.com/originprotocol">
-            GitHub
-          </Typography.Caption>
+          <a
+            href="https://github.com/originprotocol"
+            target="_blank"
+          >
+            <Typography.Caption>
+              GitHub
+            </Typography.Caption>
+          </a>
         </div>
       </div>
     </div>
@@ -96,9 +121,20 @@ export const Footer = () => (
         © 2022 Origin Protocol Inc. All rights reserved.
       </Typography.Caption2>
       <div className="flex space-x-6">
-        <Typography.Caption2 href="/privacy">Privacy Policy</Typography.Caption2>
-        <Typography.Caption2 href="/tos">Terms of Service</Typography.Caption2>
+        <a
+          href="/privacy"
+          target="_blank"
+        >
+          <Typography.Caption2>Privacy Policy</Typography.Caption2>
+        </a>
+        <a
+          href="/tos"
+          target="_blank"
+        >
+          <Typography.Caption2>Terms of Service</Typography.Caption2>
+        </a>
       </div>
+    </div>
     </div>
   </div>
 );
