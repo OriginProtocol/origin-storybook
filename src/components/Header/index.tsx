@@ -129,7 +129,7 @@ export const Header = ({ webProperty, mappedLinks, language }: HeaderProps) => {
 
   return (
     <header>
-      <div className="px-9 py-16 w-full flex justify-between items-center max-w-screen-xl mx-auto">
+      <div className="px-9 py-9 md:py-16 w-full flex justify-between items-center max-w-screen-xl mx-auto">
         <div className="flex h-4 md:h-6">
           <a href="/">
             {webProperty === "originprotocol" && <OriginLogo />}
