@@ -89,18 +89,20 @@ const NavLinks = ({
 const Hamburger = ({
   setOpen,
   open,
+  webProperty,
 }: {
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
   open: boolean;
+  webProperty: "originprotocol" | "ousd" | "story";
 }) => (
   <div className="space-y-2 cursor-pointer" onClick={() => setOpen(!open)}>
     <span
-      className={`block w-8 h-0.5 bg-gray-600 transform transition-transform ${
+      className={`block w-8 h-0.5 ${webProperty === 'ousd' ? 'bg-white' : 'bg-gray-600'} transform transition-transform ${
         open ? "rotate-45 translate-y-1.5" : ""
       }`}
     ></span>
     <span
-      className={`block w-8 h-0.5 bg-gray-600 transform transition-transform ${
+      className={`block w-8 h-0.5 ${webProperty === 'ousd' ? 'bg-white' : 'bg-gray-600'} transform transition-transform ${
         open ? "-rotate-45 -translate-y-1" : ""
       }`}
     ></span>
@@ -139,7 +141,7 @@ export const Header = ({ webProperty, mappedLinks, language }: HeaderProps) => {
           <NavLinks mappedLinks={mappedLinks} webProperty={webProperty} />
         </div>
         <div className="block md:hidden">
-          <Hamburger open={open} setOpen={setOpen} />
+          <Hamburger open={open} setOpen={setOpen} webProperty={webProperty} />
         </div>
         <div
           className={`
@@ -151,7 +153,7 @@ export const Header = ({ webProperty, mappedLinks, language }: HeaderProps) => {
           <div className="relative h-full">
             <div className="flex flex-col justify-center align-middle h-full">
               <div className="absolute right-8 top-16">
-                <Hamburger open={open} setOpen={setOpen} />
+                <Hamburger open={open} setOpen={setOpen} webProperty={webProperty} />
               </div>
               <NavLinks mappedLinks={mappedLinks} webProperty={webProperty} />
             </div>
