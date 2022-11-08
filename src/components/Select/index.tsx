@@ -7,7 +7,7 @@ function classNames(...classes: string[]) {
 }
 
 type Option = {
-  id: number;
+  id: number | null;
   name: string;
   unavailable: boolean;
 };
