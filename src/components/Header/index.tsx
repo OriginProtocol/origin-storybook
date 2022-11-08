@@ -57,7 +57,7 @@ const NavLinks = ({
             <Button
               label={mappedLink.label}
               type="header"
-              size="small"
+              size="nav"
               key={mappedLink.label}
               href={mappedLink.href}
               webProperty={webProperty}

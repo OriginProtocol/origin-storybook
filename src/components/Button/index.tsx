@@ -13,7 +13,7 @@ export interface ButtonProps {
   /**
    * How large should the button be?
    */
-  size?: "small" | "medium" | "large";
+  size?: "small" | "medium" | "large" | "nav";
   /**
    * Button contents
    */
@@ -124,6 +124,11 @@ export const Button = ({
   let textSize;
   let padding;
   switch (size) {
+    case "nav":
+      textSize = "text-base font-medium";
+      padding = "px-7 py-1";
+      break;
+
     case "small":
       textSize = "text-base";
       padding = "px-7 py-1";
