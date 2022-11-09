@@ -102,7 +102,7 @@ export const Button = ({
           ? "bg-gradient-to-r from-ousd-button-dark-start to-ousd-button-dark-end"
           : "";
       textColor = "text-white";
-      hoverStyles = "hover:text-gray-300";
+      hoverStyles = type === "header" ? "" : "hover:text-gray-300";
       break;
 
     case "story":

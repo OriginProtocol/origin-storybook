@@ -68,7 +68,7 @@ const NavLinks = ({
           );
         } else {
           return (
-            <div className={`flex flex-col ${webProperty === 'ousd' ? 'pt-2' : ''}`}>
+            <div className={`group flex flex-col ${webProperty === 'ousd' ? 'pt-2' : ''}`}>
               <Button
                 label={mappedLink.label}
                 type="header"
@@ -81,7 +81,7 @@ const NavLinks = ({
               />
               {webProperty === 'ousd' && (
                 <div
-                  className={`h-1 mx-4 mt-0.5 hover:bg-gradient-to-r from-ousd-purple to-ousd-blue rounded-full ${active === mappedLink.label ? 'bg-gradient-to-r' : ''}`}
+                  className={`h-1 mx-4 mt-0.5 bg-gradient-to-r group-hover:from-ousd-purple group-hover:to-ousd-blue rounded-full ${active === mappedLink.label ? 'bg-gradient-to-r' : ''}`}
                 >
                 </div>
               )}

@@ -113,5 +113,10 @@ module.exports = {
       },
     },
   },
+  variants: {
+    extend: {
+      gradientColorStops: ['group-hover'],
+    }
+  },
   plugins: [],
 };
