@@ -82,7 +82,12 @@ export const Button = ({
         type === "primary"
           ? "bg-gradient-to-r from-origin-protocol-button-start to-origin-protocol-button-end"
           : "bg-transparent";
-      textColor = type === "primary" ? "text-white" : "text-slate-800";
+      textColor =
+        type === "primary"
+          ? "text-white"
+          : type === 'header'
+          ? "text-slate-800"
+          : "text-black"
       hoverStyles =
         type === "primary"
           ? "hover:text-gray-100"

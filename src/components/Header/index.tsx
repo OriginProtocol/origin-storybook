@@ -32,15 +32,27 @@ export type IconFormatted = {
   url: string;
 };
 
+export interface NavLinksProps {
+  /**
+    * Array of link objects the header will use to create dropdowns and buttons
+    */
+  mappedLinks: MappedLink<LinkFormatted<IconFormatted>>[];
+  /**
+    * webProperty that header will be used on, changes logo on left side
+    */
+  webProperty: "originprotocol" | "ousd" | "story";
+  /**
+    * Currently displayed page of navigation bar
+    */
+  active?: string;
+}
+
 const NavLinks = ({
   mappedLinks,
   webProperty,
   active,
-}: {
-  mappedLinks: MappedLink<LinkFormatted<IconFormatted>>[];
-  webProperty: "originprotocol" | "ousd" | "story";
-  active: string;
-}) => (
+}: NavLinksProps
+) => (
   <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0">
     {mappedLinks.map((mappedLink) => {
       if (!mappedLink.isButton && mappedLink.links) {
@@ -129,7 +141,7 @@ export interface HeaderProps {
    */
   mappedLinks: MappedLink<LinkFormatted<IconFormatted>>[];
   /**
-   * Active element
+   * Currently displayed page of navigation bar
    */
   active?: string;
   /**
