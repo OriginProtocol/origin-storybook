@@ -32,13 +32,27 @@ export type IconFormatted = {
   url: string;
 };
 
+export interface NavLinksProps {
+  /**
+    * Array of link objects the header will use to create dropdowns and buttons
+    */
+  mappedLinks: MappedLink<LinkFormatted<IconFormatted>>[];
+  /**
+    * webProperty that header will be used on, changes logo on left side
+    */
+  webProperty: "originprotocol" | "ousd" | "story";
+  /**
+    * Currently displayed page of navigation bar
+    */
+  active?: string;
+}
+
 const NavLinks = ({
   mappedLinks,
   webProperty,
-}: {
-  mappedLinks: MappedLink<LinkFormatted<IconFormatted>>[];
-  webProperty: "originprotocol" | "ousd" | "story";
-}) => (
+  active,
+}: NavLinksProps
+) => (
   <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0">
     {mappedLinks.map((mappedLink) => {
       if (!mappedLink.isButton && mappedLink.links) {
@@ -54,16 +68,24 @@ const NavLinks = ({
           );
         } else {
           return (
-            <Button
-              label={mappedLink.label}
-              type="header"
-              size="nav"
-              key={mappedLink.label}
-              href={mappedLink.href}
-              webProperty={webProperty}
-              target={mappedLink.target}
-              rel="nofollow"
-            />
+            <div className={`flex flex-col ${webProperty === 'ousd' ? 'pt-2' : ''}`}>
+              <Button
+                label={mappedLink.label}
+                type="header"
+                size="nav"
+                key={mappedLink.label}
+                href={mappedLink.href}
+                webProperty={webProperty}
+                target={mappedLink.target}
+                rel="nofollow"
+              />
+              {webProperty === 'ousd' && (
+                <div
+                  className={`h-1 mx-4 mt-0.5 hover:bg-gradient-to-r from-ousd-purple to-ousd-blue rounded-full ${active === mappedLink.label ? 'bg-gradient-to-r' : ''}`}
+                >
+                </div>
+              )}
+            </div>
           );
         }
       }
@@ -119,12 +141,16 @@ export interface HeaderProps {
    */
   mappedLinks: MappedLink<LinkFormatted<IconFormatted>>[];
   /**
+   * Currently displayed page of navigation bar
+   */
+  active?: string;
+  /**
    * Language option for i18n
    */
   language?: string;
 }
 
-export const Header = ({ webProperty, mappedLinks, language }: HeaderProps) => {
+export const Header = ({ webProperty, mappedLinks, active, language }: HeaderProps) => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -138,7 +164,7 @@ export const Header = ({ webProperty, mappedLinks, language }: HeaderProps) => {
           </a>
         </div>
         <div className="hidden md:block">
-          <NavLinks mappedLinks={mappedLinks} webProperty={webProperty} />
+          <NavLinks mappedLinks={mappedLinks} webProperty={webProperty} active={active} />
         </div>
         <div className="block md:hidden">
           <Hamburger open={open} setOpen={setOpen} webProperty={webProperty} />

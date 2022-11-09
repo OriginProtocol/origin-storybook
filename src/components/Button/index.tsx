@@ -82,11 +82,16 @@ export const Button = ({
         type === "primary"
           ? "bg-gradient-to-r from-origin-protocol-button-start to-origin-protocol-button-end"
           : "bg-transparent";
-      textColor = type === "primary" ? "text-white" : "text-black";
+      textColor =
+        type === "primary"
+          ? "text-white"
+          : type === 'header'
+          ? "text-slate-800"
+          : "text-black"
       hoverStyles =
         type === "primary"
-          ? "hover:bg-gray-50 hover:text-gray-100"
-          : "hover:bg-gray-50";
+          ? "hover:text-gray-100"
+          : "hover:text-slate-600";
       break;
 
     case "ousd":
@@ -97,7 +102,7 @@ export const Button = ({
           ? "bg-gradient-to-r from-ousd-button-dark-start to-ousd-button-dark-end"
           : "";
       textColor = "text-white";
-      hoverStyles = "hover:bg-gray-900 hover:text-gray-100";
+      hoverStyles = "hover:text-gray-300";
       break;
 
     case "story":
@@ -125,7 +130,7 @@ export const Button = ({
   let padding;
   switch (size) {
     case "nav":
-      textSize = "text-base font-medium";
+      textSize = "text-base font-normal";
       padding = "px-7 py-1";
       break;
 
@@ -181,7 +186,6 @@ export const Button = ({
 
   return (
     <a
-      type="button"
       href={href || ""}
       target={target}
       rel={rel}
