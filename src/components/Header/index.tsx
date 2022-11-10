@@ -155,7 +155,7 @@ export const Header = ({ webProperty, mappedLinks, active, language }: HeaderPro
 
   return (
     <header>
-      <div className="px-9 py-9 md:py-16 w-full flex justify-between items-center max-w-screen-xl mx-auto">
+      <div className={`py-9 md:py-16 w-full flex justify-between items-center mx-auto ${webProperty === 'ousd' ? 'max-w-screen-2xl px-8 md:px-[134px]' : 'max-w-screen-xl px-9'}`}>
         <div className="flex h-4 md:h-6">
           <a href="/">
             {webProperty === "originprotocol" && <OriginLogo />}

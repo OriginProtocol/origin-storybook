@@ -51,7 +51,7 @@
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-svg": "^2.0.0",
     "rollup-plugin-typescript2": "^0.33.0",
-    "tailwindcss": "^2.2.19",
+    "tailwindcss": "^3.2.3",
     "typescript": "^4.8.3"
   },
   "peerDependencies": {
