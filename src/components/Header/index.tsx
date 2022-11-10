@@ -68,12 +68,11 @@ const NavLinks = ({
           );
         } else {
           return (
-            <div className={`group flex flex-col ${webProperty === 'ousd' ? 'pt-2' : ''}`}>
+            <div className={`group flex flex-col ${webProperty === 'ousd' ? 'pt-2' : ''}`} key={mappedLink.label}>
               <Button
                 label={mappedLink.label}
                 type="header"
                 size="nav"
-                key={mappedLink.label}
                 href={mappedLink.href}
                 webProperty={webProperty}
                 target={mappedLink.target}
