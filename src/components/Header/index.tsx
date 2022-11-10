@@ -68,7 +68,7 @@ const NavLinks = ({
           );
         } else {
           return (
-            <div className={`flex flex-col ${webProperty === 'ousd' ? 'pt-2' : ''}`}>
+            <div className={`group flex flex-col ${webProperty === 'ousd' ? 'pt-2' : ''}`}>
               <Button
                 label={mappedLink.label}
                 type="header"
@@ -81,7 +81,7 @@ const NavLinks = ({
               />
               {webProperty === 'ousd' && (
                 <div
-                  className={`h-1 mx-4 mt-0.5 hover:bg-gradient-to-r from-ousd-purple to-ousd-blue rounded-full ${active === mappedLink.label ? 'bg-gradient-to-r' : ''}`}
+                  className={`h-1 mx-4 mt-0.5 bg-gradient-to-r group-hover:from-ousd-purple group-hover:to-ousd-blue rounded-full ${active === mappedLink.label ? 'bg-gradient-to-r' : ''}`}
                 >
                 </div>
               )}
@@ -155,7 +155,7 @@ export const Header = ({ webProperty, mappedLinks, active, language }: HeaderPro
 
   return (
     <header>
-      <div className="px-9 py-9 md:py-16 w-full flex justify-between items-center max-w-screen-xl mx-auto">
+      <div className={`py-9 md:py-16 w-full flex justify-between items-center mx-auto ${webProperty === 'ousd' ? 'max-w-screen-2xl px-8 md:px-[134px]' : 'max-w-screen-xl px-9'}`}>
         <div className="flex h-4 md:h-6">
           <a href="/">
             {webProperty === "originprotocol" && <OriginLogo />}

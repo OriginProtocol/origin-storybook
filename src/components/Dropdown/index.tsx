@@ -77,7 +77,7 @@ export const Dropdown = ({
                 ? "pr-14 translate-x-6 md:translate-x-0"
                 : ""
             }
-            transform inline-flex w-full justify-center align-middle px-4 py-2 text-base font-medium text-slate-800 hover:text-slate-600 focus:outline-none focus:ring-offset-gray-100 font-sans
+            transform inline-flex w-full justify-center align-middle px-4 py-2 text-base font-normal text-slate-800 hover:text-slate-600 focus:outline-none focus:ring-offset-gray-100 font-sans
             `}
           id="menu-button"
           aria-expanded="true"

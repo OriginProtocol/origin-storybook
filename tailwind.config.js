@@ -3,7 +3,6 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
-  purge: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
       animation: {
@@ -112,6 +111,11 @@ module.exports = {
         'slate-800': '#1E293B',
       },
     },
+  },
+  variants: {
+    extend: {
+      gradientColorStops: ['group-hover'],
+    }
   },
   plugins: [],
 };
