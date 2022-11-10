@@ -96,6 +96,7 @@ const NavLinks = ({
             <Button
               size="small"
               label={mappedLink.label}
+              key={mappedLink.label}
               href={mappedLink.href}
               target={mappedLink.target}
               webProperty="story"
