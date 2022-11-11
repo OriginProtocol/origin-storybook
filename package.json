@@ -60,7 +60,7 @@
   },
   "scripts": {
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
+    "build-storybook": "build-storybook -o docs-build -s ./public",
     "chromatic": "npx chromatic --project-token=7db6a89b14e5",
     "test:generate-output": "jest --json --outputFile=.jest-test-results.json",
     "build": "NODE_ENV=production rollup -c",
