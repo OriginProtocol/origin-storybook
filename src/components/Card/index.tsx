@@ -39,7 +39,7 @@ export interface CardProps {
    */
   thumbnail?: React.ReactNode
   /**
-   * Target for links
+   * Target for links. Defaults to _blank.
    */
   target?: '_blank' | '_parent' | '_self' | '_top'
 }
