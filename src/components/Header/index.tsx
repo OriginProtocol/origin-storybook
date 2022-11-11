@@ -16,6 +16,7 @@ export type MappedLink<Link> = {
   order: number;
   target?: string;
   links?: Link[];
+  isHighlight?: boolean;
 };
 
 export type LinkFormatted<IconFormatted> = {
@@ -77,6 +78,7 @@ const NavLinks = ({
                 webProperty={webProperty}
                 target={mappedLink.target}
                 rel="nofollow"
+                className={`${mappedLink.isHighlight ? "text-story-pink" : ""}`}
               />
               {webProperty === 'ousd' && (
                 <div
