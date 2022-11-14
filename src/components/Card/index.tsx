@@ -60,7 +60,7 @@ export const Card = ({
   const Link1Tag = linkHref2 ? 'a' : 'p'
 
   return (
-    <Wrapper href={linkHref} target={target} className={`rounded-xl inline-block w-full shadow overflow-hidden ${webProperty === 'ousd' ? 'text-white border-white border-2' : 'text-black'} bg-white flex flex-col`}>
+    <Wrapper href={linkHref} target={target} className={`rounded-xl inline-block w-full shadow overflow-hidden text-black ${webProperty === 'ousd' ? 'border-white border-2' : ''} bg-white flex flex-col`}>
       <div className="w-full h-48 relative overflow-hidden">
         {img}
       </div>
@@ -68,13 +68,13 @@ export const Card = ({
         <div className="space-y-8 flex flex-col justify-between">
           <div className="space-y-4">
             <div className={`${webProperty === 'story' ? 'w-3/4' : ''}`}>
-              <Typography.Title className={`${webProperty === 'launchpad' ? 'mt-3' : 'mt-2'}`}>
+              <Typography.H7 className={`${webProperty === 'launchpad' ? 'mt-3' : 'mt-2'}`} style={{fontWeight: 700}}>
                 {title}
-              </Typography.Title>
+              </Typography.H7>
             </div>
-            <Typography.Body2 className="text-slate-600">
+            <Typography.Body3 className="text-slate-600">
               {body}
-            </Typography.Body2>
+            </Typography.Body3>
           </div>
           <div className="space-y-2.5">
             <Link1Tag href={linkHref} className='font-sansInter font-bold text-base text-link-blue mr-1.5'>
