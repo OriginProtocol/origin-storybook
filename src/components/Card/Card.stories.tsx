@@ -17,7 +17,17 @@ export default {
 const Template: ComponentStory<typeof Card> = (args) => (
   <div className="space-y-4 md:space-y-0 md:grid md:grid-cols-3 gap-10 max-w-screen-xl">
     <Card {...args} />
-    <Card {...args} title='some other title' img={<Image src='https://placekeanu.com/381/192' alt='keanu banner' height='500' width='200' />} />
+    <Card
+      {...args}
+      title='some other title to test out length of cards relative to each other'
+      body='Some other much longer description and wrongly formatted image to see what this would look like and compare heights of body text to each other to see how the anchor links at the bottom hope this is long enough for that. Okay I guess it was not so adding these extra sentences to pad the rest out and see how that is.'
+      img={
+        <Image src='https://placekeanu.com/381/192'
+          alt='keanu banner'
+          height='500'
+          width='200' />
+        }
+      />
     <Card {...args} />
     <Card {...args} />
     <Card {...args} />
@@ -101,6 +111,7 @@ StoryCard.args = {
   ),
   body: "3LAU's sale on Origin generated $11.7M in sales and holds the world record for the most successful music NFT of all time. Global media covered the historic event, with Forbes, Business Insider, Coindesk, and many other outlets heralding in the new age of NFTs with their coverage.",
   linkText: "$11.7 million dollars sale. First music NFT on the blockchain",
+  target: '_blank',
   linkHref: "https://google.com",
 };
 

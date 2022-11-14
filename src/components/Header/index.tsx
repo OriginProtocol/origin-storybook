@@ -16,6 +16,7 @@ export type MappedLink<Link> = {
   order: number;
   target?: string;
   links?: Link[];
+  isHighlight?: boolean;
 };
 
 export type LinkFormatted<IconFormatted> = {
@@ -68,16 +69,16 @@ const NavLinks = ({
           );
         } else {
           return (
-            <div className={`group flex flex-col ${webProperty === 'ousd' ? 'pt-2' : ''}`}>
+            <div className={`group flex flex-col ${webProperty === 'ousd' ? 'pt-2' : ''}`} key={mappedLink.label}>
               <Button
                 label={mappedLink.label}
                 type="header"
                 size="nav"
-                key={mappedLink.label}
                 href={mappedLink.href}
                 webProperty={webProperty}
                 target={mappedLink.target}
                 rel="nofollow"
+                className={`${mappedLink.isHighlight ? "text-story-pink" : ""}`}
               />
               {webProperty === 'ousd' && (
                 <div
@@ -97,6 +98,7 @@ const NavLinks = ({
             <Button
               size="small"
               label={mappedLink.label}
+              key={mappedLink.label}
               href={mappedLink.href}
               target={mappedLink.target}
               webProperty="story"
