@@ -1,11 +1,6 @@
 import { useState } from "react";
 import { Button } from "../Button";
 import { Dropdown } from "../Dropdown";
-import {
-  LanguageOptions,
-  OgnDropdownOptions,
-  ProductsOptions,
-} from "./HeaderOptions";
 import { OriginDollarLogo, OriginLogo, OriginStoryLogo } from "../Icons";
 
 export type MappedLink<Link> = {
@@ -46,12 +41,17 @@ export interface NavLinksProps {
     * Currently displayed page of navigation bar
     */
   active?: string;
+  /**
+   * Is this being used on a mobile hamburger drawer? Used to enlarge text if so.
+   */
+  isMobile?: boolean;
 }
 
 const NavLinks = ({
   mappedLinks,
   webProperty,
   active,
+  isMobile
 }: NavLinksProps
 ) => (
   <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0">
@@ -65,6 +65,7 @@ const NavLinks = ({
               options={mappedLink.links}
               key={mappedLink.label}
               bolding="none"
+              classes={`${isMobile ? "text-2xl" : ""}`}
             />
           );
         } else {
@@ -78,7 +79,7 @@ const NavLinks = ({
                 webProperty={webProperty}
                 target={mappedLink.target}
                 rel="nofollow"
-                className={`${mappedLink.isHighlight ? "text-story-pink" : ""} ${webProperty === 'ousd' ? 'px-7 lg:px-4 xl:px-7' : ''}`}
+                className={`${mappedLink.isHighlight ? "text-story-pink" : ""} ${webProperty === 'ousd' ? 'px-7 lg:px-4 xl:px-7' : ''} ${isMobile ? "text-2xl" : ""}`}
               />
               {webProperty === 'ousd' && (
                 <div
@@ -183,7 +184,7 @@ export const Header = ({ webProperty, mappedLinks, active, language }: HeaderPro
               <div className="absolute right-8 top-16">
                 <Hamburger open={open} setOpen={setOpen} webProperty={webProperty} />
               </div>
-              <NavLinks mappedLinks={mappedLinks} webProperty={webProperty} />
+              <NavLinks mappedLinks={mappedLinks} webProperty={webProperty} isMobile />
             </div>
           </div>
         </div>

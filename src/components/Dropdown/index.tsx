@@ -77,6 +77,7 @@ export const Dropdown = ({
                 ? "pr-14 translate-x-6 md:translate-x-0"
                 : ""
             }
+            ${classes}
             transform inline-flex w-full justify-center align-middle px-4 py-2 text-base font-normal text-slate-800 hover:text-slate-600 focus:outline-none focus:ring-offset-gray-100 font-sans
             `}
           id="menu-button"
@@ -137,6 +138,7 @@ export const Dropdown = ({
                   (bolding === "selection" && optionLabel === label)
                 }
                 columns={options.length > SINGLE_COLUMN_OPTIONS_MAX ? 2 : 1}
+                className={classes}
               />
             ))}
           </div>
@@ -157,6 +159,7 @@ interface DropdownOptionProps {
     caption: string;
     url: string;
   };
+  className?: string;
 }
 
 const DropdownOption = ({
@@ -166,6 +169,7 @@ const DropdownOption = ({
   bold = false,
   columns = 1,
   icon,
+  className
 }: DropdownOptionProps) => {
   return (
     <Menu.Item>
@@ -181,7 +185,8 @@ const DropdownOption = ({
             columns === 1 ? "w-full" : "w-1/2",
             icon ? "py-4" : "py-2",
             "block px-8 text-base",
-            "font-sans"
+            "font-sans",
+            className || ''
           )}
         >
           {icon && (
