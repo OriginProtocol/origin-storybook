@@ -78,11 +78,11 @@ const NavLinks = ({
                 webProperty={webProperty}
                 target={mappedLink.target}
                 rel="nofollow"
-                className={`${mappedLink.isHighlight ? "text-story-pink" : ""}`}
+                className={`${mappedLink.isHighlight ? "text-story-pink" : ""} ${webProperty === 'ousd' ? 'px-7 lg:px-4 xl:px-7' : ''}`}
               />
               {webProperty === 'ousd' && (
                 <div
-                  className={`h-1 mx-4 mt-0.5 bg-gradient-to-r group-hover:from-ousd-purple group-hover:to-ousd-blue rounded-full ${active === mappedLink.label ? 'bg-gradient-to-r' : ''}`}
+                  className={`h-1 mx-4 mt-0.5 bg-gradient-to-r group-hover:from-ousd-purple group-hover:to-ousd-blue rounded-full ${active === mappedLink.label ? 'from-ousd-purple to-ousd-blue' : ''}`}
                 >
                 </div>
               )}
