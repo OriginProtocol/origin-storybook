@@ -81,7 +81,7 @@ export const Button = ({
       background =
         type === "primary"
           ? "bg-gradient-to-r from-origin-protocol-button-start to-origin-protocol-button-end"
-          : "bg-transparent";
+          : "";
       textColor =
         type === "primary"
           ? "text-white"
