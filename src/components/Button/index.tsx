@@ -102,7 +102,7 @@ export const Button = ({
           ? "bg-gradient-to-r from-ousd-button-dark-start to-ousd-button-dark-end"
           : "";
       textColor = "text-white";
-      hoverStyles = "hover:text-gray-300";
+      hoverStyles = type === "header" ? "" : "hover:text-gray-300";
       break;
 
     case "story":
@@ -158,7 +158,7 @@ export const Button = ({
   let rounding;
   switch (type) {
     case "header":
-      fontWeight = "font-light";
+      fontWeight = "font-normal";
       shadow = "";
       rounding = "";
       padding = "px-4 py-1";

@@ -107,45 +107,26 @@ Story.args = {
   webProperty: "story",
   mappedLinks: [
     {
-      label: "Products",
-      isButton: false,
-      order: 1,
-      links: [
-        {
-          href: "https://ousd.com",
-          label: "Origin Dollar",
-          target: "_blank",
-        },
-        {
-          href: "https://story.xyz",
-          label: "Origin Story",
-          target: "_blank",
-        },
-      ],
-    },
-    {
-      label: "Drops",
-      isButton: false,
-      order: 2,
-      links: [
-        {
-          href: "http://nft.parishilton.com/",
-          label: "Paris Hilton - Past Lives New Beginnings",
-          target: "_blank",
-        },
-        {
-          href: "https://nft.3lau.com/#/auction",
-          label: "3Lau - Ultraviolet",
-          target: "_blank",
-        },
-      ],
-    },
-    {
-      href: "https://story.xyz",
-      label: "Docs",
+      href: "https://story.xyz/blog",
+      label: "Blog",
       isButton: false,
       order: 3,
       links: [],
+    },
+    {
+      href: "https://api.originprotocol.com/dashboard",
+      label: "Dashboard",
+      isButton: false,
+      order: 3,
+      links: [],
+    },
+    {
+      href: "https://story.xyz/staking",
+      label: "Rewards",
+      isButton: false,
+      order: 3,
+      links: [],
+      isHighlight: true,
     },
     {
       label: "OGN",
