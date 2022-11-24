@@ -52,9 +52,9 @@ const NavLinks = ({
   webProperty,
   active,
   isMobile
-}: NavLinksProps
+}: NavLinksProps 
 ) => (
-  <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0">
+  <div className={`flex flex-col md:flex-row space-y-4 md:space-y-0 ${webProperty === 'ousd' && isMobile ? "px-8" : "items-center justify-center"}`}>
     {mappedLinks.map((mappedLink) => {
       if (!mappedLink.isButton && mappedLink.links) {
         if (mappedLink.links.length > 0) {
@@ -70,7 +70,7 @@ const NavLinks = ({
           );
         } else {
           return (
-            <div className={`group flex flex-col ${webProperty === 'ousd' ? 'pt-2' : ''}`} key={mappedLink.label}>
+            <div className={`group flex flex-col ${webProperty === 'ousd' && isMobile ? '-ml-4' : webProperty === 'ousd' ? 'pt-2' : ''}`} key={mappedLink.label}>
               <Button
                 label={mappedLink.label}
                 type="header"
@@ -79,7 +79,7 @@ const NavLinks = ({
                 webProperty={webProperty}
                 target={mappedLink.target}
                 rel="nofollow"
-                className={`${mappedLink.isHighlight ? "text-story-pink" : ""} ${isMobile ? "text-2xl" : ""}`}
+                className={`${mappedLink.isHighlight ? "text-story-pink" : ""} ${webProperty === 'ousd' && isMobile ? "text-base" : isMobile ? "text-2xl" : ""}`}
               />
               {webProperty === 'ousd' && (
                 <div
@@ -92,7 +92,7 @@ const NavLinks = ({
         }
       }
     })}
-    <div className="flex flex-col md:flex-row md:space-x-5 md:pl-4 items-center justify-center space-y-4 md:space-y-0">
+    <div className={`flex flex-col md:flex-row md:space-x-5 md:pl-4 items-center justify-center space-y-4 md:space-y-0`}>
       {mappedLinks.map((mappedLink) => {
         if (mappedLink.isButton) {
           return (
@@ -102,7 +102,8 @@ const NavLinks = ({
               key={mappedLink.label}
               href={mappedLink.href}
               target={mappedLink.target}
-              webProperty="story"
+              className={`${webProperty === 'ousd' && isMobile ? "absolute left-8 right-8 bottom-8 text-center" : ""}`}
+              webProperty={webProperty}
             />
           );
         }
@@ -181,7 +182,12 @@ export const Header = ({ webProperty, mappedLinks, active, language }: HeaderPro
         >
           <div className="relative h-full">
             <div className="flex flex-col justify-center align-middle h-full">
-              <div className="absolute right-8 top-16">
+              <div className="absolute left-8 top-9 h-4">
+                <a href="/">
+                  {webProperty === "ousd" && <OriginDollarLogo theme="dark" />}
+                </a>
+              </div>
+              <div className="absolute right-8 top-9">
                 <Hamburger open={open} setOpen={setOpen} webProperty={webProperty} />
               </div>
               <NavLinks mappedLinks={mappedLinks} webProperty={webProperty} isMobile />
