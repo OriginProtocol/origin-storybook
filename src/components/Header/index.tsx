@@ -79,7 +79,7 @@ const NavLinks = ({
                 webProperty={webProperty}
                 target={mappedLink.target}
                 rel="nofollow"
-                className={`${mappedLink.isHighlight ? "text-story-pink" : ""} ${webProperty === 'ousd' ? 'px-7 lg:px-4 xl:px-7' : ''} ${isMobile ? "text-2xl" : ""}`}
+                className={`${mappedLink.isHighlight ? "text-story-pink" : ""} ${isMobile ? "text-2xl" : ""}`}
               />
               {webProperty === 'ousd' && (
                 <div
@@ -158,7 +158,7 @@ export const Header = ({ webProperty, mappedLinks, active, language }: HeaderPro
 
   return (
     <header>
-      <div className={`py-9 md:py-16 w-full flex justify-between items-center mx-auto ${webProperty === 'ousd' ? 'max-w-[1432px] px-4 md:px-[134px]' : 'max-w-screen-xl px-9'}`}>
+      <div className={`py-9 md:py-16 w-full flex justify-between items-center mx-auto ${webProperty === 'ousd' ? 'max-w-[1432px] px-8 md:px-16 lg:px-[134px]' : 'max-w-screen-xl px-9'}`}>
         <div className="flex h-4 md:h-6">
           <a href="/">
             {webProperty === "originprotocol" && <OriginLogo />}
