@@ -57,8 +57,6 @@ OriginProtocolCard.args = {
   body: "7,777 Lucky Duckies have left the pond and are getting into mischief!",
   linkText: "Visit luckyducky.xyz/market",
   linkHref: "https://google.com",
-  linkText2: "Visit luckyducky.xyz/market",
-  linkHref2: "https://google.com",
 };
 
 export const OUSDCard = Template.bind({});
@@ -136,5 +134,29 @@ LaunchpadCard.args = {
   ),
   body: "7,777 Lucky Duckies have left the pond and are getting into mischief!",
   linkText: "Visit luckyducky.xyz/market",
+  linkHref: "https://google.com",
+};
+
+export const PressCard = Template.bind({});
+PressCard.args = {
+  webProperty: "press",
+  title: "Origin Dollar Press Kit",
+  img: (
+    <Image
+      src="https://placekeanu.com/381/192"
+      alt="keanu banner"
+      width="400"
+      height="200"
+    />
+  ),
+  thumbnail: (
+    <Image
+      src="https://placekeanu.com/128/128"
+      alt="keanu face"
+      layout="fill"
+    />
+  ),
+  body: "Download the Origin Dollar logo, OUSD symbol and OGV symbol.",
+  linkText: "Download",
   linkHref: "https://google.com",
 };
