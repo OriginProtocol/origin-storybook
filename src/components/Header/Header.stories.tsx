@@ -32,6 +32,7 @@ OriginProtocol.args = {
           href: "https://story.xyz",
           label: "Origin Story",
           target: "_blank",
+          nofollow: true,
         },
       ],
     },
@@ -139,6 +140,7 @@ Story.args = {
           href: "https://www.originprotocol.com/en/dashboard",
           label: "Dashboard",
           target: "_blank",
+          nofollow: true,
         },
         {
           href: "https://story.xyz/stake",

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "../Button";
 import { Dropdown } from "../Dropdown";
 import { OriginDollarLogo, OriginLogo, OriginStoryLogo } from "../Icons";
+import { getRelProps } from "../utils";
 
 export type MappedLink<Link> = {
   href?: string;
@@ -21,6 +22,7 @@ export type LinkFormatted<IconFormatted> = {
   highlight?: boolean;
   target: string;
   icon?: IconFormatted;
+  nofollow?: boolean;
 };
 
 export type IconFormatted = {
@@ -47,11 +49,6 @@ export interface NavLinksProps {
    */
   isMobile?: boolean;
 }
-
-// used to conditionally add rel='nofollow' if the navLink calls for it
-const getRelProps = (nofollow?: boolean) => (
-  nofollow ? { rel: 'nofollow' } : {}
-)
 
 const NavLinks = ({
   mappedLinks,

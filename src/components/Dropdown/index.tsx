@@ -1,7 +1,8 @@
-import { Fragment, useState } from "react";
 import { Menu, Transition } from "@headlessui/react";
-import { DownCaret } from "../Icons";
 import Image from "next/image";
+import { Fragment } from "react";
+import { DownCaret } from "../Icons";
+import { getRelProps } from "../utils";
 
 type Option = {
   label: string;
@@ -12,6 +13,7 @@ type Option = {
     caption: string;
     url: string;
   };
+  nofollow?: boolean;
 };
 
 export interface DropdownProps {
@@ -60,8 +62,6 @@ export const Dropdown = ({
   classes,
   style,
 }: DropdownProps) => {
-  const [selectedItem, setSelectedItem] = useState(0);
-
   return (
     <Menu
       as="div"
@@ -126,7 +126,7 @@ export const Dropdown = ({
           tabIndex={-1}
         >
           <div className="py-1 flex flex-wrap" role="none">
-            {options.map(({ label: optionLabel, href, highlight, icon }) => (
+            {options.map(({ label: optionLabel, href, highlight, icon, nofollow }) => (
               <DropdownOption
                 label={optionLabel}
                 href={href}
@@ -139,6 +139,7 @@ export const Dropdown = ({
                 }
                 columns={options.length > SINGLE_COLUMN_OPTIONS_MAX ? 2 : 1}
                 className={classes}
+                nofollow={nofollow}
               />
             ))}
           </div>
@@ -160,6 +161,7 @@ interface DropdownOptionProps {
     url: string;
   };
   className?: string;
+  nofollow?: boolean;
 }
 
 const DropdownOption = ({
@@ -169,15 +171,17 @@ const DropdownOption = ({
   bold = false,
   columns = 1,
   icon,
+  nofollow,
   className
 }: DropdownOptionProps) => {
+  const relProps = getRelProps(nofollow);
+
   return (
     <Menu.Item>
       {({ active }) => (
         <a
           href={href}
           target="_blank"
-          rel="nofollow"
           className={classNames(
             active ? "bg-gray-100 text-gray-900" : "text-gray-700",
             highlight ? "text-story-pink" : "text-gray-700",
@@ -188,6 +192,7 @@ const DropdownOption = ({
             "font-sans",
             className || ''
           )}
+          {...relProps}
         >
           {icon && (
             <div className="relative w-full h-6 text-left">
