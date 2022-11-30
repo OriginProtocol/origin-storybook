@@ -48,7 +48,7 @@ export const Card = ({
 }: CardProps) => {
   return (
     <a href={linkHref} download={webProperty === 'press'} target={target} className={`rounded-xl inline-block w-full flex ${webProperty === 'ousd' ? 'p-[1px] bg-gradient-to-r from-[#8c66fcc0] to-[#0274f1c0] hover:from-[#8c66fc] hover:to-[#0274f1]' : ''}`}>
-      <div className={`rounded-xl inline-block w-full shadow overflow-hidden flex flex-col ${webProperty === 'ousd' ? 'bg-[#1e1f25] text-[#fafbfb]' : 'text-black'}`}>
+      <div className={`rounded-xl inline-block w-full shadow overflow-hidden flex flex-col ${webProperty === 'ousd' ? 'bg-[#1e1f25] text-[#fafbfb]' : 'bg-white text-black'}`}>
         <div className="w-full h-48 relative overflow-hidden">
           {img}
         </div>
