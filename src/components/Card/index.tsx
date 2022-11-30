@@ -47,8 +47,8 @@ export const Card = ({
   target = '_blank',
 }: CardProps) => {
   return (
-    <a href={linkHref} download={webProperty === 'press'} target={target} className={`rounded-xl inline-block w-full ${webProperty === 'ousd' ? 'transition duration-300 border-[#00000080] shadow-black hover:drop-shadow-2xl hover:border-[#00000000] border-[1px] bg-gradient-to-r from-[#8c66fc] to-[#0274f1]' : ''}`}>
-      <div className={`rounded-[0.65rem] inline-block w-full shadow overflow-hidden ${webProperty === 'ousd' ? 'bg-[#1e1f25] text-[#fafbfb]' : 'bg-white text-black'}`}>
+    <a href={linkHref} download={webProperty === 'press'} target={target} className={`rounded-xl w-full flex ${webProperty === 'ousd' ? 'transition duration-300 border-[#00000080] shadow-black hover:drop-shadow-2xl hover:border-[#00000000] border-[1px] bg-gradient-to-r from-[#8c66fc] to-[#0274f1]' : ''}`}>
+      <div className={`rounded-[0.65rem] w-full shadow overflow-hidden flex flex-col ${webProperty === 'ousd' ? 'bg-[#1e1f25] text-[#fafbfb]' : 'bg-white text-black'}`}>
         <div className="w-full h-48 relative overflow-hidden">
           {img}
         </div>
