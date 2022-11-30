@@ -12,6 +12,7 @@ export type MappedLink<Link> = {
   target?: string;
   links?: Link[];
   isHighlight?: boolean;
+  nofollow?: boolean;
 };
 
 export type LinkFormatted<IconFormatted> = {
@@ -47,15 +48,22 @@ export interface NavLinksProps {
   isMobile?: boolean;
 }
 
+// used to conditionally add rel='nofollow' if the navLink calls for it
+const getRelProps = (nofollow?: boolean) => (
+  nofollow ? { rel: 'nofollow' } : {}
+)
+
 const NavLinks = ({
   mappedLinks,
   webProperty,
   active,
   isMobile
-}: NavLinksProps 
+}: NavLinksProps
 ) => (
   <div className={`flex flex-col md:flex-row space-y-4 md:space-y-0 ${webProperty === 'ousd' && isMobile ? "px-8" : "items-center justify-center"}`}>
     {mappedLinks.map((mappedLink) => {
+      const relProps = getRelProps(mappedLink.nofollow)
+
       if (!mappedLink.isButton && mappedLink.links) {
         if (mappedLink.links.length > 0) {
           return (
@@ -78,8 +86,8 @@ const NavLinks = ({
                 href={mappedLink.href}
                 webProperty={webProperty}
                 target={mappedLink.target}
-                rel="nofollow"
                 className={`${mappedLink.isHighlight ? "text-story-pink" : ""} ${webProperty === 'ousd' && isMobile ? "text-base" : isMobile ? "text-2xl" : ""}`}
+                {...relProps}
               />
               {webProperty === 'ousd' && (
                 <div
@@ -94,6 +102,8 @@ const NavLinks = ({
     })}
     <div className={`flex flex-col md:flex-row md:space-x-5 md:pl-4 items-center justify-center space-y-4 md:space-y-0`}>
       {mappedLinks.map((mappedLink) => {
+        const relProps = getRelProps(mappedLink.nofollow)
+
         if (mappedLink.isButton) {
           return (
             <Button
@@ -104,6 +114,7 @@ const NavLinks = ({
               target={mappedLink.target}
               className={`${webProperty === 'ousd' && isMobile ? "absolute left-8 right-8 bottom-8 text-center" : ""}`}
               webProperty={webProperty}
+              {...relProps}
             />
           );
         }

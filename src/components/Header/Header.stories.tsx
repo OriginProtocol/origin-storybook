@@ -119,6 +119,7 @@ Story.args = {
       isButton: false,
       order: 3,
       links: [],
+      nofollow: true,
     },
     {
       href: "https://story.xyz/staking",
@@ -153,6 +154,7 @@ Story.args = {
       isButton: true,
       order: 5,
       links: [],
+      nofollow: true,
     },
     {
       href: "https://google.com",
