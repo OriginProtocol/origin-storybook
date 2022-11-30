@@ -158,8 +158,8 @@ export const Header = ({ webProperty, mappedLinks, active, language }: HeaderPro
   const [open, setOpen] = useState(false);
 
   return (
-    <header>
-      <div className={`py-9 md:py-16 w-full flex justify-between items-center mx-auto ${webProperty === 'ousd' ? 'max-w-[1432px] px-8 md:px-16 lg:px-[134px]' : 'max-w-screen-xl px-9'}`}>
+    <header className={`${webProperty === 'ousd' ? 'px-8 md:px-16 lg:px-[8.375rem]' : ''}`}>
+      <div className={`py-9 md:py-16 w-full flex justify-between items-center mx-auto ${webProperty === 'ousd' ? 'max-w-[89.5rem]' : 'max-w-screen-xl px-9'}`}>
         <div className="flex h-4 md:h-6">
           <a href="/">
             {webProperty === "originprotocol" && <OriginLogo />}

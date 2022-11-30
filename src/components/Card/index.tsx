@@ -47,43 +47,45 @@ export const Card = ({
   target = '_blank',
 }: CardProps) => {
   return (
-    <a href={linkHref} download={webProperty === 'press'} target={target} className={`rounded-xl inline-block w-full shadow overflow-hidden text-black ${webProperty === 'ousd' ? 'border-white border-2' : ''} bg-white flex flex-col`}>
-      <div className="w-full h-48 relative overflow-hidden">
-        {img}
-      </div>
-      <div className="px-6 py-8 w-full flex grow relative">
-        <div className="space-y-8 flex flex-col justify-between">
-          <div className="space-y-4">
-            <div className={`${webProperty === 'story' ? 'w-3/4' : ''}`}>
-              <Typography.H7 className={`${webProperty === 'launchpad' ? 'mt-3' : 'mt-2'}`} style={{fontWeight: 700}}>
-                {title}
-              </Typography.H7>
-            </div>
-            <Typography.Body3 className="text-slate-600">
-              {body}
-            </Typography.Body3>
-          </div>
-          <div className='font-sansInter font-bold text-base text-link-blue mr-1.5'>
-            {linkText}
-            {
-              (webProperty === 'story' || webProperty ==='launchpad') && (
-                <>
-                  {' '}
-                  <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" className="inline">
-                    <path d="M12.9628 14.6C13.4058 14.6 13.791 14.4363 14.1088 14.1088C14.4266 13.7814 14.6 13.4058 14.6 12.9628V7.3H12.9628V12.9628H1.6372V1.6372H7.3V0H1.6372C1.18456 0 0.79934 0.16372 0.48153 0.491161C0.16372 0.808971 0 1.1942 0 1.6372V12.9628C0 13.4058 0.16372 13.791 0.48153 14.1088C0.79934 14.4266 1.18456 14.6 1.6372 14.6H12.9628ZM5.01755 10.7285L12.9628 2.78325V5.6628H14.6V0H8.9372V1.6372H11.8168L3.8715 9.57282L5.01755 10.7285Z" fill="#0074F0"/>
-                  </svg>
-                </>
-              )
-            }
-          </div>
+    <a href={linkHref} download={webProperty === 'press'} target={target} className={`rounded-xl inline-block w-full flex ${webProperty === 'ousd' ? 'p-[1px] bg-gradient-to-r from-[#8c66fcc0] to-[#0274f1c0] hover:from-[#8c66fc] hover:to-[#0274f1]' : ''}`}>
+      <div className={`rounded-xl inline-block w-full shadow overflow-hidden flex flex-col ${webProperty === 'ousd' ? 'bg-[#1e1f25] text-[#fafbfb]' : 'text-black'}`}>
+        <div className="w-full h-48 relative overflow-hidden">
+          {img}
         </div>
-        { thumbnail && (webProperty === 'story' || webProperty === 'launchpad') && (
-          <div className={`absolute top-0 mt-0 transform overflow-hidden ${webProperty === 'story' ? 'right-6 -translate-y-1/2 rounded-full border-4 border-white' : 'left-6 -translate-y-2/3 rounded-xl'}`}>
-            <div className="w-24 h-24 relative">
-              {thumbnail}
+        <div className="px-6 py-8 w-full flex grow relative">
+          <div className="space-y-8 flex flex-col justify-between">
+            <div className="space-y-4">
+              <div className={`${webProperty === 'story' ? 'w-3/4' : ''}`}>
+                <Typography.H7 className={`${webProperty === 'launchpad' ? 'mt-3' : 'mt-2'}`} style={{fontWeight: 700}}>
+                  {title}
+                </Typography.H7>
+              </div>
+              <Typography.Body3 className={`${webProperty === 'ousd' ? 'text-[#b5beca]' : 'text-slate-600'}`}>
+                {body}
+              </Typography.Body3>
+            </div>
+            <div className='font-sansInter font-bold text-base text-link-blue mr-1.5'>
+              {linkText}
+              {
+                (webProperty === 'story' || webProperty ==='launchpad') && (
+                  <>
+                    {' '}
+                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" className="inline">
+                      <path d="M12.9628 14.6C13.4058 14.6 13.791 14.4363 14.1088 14.1088C14.4266 13.7814 14.6 13.4058 14.6 12.9628V7.3H12.9628V12.9628H1.6372V1.6372H7.3V0H1.6372C1.18456 0 0.79934 0.16372 0.48153 0.491161C0.16372 0.808971 0 1.1942 0 1.6372V12.9628C0 13.4058 0.16372 13.791 0.48153 14.1088C0.79934 14.4266 1.18456 14.6 1.6372 14.6H12.9628ZM5.01755 10.7285L12.9628 2.78325V5.6628H14.6V0H8.9372V1.6372H11.8168L3.8715 9.57282L5.01755 10.7285Z" fill="#0074F0"/>
+                    </svg>
+                  </>
+                )
+              }
             </div>
           </div>
-        )}
+          { thumbnail && (webProperty === 'story' || webProperty === 'launchpad') && (
+            <div className={`absolute top-0 mt-0 transform overflow-hidden ${webProperty === 'story' ? 'right-6 -translate-y-1/2 rounded-full border-4 border-white' : 'left-6 -translate-y-2/3 rounded-xl'}`}>
+              <div className="w-24 h-24 relative">
+                {thumbnail}
+              </div>
+            </div>
+          )}
+        </div>
       </div>
     </a>
   )
