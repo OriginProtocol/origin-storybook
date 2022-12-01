@@ -32,6 +32,7 @@ OriginProtocol.args = {
           href: "https://story.xyz",
           label: "Origin Story",
           target: "_blank",
+          nofollow: true,
         },
       ],
     },
@@ -119,6 +120,7 @@ Story.args = {
       isButton: false,
       order: 3,
       links: [],
+      nofollow: true,
     },
     {
       href: "https://story.xyz/staking",
@@ -138,6 +140,7 @@ Story.args = {
           href: "https://www.originprotocol.com/en/dashboard",
           label: "Dashboard",
           target: "_blank",
+          nofollow: true,
         },
         {
           href: "https://story.xyz/stake",
@@ -153,6 +156,7 @@ Story.args = {
       isButton: true,
       order: 5,
       links: [],
+      nofollow: true,
     },
     {
       href: "https://google.com",
