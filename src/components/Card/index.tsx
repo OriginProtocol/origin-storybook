@@ -47,10 +47,10 @@ export const Card = ({
   target = '_blank',
 }: CardProps) => {
   return (
-    <a href={linkHref} download={webProperty === 'press'} target={target} className={`rounded-xl inline-block w-full flex ${webProperty === 'ousd' ? 'group bg-gradient-to-r from-[#8c66fc] to-[#0274f1]' : ''}`}>
-      <div className={`${webProperty === 'ousd' ? 'flex w-full h-full rounded-xl transition duration-300 bg-[#00000080] group-hover:bg-[#00000000] shadow-black group-hover:drop-shadow-2xl' : ''}`}>
-        <div className={`m-[1px] rounded-xl inline-block w-full shadow overflow-hidden flex flex-col ${webProperty === 'ousd' ? 'bg-[#1e1f25] text-[#fafbfb]' : 'bg-white text-black'}`}>
-          <div className="w-full h-full relative overflow-hidden">
+    <a href={linkHref} download={webProperty === 'press'} target={target} className={`rounded-xl w-full flex ${webProperty === 'ousd' ? 'group bg-gradient-to-r from-[#8c66fc] to-[#0274f1]' : ''}`}>
+      <div className={`flex ${webProperty === 'ousd' ? 'w-full h-full rounded-xl transition duration-300 bg-[#ff000080] group-hover:bg-[#00000000] shadow-black group-hover:drop-shadow-2xl' : ''}`}>
+        <div className={`m-[1px] rounded-xl w-full shadow overflow-hidden flex flex-col ${webProperty === 'ousd' ? 'bg-[#1e1f25] text-[#fafbfb]' : 'bg-white text-black'}`}>
+          <div className="w-full h-48 relative overflow-hidden">
             {img}
           </div>
           <div className="px-6 py-8 w-full flex grow relative">
