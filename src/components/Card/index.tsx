@@ -49,7 +49,7 @@ export const Card = ({
   return (
     <a href={linkHref} download={webProperty === 'press'} target={target} className={`rounded-xl inline-block w-full flex ${webProperty === 'ousd' ? 'group bg-gradient-to-r from-[#8c66fc] to-[#0274f1]' : ''}`}>
       <div className={`${webProperty === 'ousd' ? 'flex w-full h-full rounded-xl transition duration-300 bg-[#00000080] group-hover:bg-[#00000000] shadow-black group-hover:drop-shadow-2xl' : ''}`}>
-        <div className={`m-[1px] rounded-xl inline-block w-full shadow overflow-hidden flex flex-col ${webProperty === 'ousd' ? 'bg-[#1e1f25] text-[#fafbfb]' : 'text-black'}`}>
+        <div className={`m-[1px] rounded-xl inline-block w-full shadow overflow-hidden flex flex-col ${webProperty === 'ousd' ? 'bg-[#1e1f25] text-[#fafbfb]' : 'bg-white text-black'}`}>
           <div className="w-full h-full relative overflow-hidden">
             {img}
           </div>
