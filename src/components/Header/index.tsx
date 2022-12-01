@@ -75,7 +75,7 @@ const NavLinks = ({
           );
         } else {
           return (
-            <div className={`group flex flex-col ${webProperty === 'ousd' && isMobile ? '-ml-4' : webProperty === 'ousd' ? 'pt-2' : ''}`} key={mappedLink.label}>
+            <div className={`group flex flex-col ${webProperty === 'ousd' && isMobile ? '-ml-4 mr-auto' : webProperty === 'ousd' ? 'pt-2' : ''}`} key={mappedLink.label}>
               <Button
                 label={mappedLink.label}
                 type="header"
