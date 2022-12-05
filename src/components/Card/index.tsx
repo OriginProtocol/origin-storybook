@@ -50,14 +50,14 @@ export const Card = ({
     <a href={linkHref} download={webProperty === 'press'} target={target} className={`rounded-xl w-full flex ${webProperty === 'ousd' ? 'group bg-gradient-to-r from-[#8c66fc] to-[#0274f1]' : ''}`}>
       <div className={`flex ${webProperty === 'ousd' ? 'w-full h-full rounded-xl transition duration-300 bg-[#00000080] group-hover:bg-[#00000000] shadow-black group-hover:drop-shadow-2xl' : ''}`}>
         <div className={`m-[1px] rounded-xl w-full shadow overflow-hidden flex flex-col ${webProperty === 'ousd' ? 'bg-[#1e1f25] text-[#fafbfb]' : 'bg-white text-black'}`}>
-          <div className="w-full h-full relative overflow-hidden">
+          <div className="w-full relative overflow-hidden">
             {img}
           </div>
           <div className="px-6 py-8 w-full flex grow relative">
             <div className="space-y-8 flex flex-col justify-between">
               <div className="space-y-4">
                 <div className={`${webProperty === 'story' ? 'w-3/4' : ''}`}>
-                  <Typography.H7 className={`${webProperty === 'launchpad' ? 'mt-3' : 'mt-2'}`} style={{fontWeight: 700}}>
+                  <Typography.H7 className={`!text-base lg:!text-2xl ${webProperty === 'launchpad' ? 'mt-3' : 'mt-2'}`} style={{fontWeight: 700}}>
                     {title}
                   </Typography.H7>
                 </div>
