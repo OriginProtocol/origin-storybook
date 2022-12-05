@@ -57,7 +57,7 @@ export const Card = ({
             <div className="space-y-8 flex flex-col justify-between">
               <div className="space-y-4">
                 <div className={`${webProperty === 'story' ? 'w-3/4' : ''}`}>
-                  <Typography.H7 className={`${webProperty === 'launchpad' ? 'mt-3' : 'mt-2'}`} style={{fontWeight: 700}}>
+                  <Typography.H7 className={`!text-base lg:!text-2xl ${webProperty === 'launchpad' ? 'mt-3' : 'mt-2'}`} style={{fontWeight: 700}}>
                     {title}
                   </Typography.H7>
                 </div>
