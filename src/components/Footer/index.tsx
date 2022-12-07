@@ -113,6 +113,14 @@ export const Footer = () => (
               GitHub
             </Typography.Caption>
           </a>
+          <a
+            href="https://originprotocol.com/blog#press"
+            target="_self"
+          >
+            <Typography.Caption>
+              Press
+            </Typography.Caption>
+          </a>
         </div>
       </div>
     </div>
