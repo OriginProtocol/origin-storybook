@@ -24,7 +24,7 @@ export const OriginLogo = ({
   )
 }
 
-export const OriginDollarLogo = ({}: OriginLogoProps) => {
+export const OriginDollarLogo = () => {
   return (
     <svg
       width="auto"
@@ -117,8 +117,8 @@ export const OriginStoryLogo = ({ height = 24 }: OriginLogoProps) => {
 
 export const YouTube = ({ size = '17' }: { size?: string | number }) => (
   <svg
-    width="17"
-    height="13"
+    width={size}
+    height={size}
     viewBox="0 0 17 13"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"

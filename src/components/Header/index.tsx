@@ -191,17 +191,12 @@ export interface HeaderProps {
    * Currently displayed page of navigation bar
    */
   active?: string
-  /**
-   * Language option for i18n
-   */
-  language?: string
 }
 
 export const Header = ({
   webProperty,
   mappedLinks,
   active,
-  language
 }: HeaderProps) => {
   const [open, setOpen] = useState(false)
 

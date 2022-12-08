@@ -2,7 +2,6 @@ import { Menu, Transition } from '@headlessui/react'
 import Image from 'next/image'
 import { Fragment } from 'react'
 import { DownCaret } from '../Icons'
-import { getRelProps } from '../utils'
 
 type Option = {
   label: string
@@ -176,8 +175,6 @@ const DropdownOption = ({
   nofollow,
   className
 }: DropdownOptionProps) => {
-  const relProps = getRelProps(nofollow)
-
   return (
     <Menu.Item>
       {({ active }) => (
@@ -194,7 +191,7 @@ const DropdownOption = ({
             'font-sans',
             className || ''
           )}
-          {...relProps}
+          rel={`noreferrer ${nofollow ? 'nofollow' : ''}`}
         >
           {icon && (
             <div className="relative w-full h-6 text-left">

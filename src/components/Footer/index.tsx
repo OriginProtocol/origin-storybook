@@ -27,25 +27,25 @@ export const Footer = ({ webProperty }: FooterProps) => (
         <div className="flex flex-col md:justify-between space-y-6 md:space-y-0 flex-6">
           <OriginLogo theme="dark" />
           <div className="flex space-x-6 items-center md:pt-40">
-            <a href="https://twitter.com/OriginProtocol" target="_blank">
+            <a href="https://twitter.com/OriginProtocol" target="_blank" rel="noreferrer">
               <Twitter />
             </a>
-            <a href="https://www.facebook.com/originprotocol/" target="_blank">
+            <a href="https://www.facebook.com/originprotocol/" target="_blank" rel="noreferrer">
               <Facebook />
             </a>
-            <a href="https://www.youtube.com/c/originprotocol" target="_blank">
+            <a href="https://www.youtube.com/c/originprotocol" target="_blank" rel="noreferrer">
               <YouTube />
             </a>
-            <a href="https://blog.originprotocol.com/" target="_blank">
+            <a href="https://blog.originprotocol.com/" target="_blank" rel="noreferrer">
               <Medium />
             </a>
-            <a href="https://t.me/originprotocol" target="_blank">
+            <a href="https://t.me/originprotocol" target="_blank" rel="noreferrer">
               <Telegram />
             </a>
-            <a href="https://discord.com/invite/ogn" target="_blank">
+            <a href="https://discord.com/invite/ogn" target="_blank" rel="noreferrer">
               <Discord />
             </a>
-            <a href="https://www.reddit.com/r/originprotocol/" target="_blank">
+            <a href="https://www.reddit.com/r/originprotocol/" target="_blank" rel="noreferrer">
               <RedditIcon />
             </a>
           </div>
@@ -61,7 +61,7 @@ export const Footer = ({ webProperty }: FooterProps) => (
                   ? '/community'
                   : 'https://originprotocol.com/community'
               }
-              target={webProperty === 'originprotocol' ? '_self' : '_blank'}
+              target={webProperty === 'originprotocol' ? '_self' : '_blank'} rel="noreferrer"
             >
               <Typography.Caption className="opacity-75">
                 Community
@@ -70,7 +70,7 @@ export const Footer = ({ webProperty }: FooterProps) => (
             <div className="flex items-center">
               <a
                 href="https://angel.co/company/originprotocol/jobs"
-                target="_blank"
+                target="_blank" rel="noreferrer"
               >
                 <Typography.Caption className="opacity-75">
                   Careers
@@ -78,7 +78,7 @@ export const Footer = ({ webProperty }: FooterProps) => (
               </a>
               <a
                 href="https://angel.co/company/originprotocol/jobs"
-                target="_blank"
+                target="_blank" rel="noreferrer"
               >
                 <div className="opacity-100 text-sm ml-2 bg-gray-700 py-1 px-3 rounded-xl font-medium">
                   Hiring!
@@ -96,7 +96,7 @@ export const Footer = ({ webProperty }: FooterProps) => (
                   ? 'https://story.xyz'
                   : 'https://originprotocol.com'
               }
-              target="_blank"
+              target="_blank" rel="noreferrer"
             >
               <Typography.Caption>
                 {webProperty !== 'story' ? 'Origin Story' : 'Origin Protocol'}
@@ -108,7 +108,7 @@ export const Footer = ({ webProperty }: FooterProps) => (
                   ? 'https://ousd.com'
                   : 'https://originprotocol.com'
               }
-              target="_blank"
+              target="_blank" rel="noreferrer"
             >
               <Typography.Caption>
                 {webProperty !== 'ousd' ? 'Origin Dollar' : 'Origin Protocol'}
@@ -119,7 +119,7 @@ export const Footer = ({ webProperty }: FooterProps) => (
         <div className="flex flex-col flex-2 space-y-4">
           <Typography.Body3 className="font-bold">Resources</Typography.Body3>
           <div className="flex flex-row md:flex-col space-x-4 md:space-x-0 md:space-y-4 opacity-75">
-            <a href="https://github.com/originprotocol" target="_blank">
+            <a href="https://github.com/originprotocol" target="_blank" rel="noreferrer">
               <Typography.Caption>GitHub</Typography.Caption>
             </a>
           </div>

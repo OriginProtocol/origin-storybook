@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import { Typography } from '../Typography'
 
 export interface CardProps {

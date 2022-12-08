@@ -71,7 +71,7 @@ const GenericTypography = ({
         href={href}
         target="_blank"
         className={`${className}`}
-        style={{ ...(style || {}) }}
+        style={{ ...(style || {}) }} rel="noreferrer"
       >
         <Tag className="flex items-center">{children}</Tag>
       </a>

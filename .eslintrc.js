@@ -1,4 +1,4 @@
-export default {
+module.exports = {
     "env": {
         "browser": true,
         "es2021": true
@@ -6,7 +6,8 @@ export default {
     "extends": [
         "eslint:recommended",
         "plugin:react/recommended",
-        "plugin:@typescript-eslint/recommended"
+        "plugin:@typescript-eslint/recommended",
+        "plugin:react/jsx-runtime"
     ],
     "overrides": [
     ],
@@ -19,15 +20,6 @@ export default {
         "react",
         "@typescript-eslint"
     ],
-    'jsx-runtime': {
-        plugins: [
-            'react'
-        ],
-        rules: {
-            'react/react-in-jsx-scope': 0,
-            'react/jsx-uses-react': 0
-        }
-    },
     "rules": {
         "@typescript-eslint/triple-slash-reference": 0
     }

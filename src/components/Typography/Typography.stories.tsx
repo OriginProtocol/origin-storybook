@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable react/no-children-prop */
+/* eslint-disable react/no-unescaped-entities */
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
 import { Typography, GradientText } from '.'
@@ -134,8 +137,8 @@ const GradientTextDisplay = ({
   textOptions: GradientTextProps[]
 }) => (
   <div>
-    {textOptions.map((gradientTextProps) => (
-      <Typography.Body>
+    {textOptions.map((gradientTextProps, i) => (
+      <Typography.Body key={`gradient-text-${i}`}>
         Some text with <GradientText {...gradientTextProps} />
       </Typography.Body>
     ))}
@@ -162,10 +165,10 @@ const textOptions: GradientTextProps[] = [
   }
 ]
 
-const GradientTemplate: ComponentStory<typeof GradientText> = (args) => (
+const GradientTemplate: ComponentStory<typeof GradientText> = () => (
   <div>
-    {textOptions.map((gradientTextProps) => (
-      <Typography.Body>
+    {textOptions.map((gradientTextProps, i) => (
+      <Typography.Body key={`gradient-text-${i}`}>
         Some text with <GradientText {...gradientTextProps} />
       </Typography.Body>
     ))}
