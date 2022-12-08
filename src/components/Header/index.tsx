@@ -214,7 +214,7 @@ export const Header = ({
         <div className="flex h-4 md:h-6">
           <a href="/">
             {webProperty === 'originprotocol' && <OriginLogo />}
-            {webProperty === 'ousd' && <OriginDollarLogo theme="dark" />}
+            {webProperty === 'ousd' && <OriginDollarLogo />}
             {webProperty === 'story' && <OriginStoryLogo />}
           </a>
         </div>
@@ -239,7 +239,7 @@ export const Header = ({
             <div className="flex flex-col justify-center align-middle h-full">
               <div className="absolute left-8 top-9 h-4">
                 <a href="/">
-                  {webProperty === 'ousd' && <OriginDollarLogo theme="dark" />}
+                  {webProperty === 'ousd' && <OriginDollarLogo />}
                 </a>
               </div>
               <div className="absolute right-8 top-9">
