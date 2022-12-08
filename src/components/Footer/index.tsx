@@ -1,7 +1,6 @@
 import {
   Discord,
   Facebook,
-  FTXIcon,
   Medium,
   OriginLogo,
   RedditIcon,
