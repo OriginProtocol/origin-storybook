@@ -118,3 +118,8 @@ yarn build
 npm version [major|minor|patch] -m "New version message"
 npm publish
 ```
+
+Make sure to also add the tags to Github as well!
+```
+git push origin main --tags
+```
