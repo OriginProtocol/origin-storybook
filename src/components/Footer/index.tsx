@@ -4,15 +4,23 @@ import {
   FTXIcon,
   Medium,
   OriginLogo,
-  Reddit,
   RedditIcon,
   Telegram,
   Twitter,
-  YouTube,
+  YouTube
 } from "../Icons";
 import { Typography } from "../Typography";
 
-export const Footer = () => (
+export interface FooterProps {
+  /**
+   * Web property that will which links will show and make some links switch between relative and absolute
+   */
+  webProperty: 'originprotocol' | 'ousd' | 'story'
+}
+
+export const Footer = ({
+  webProperty
+}: FooterProps) => (
   <div className="w-full bg-gradient-to-r from-black to-footer-end py-10 md:py-20 text-white">
     <div className='max-w-screen-xl mx-auto'>
     <div
@@ -43,17 +51,14 @@ export const Footer = () => (
           <a href="https://www.reddit.com/r/originprotocol/" target="_blank">
             <RedditIcon />
           </a>
-          <a href="https://blockfolio.com/coin/OGN" target="_blank">
-            <FTXIcon />
-          </a>
         </div>
       </div>
       <div className="flex flex-col flex-2 space-y-4">
         <Typography.Body3 className="font-semibold">Organization</Typography.Body3>
         <div className="flex flex-row md:flex-col space-x-4 md:space-x-0 md:space-y-4">
           <a
-            href="/community"
-            target="_blank"
+            href={webProperty === 'originprotocol' ? '/community' : 'https://originprotocol.com/community'}
+            target={webProperty === 'originprotocol' ? '_self' : '_blank' }
           >
             <Typography.Caption className="opacity-75">
               Community
@@ -85,19 +90,19 @@ export const Footer = () => (
         <Typography.Body3 className="font-bold">Products</Typography.Body3>
         <div className="flex flex-row md:flex-col space-x-4 md:space-x-0 md:space-y-4 opacity-75">
           <a
-            href="https://story.xyz"
+            href={webProperty !== 'story' ? "https://story.xyz" : "https://originprotocol.com"}
             target="_blank"
           >
             <Typography.Caption>
-              Origin Story
+              {webProperty !== 'story' ? "Origin Story" : "Origin Protocol"}
             </Typography.Caption>
           </a>
           <a
-            href="https://ousd.com"
+            href={webProperty !== 'ousd' ? "https://ousd.com" : "https://originprotocol.com"}
             target="_blank"
           >
             <Typography.Caption>
-              Origin Dollar
+              {webProperty !== 'ousd' ? "Origin Dollar" : "Origin Protocol"}
             </Typography.Caption>
           </a>
         </div>

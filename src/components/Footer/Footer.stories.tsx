@@ -13,6 +13,21 @@ export default {
 } as ComponentMeta<typeof Footer>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Footer> = (args) => <Footer />;
+const Template: ComponentStory<typeof Footer> = (args) => <Footer {...args} />;
 
 export const OriginProtocolFooter = Template.bind({});
+OriginProtocolFooter.args = {
+  webProperty: 'originprotocol'
+};
+
+export const StoryFooter = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+StoryFooter.args = {
+  webProperty: 'story'
+};
+
+export const OusdFooter = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+OusdFooter.args = {
+  webProperty: 'ousd'
+};
