@@ -1,34 +1,34 @@
-import React, { useState } from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import React, { useState } from 'react'
+import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import Modal from "./";
-import { Button } from "../Button";
-import { Typography } from "../Typography";
+import Modal from './'
+import { Button } from '../Button'
+import { Typography } from '../Typography'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Origin/Modal",
+  title: 'Origin/Modal',
   component: Modal,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     open: {
-      control: false,
+      control: false
     },
     setOpen: {
-      control: false,
-    },
-  },
-} as ComponentMeta<typeof Modal>;
+      control: false
+    }
+  }
+} as ComponentMeta<typeof Modal>
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof Modal> = (args) => {
-  const [open, setOpen] = useState(args.open);
+  const [open, setOpen] = useState(args.open)
 
   return (
     <div>
       <Button
         onClick={() => {
-          setOpen(true);
+          setOpen(true)
         }}
       >
         Click me!
@@ -37,29 +37,29 @@ const Template: ComponentStory<typeof Modal> = (args) => {
         {args.children}
       </Modal>
     </div>
-  );
-};
+  )
+}
 
-export const SimpleModal = Template.bind({});
+export const SimpleModal = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 SimpleModal.args = {
-  closeButtonLabel: "Close",
+  closeButtonLabel: 'Close',
   children: <div>Simple text</div>,
-  open: false,
-};
+  open: false
+}
 
-export const SimpleOpenModal = Template.bind({});
+export const SimpleOpenModal = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 SimpleOpenModal.args = {
-  closeButtonLabel: "Close",
+  closeButtonLabel: 'Close',
   children: <div>Simple Open text</div>,
-  open: true,
-};
+  open: true
+}
 
-export const ComplexModal = Template.bind({});
+export const ComplexModal = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 ComplexModal.args = {
-  closeButtonLabel: "Close",
+  closeButtonLabel: 'Close',
   children: (
     <div className="flex flex-col space-y-2">
       <Typography.Body2>A formatted set of React Children</Typography.Body2>
@@ -67,13 +67,13 @@ ComplexModal.args = {
       <Button>buttons</Button>
     </div>
   ),
-  open: false,
-};
+  open: false
+}
 
-export const ComplexOpenModal = Template.bind({});
+export const ComplexOpenModal = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 ComplexOpenModal.args = {
-  closeButtonLabel: "Close",
+  closeButtonLabel: 'Close',
   children: (
     <div className="flex flex-col space-y-2">
       <Typography.Body2>A formatted set of React Children</Typography.Body2>
@@ -81,5 +81,5 @@ ComplexOpenModal.args = {
       <Button>buttons</Button>
     </div>
   ),
-  open: true,
-};
+  open: true
+}

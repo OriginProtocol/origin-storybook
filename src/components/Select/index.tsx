@@ -1,30 +1,30 @@
-import { useState, Fragment } from "react";
-import { Listbox, Transition } from "@headlessui/react";
-import { CheckIcon, ChevronDownIcon } from "@heroicons/react/20/solid";
+import { useState, Fragment } from 'react'
+import { Listbox, Transition } from '@headlessui/react'
+import { CheckIcon, ChevronDownIcon } from '@heroicons/react/20/solid'
 
 function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(" ");
+  return classes.filter(Boolean).join(' ')
 }
 
 type Option = {
-  id: number | null;
-  name: string;
-  unavailable: boolean;
-};
+  id: number | null
+  name: string
+  unavailable: boolean
+}
 
 type Props = {
-  label: string;
-  onSelect: (value: Option) => void;
-  options: Option[];
-};
+  label: string
+  onSelect: (value: Option) => void
+  options: Option[]
+}
 
 export function Select({ label, onSelect, options }: Props) {
-  const [selected, setSelected] = useState(options[0]);
+  const [selected, setSelected] = useState(options[0])
 
   const onChange = (value: Option) => {
-    onSelect(value);
-    setSelected(value);
-  };
+    onSelect(value)
+    setSelected(value)
+  }
 
   return (
     <Listbox value={selected} onChange={onChange}>
@@ -59,8 +59,8 @@ export function Select({ label, onSelect, options }: Props) {
                     key={option.id}
                     className={({ active }) =>
                       classNames(
-                        active ? "text-white bg-indigo-600" : "text-gray-900",
-                        "relative cursor-default select-none py-2 pl-3 pr-9"
+                        active ? 'text-white bg-indigo-600' : 'text-gray-900',
+                        'relative cursor-default select-none py-2 pl-3 pr-9'
                       )
                     }
                     value={option}
@@ -70,8 +70,8 @@ export function Select({ label, onSelect, options }: Props) {
                         <div className="flex items-center">
                           <span
                             className={classNames(
-                              selected ? "font-semibold" : "font-normal",
-                              "ml-3 block truncate"
+                              selected ? 'font-semibold' : 'font-normal',
+                              'ml-3 block truncate'
                             )}
                           >
                             {option.name}
@@ -81,8 +81,8 @@ export function Select({ label, onSelect, options }: Props) {
                         {selected ? (
                           <span
                             className={classNames(
-                              active ? "text-white" : "text-indigo-600",
-                              "absolute inset-y-0 right-0 flex items-center pr-4"
+                              active ? 'text-white' : 'text-indigo-600',
+                              'absolute inset-y-0 right-0 flex items-center pr-4'
                             )}
                           >
                             <CheckIcon className="h-5 w-5" aria-hidden="true" />
@@ -98,5 +98,5 @@ export function Select({ label, onSelect, options }: Props) {
         </>
       )}
     </Listbox>
-  );
+  )
 }

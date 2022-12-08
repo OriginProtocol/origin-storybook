@@ -1,33 +1,33 @@
-import { Dialog, Transition } from "@headlessui/react";
-import { Fragment, useRef } from "react";
-import { Button } from "../Button";
+import { Dialog, Transition } from '@headlessui/react'
+import { Fragment, useRef } from 'react'
+import { Button } from '../Button'
 
 interface ModalProps {
   /**
    * Children to display within the Modal
    */
-  children: React.ReactNode;
+  children: React.ReactNode
   /**
    * Label to use for button to close modal
    */
-  closeButtonLabel: string;
+  closeButtonLabel: string
   /**
    * Boolean for whether modal is open or closed
    */
-  open: boolean;
+  open: boolean
   /**
    * Function to open or close the modal
    */
-  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export default function Modal({
   children,
   closeButtonLabel,
   open,
-  setOpen,
+  setOpen
 }: ModalProps) {
-  const cancelButtonRef = useRef(null);
+  const cancelButtonRef = useRef(null)
 
   return (
     <Transition.Root show={open} as={Fragment}>
@@ -79,5 +79,5 @@ export default function Modal({
         </div>
       </Dialog>
     </Transition.Root>
-  );
+  )
 }

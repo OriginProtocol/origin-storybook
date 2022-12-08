@@ -1,58 +1,58 @@
-import React, { Component } from "react";
+import React, { Component } from 'react'
 
-export { GradientText } from "./GradientText";
+export { GradientText } from './GradientText'
 
 export interface TypographyProps {
   /**
    * Children to wrap with typography styling
    */
-  children: React.ReactNode;
+  children: React.ReactNode
   /**
    * Additional className to add onto ones supplied by typography componnent
    */
-  className?: string;
+  className?: string
   /**
    * Additional styling to add onto typography component
    */
-  style?: object;
+  style?: object
   /**
    * Tag type to use
    */
   as?:
-    | "h1"
-    | "h2"
-    | "h3"
-    | "h4"
-    | "h5"
-    | "h6"
-    | "p"
-    | "span"
-    | "blockquote"
-    | "q"
-    | "code"
-    | "a"
-    | "div";
+    | 'h1'
+    | 'h2'
+    | 'h3'
+    | 'h4'
+    | 'h5'
+    | 'h6'
+    | 'p'
+    | 'span'
+    | 'blockquote'
+    | 'q'
+    | 'code'
+    | 'a'
+    | 'div'
   /**
    * Tag type to default to if not tag type supplied
    */
   defaultAs?:
-    | "h1"
-    | "h2"
-    | "h3"
-    | "h4"
-    | "h5"
-    | "h6"
-    | "p"
-    | "span"
-    | "blockquote"
-    | "q"
-    | "code"
-    | "a"
-    | "div";
+    | 'h1'
+    | 'h2'
+    | 'h3'
+    | 'h4'
+    | 'h5'
+    | 'h6'
+    | 'p'
+    | 'span'
+    | 'blockquote'
+    | 'q'
+    | 'code'
+    | 'a'
+    | 'div'
   /**
    * Href for links
    */
-  href?: string;
+  href?: string
 }
 
 const GenericTypography = ({
@@ -61,9 +61,9 @@ const GenericTypography = ({
   style,
   defaultAs,
   as,
-  href,
+  href
 }: TypographyProps) => {
-  const Tag = `${as || defaultAs || "span"}` as keyof JSX.IntrinsicElements;
+  const Tag = `${as || defaultAs || 'span'}` as keyof JSX.IntrinsicElements
 
   if (href) {
     return (
@@ -75,17 +75,17 @@ const GenericTypography = ({
       >
         <Tag className="flex items-center">{children}</Tag>
       </a>
-    );
+    )
   } else {
     return (
       <Tag className={`${className}`} style={{ ...(style || {}) }}>
         {children}
       </Tag>
-    );
+    )
   }
-};
+}
 export class Typography extends Component<TypographyProps> {
-  static H1 = ({ children, className = "", style, as }: TypographyProps) => {
+  static H1 = ({ children, className = '', style, as }: TypographyProps) => {
     return (
       <GenericTypography
         className={`font-sansSailec font-bold text-5xl md:text-8xl ${className}`}
@@ -95,10 +95,10 @@ export class Typography extends Component<TypographyProps> {
       >
         {children}
       </GenericTypography>
-    );
-  };
+    )
+  }
 
-  static H2 = ({ children, className = "", style, as }: TypographyProps) => {
+  static H2 = ({ children, className = '', style, as }: TypographyProps) => {
     return (
       <GenericTypography
         className={`font-sansSailec font-medium text-4xl md:text-7xl ${className}`}
@@ -108,10 +108,10 @@ export class Typography extends Component<TypographyProps> {
       >
         {children}
       </GenericTypography>
-    );
-  };
+    )
+  }
 
-  static H3 = ({ children, className = "", style, as }: TypographyProps) => {
+  static H3 = ({ children, className = '', style, as }: TypographyProps) => {
     return (
       <GenericTypography
         className={`font-sansSailec font-medium text-3xl md:text-6xl ${className}`}
@@ -121,10 +121,10 @@ export class Typography extends Component<TypographyProps> {
       >
         {children}
       </GenericTypography>
-    );
-  };
+    )
+  }
 
-  static H4 = ({ children, className = "", style, as }: TypographyProps) => {
+  static H4 = ({ children, className = '', style, as }: TypographyProps) => {
     return (
       <GenericTypography
         className={`font-sansSailec font-medium text-2xl md:text-5xl ${className}`}
@@ -134,10 +134,10 @@ export class Typography extends Component<TypographyProps> {
       >
         {children}
       </GenericTypography>
-    );
-  };
+    )
+  }
 
-  static H5 = ({ children, className = "", style, as }: TypographyProps) => {
+  static H5 = ({ children, className = '', style, as }: TypographyProps) => {
     return (
       <GenericTypography
         className={`font-sansSailec font-medium text-xl md:text-4xl ${className}`}
@@ -147,10 +147,10 @@ export class Typography extends Component<TypographyProps> {
       >
         {children}
       </GenericTypography>
-    );
-  };
+    )
+  }
 
-  static H6 = ({ children, className = "", style, as }: TypographyProps) => {
+  static H6 = ({ children, className = '', style, as }: TypographyProps) => {
     return (
       <GenericTypography
         className={`font-sansSailec font-medium text-lg md:text-3xl ${className}`}
@@ -160,10 +160,10 @@ export class Typography extends Component<TypographyProps> {
       >
         {children}
       </GenericTypography>
-    );
-  };
+    )
+  }
 
-  static H7 = ({ children, className = "", style, as }: TypographyProps) => {
+  static H7 = ({ children, className = '', style, as }: TypographyProps) => {
     return (
       <GenericTypography
         className={`font-sansSailec font-medium text-base md:text-2xl ${className}`}
@@ -173,15 +173,15 @@ export class Typography extends Component<TypographyProps> {
       >
         {children}
       </GenericTypography>
-    );
-  };
+    )
+  }
 
   static Body = ({
     children,
-    className = "",
+    className = '',
     style,
     href,
-    as,
+    as
   }: TypographyProps) => {
     return (
       <GenericTypography
@@ -193,15 +193,15 @@ export class Typography extends Component<TypographyProps> {
       >
         {children}
       </GenericTypography>
-    );
-  };
+    )
+  }
 
   static Body2 = ({
     children,
-    className = "",
+    className = '',
     style,
     href,
-    as,
+    as
   }: TypographyProps) => {
     return (
       <GenericTypography
@@ -213,15 +213,15 @@ export class Typography extends Component<TypographyProps> {
       >
         {children}
       </GenericTypography>
-    );
-  };
+    )
+  }
 
   static Body3 = ({
     children,
-    className = "",
+    className = '',
     style,
     href,
-    as,
+    as
   }: TypographyProps) => {
     return (
       <GenericTypography
@@ -233,10 +233,10 @@ export class Typography extends Component<TypographyProps> {
       >
         {children}
       </GenericTypography>
-    );
-  };
+    )
+  }
 
-  static Title = ({ children, className = "", style, as }: TypographyProps) => {
+  static Title = ({ children, className = '', style, as }: TypographyProps) => {
     return (
       <GenericTypography
         className={`font-sansInter font-bold text-xl ${className}`}
@@ -246,14 +246,14 @@ export class Typography extends Component<TypographyProps> {
       >
         {children}
       </GenericTypography>
-    );
-  };
+    )
+  }
 
   static Title2 = ({
     children,
-    className = "",
+    className = '',
     style,
-    as,
+    as
   }: TypographyProps) => {
     return (
       <GenericTypography
@@ -264,14 +264,14 @@ export class Typography extends Component<TypographyProps> {
       >
         {children}
       </GenericTypography>
-    );
-  };
+    )
+  }
 
   static Caption = ({
     children,
-    className = "",
+    className = '',
     style,
-    as,
+    as
   }: TypographyProps) => {
     return (
       <GenericTypography
@@ -282,14 +282,14 @@ export class Typography extends Component<TypographyProps> {
       >
         {children}
       </GenericTypography>
-    );
-  };
+    )
+  }
 
   static Caption2 = ({
     children,
-    className = "",
+    className = '',
     style,
-    as,
+    as
   }: TypographyProps) => {
     return (
       <GenericTypography
@@ -300,10 +300,10 @@ export class Typography extends Component<TypographyProps> {
       >
         {children}
       </GenericTypography>
-    );
-  };
+    )
+  }
 
-  static Label = ({ children, className = "", style, as }: TypographyProps) => {
+  static Label = ({ children, className = '', style, as }: TypographyProps) => {
     return (
       <GenericTypography
         className={`font-sansInter font-bold text-sm uppercase ${className}`}
@@ -313,15 +313,15 @@ export class Typography extends Component<TypographyProps> {
       >
         {children}
       </GenericTypography>
-    );
-  };
+    )
+  }
 
   static Link = ({
     children,
-    className = "",
+    className = '',
     style,
     as,
-    href,
+    href
   }: TypographyProps) => {
     return (
       <GenericTypography
@@ -333,10 +333,10 @@ export class Typography extends Component<TypographyProps> {
       >
         {children}
       </GenericTypography>
-    );
-  };
+    )
+  }
 
   render() {
-    return <Typography.Body {...this.props} />;
+    return <Typography.Body {...this.props} />
   }
 }

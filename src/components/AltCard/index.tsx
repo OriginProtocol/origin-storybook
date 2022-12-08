@@ -1,38 +1,38 @@
-import { Typography } from "../Typography";
+import { Typography } from '../Typography'
 
 export interface AltCardProps {
   /**
    * String at the top of the text portion of the card
    */
-  title: string;
+  title: string
   /**
    * String used as body/subtitle below title
    */
-  body?: string;
+  body?: string
   /**
    * Src for image at top of card
    */
-  imgSrc: string;
+  imgSrc: string
   /**
    * Src for alt at top of card
    */
-  imgAlt: string;
+  imgAlt: string
   /**
    * String that is used as link href, optional
    */
-  linkHref?: string;
+  linkHref?: string
   /**
    * Toggle smaller font
    */
-  narrow: boolean;
+  narrow: boolean
   /**
    * Src for image in thumbnail at top of card, only for narrow cards
    */
-  thumbnailSrc?: string;
+  thumbnailSrc?: string
   /**
    * Alt for image in thumbnail at top of card, only for narrow cards
    */
-  thumbnailAlt?: string;
+  thumbnailAlt?: string
 }
 
 export const AltCard = ({
@@ -43,7 +43,7 @@ export const AltCard = ({
   linkHref,
   narrow,
   thumbnailSrc,
-  thumbnailAlt,
+  thumbnailAlt
 }: AltCardProps) => (
   <a href={linkHref} target="_blank" rel="noopener noreferrer">
     <div className="p-6 rounded-xl w-full border-gray-100 border-2 shadow-lg overflow-hidden text-black">
@@ -60,7 +60,9 @@ export const AltCard = ({
         )}
       </div>
       <div className="clear-both">
-        <Typography.Caption2 className='text-blue-500 font-bold mb-1'>{title}</Typography.Caption2>
+        <Typography.Caption2 className="text-blue-500 font-bold mb-1">
+          {title}
+        </Typography.Caption2>
         {narrow ? (
           <Typography.Title2>{body}</Typography.Title2>
         ) : (
@@ -69,4 +71,4 @@ export const AltCard = ({
       </div>
     </div>
   </a>
-);
+)
