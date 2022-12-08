@@ -122,6 +122,14 @@ export const Footer = ({ webProperty }: FooterProps) => (
             <a href="https://github.com/originprotocol" target="_blank" rel="noreferrer">
               <Typography.Caption>GitHub</Typography.Caption>
             </a>
+            <a
+              href="https://originprotocol.com/blog#press"
+              target="_self"
+            >
+              <Typography.Caption>
+                Press
+              </Typography.Caption>
+            </a>
           </div>
         </div>
       </div>
