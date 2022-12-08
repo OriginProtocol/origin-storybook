@@ -68,6 +68,8 @@
     "chromatic": "npx chromatic --project-token=7db6a89b14e5",
     "test:generate-output": "jest --json --outputFile=.jest-test-results.json",
     "build": "NODE_ENV=production rollup -c",
+    "lint": "eslint ./src",
+    "lint:fix": "eslint --fix ./src",
     "test": "jest"
   },
   "files": [
