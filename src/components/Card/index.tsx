@@ -12,7 +12,7 @@ export interface CardProps {
   /**
    * String used as body/subtitle below title
    */
-  body?: string
+  body?: string | React.ReactNode
   /**
    * String that is used as link text, optional
    */
