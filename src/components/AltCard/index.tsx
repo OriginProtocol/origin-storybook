@@ -45,7 +45,7 @@ export const AltCard = ({
   thumbnailSrc,
   thumbnailAlt
 }: AltCardProps) => (
-  <a href={linkHref} target="_blank" rel="noopener noreferrer">
+  <a href={linkHref} target="_blank" rel="noopener noreferrer nofollow">
     <div className="p-6 rounded-xl w-full border-gray-100 border-2 shadow-lg overflow-hidden text-black">
       <div className="relative justify-self-start mb-3">
         <img src={imgSrc} alt={imgAlt} className="h-10" />
