@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
+import { twMerge } from "tailwind-merge";
 
 export { GradientText } from './GradientText'
 
@@ -88,7 +89,10 @@ export class Typography extends Component<TypographyProps> {
   static H1 = ({ children, className = '', style, as }: TypographyProps) => {
     return (
       <GenericTypography
-        className={`font-sansSailec font-bold text-5xl md:text-8xl ${className}`}
+        className={twMerge(
+          "font-sansSailec font-bold text-5xl md:text-8xl",
+          className
+        )}
         style={style}
         as={as}
         defaultAs="h1"
@@ -101,7 +105,10 @@ export class Typography extends Component<TypographyProps> {
   static H2 = ({ children, className = '', style, as }: TypographyProps) => {
     return (
       <GenericTypography
-        className={`font-sansSailec font-medium text-4xl md:text-7xl ${className}`}
+        className={twMerge(
+          "font-sansSailec font-medium text-4xl md:text-7xl",
+          className
+        )}
         style={style}
         as={as}
         defaultAs="h2"
@@ -114,7 +121,10 @@ export class Typography extends Component<TypographyProps> {
   static H3 = ({ children, className = '', style, as }: TypographyProps) => {
     return (
       <GenericTypography
-        className={`font-sansSailec font-medium text-3xl md:text-6xl ${className}`}
+        className={twMerge(
+          "font-sansSailec font-medium text-3xl md:text-6xl",
+          className
+        )}
         style={style}
         as={as}
         defaultAs="h3"
@@ -127,7 +137,10 @@ export class Typography extends Component<TypographyProps> {
   static H4 = ({ children, className = '', style, as }: TypographyProps) => {
     return (
       <GenericTypography
-        className={`font-sansSailec font-medium text-2xl md:text-5xl ${className}`}
+        className={twMerge(
+          "font-sansSailec font-medium text-2xl md:text-5xl",
+          className
+        )}
         style={style}
         as={as}
         defaultAs="h4"
@@ -140,7 +153,10 @@ export class Typography extends Component<TypographyProps> {
   static H5 = ({ children, className = '', style, as }: TypographyProps) => {
     return (
       <GenericTypography
-        className={`font-sansSailec font-medium text-xl md:text-4xl ${className}`}
+        className={twMerge(
+          "font-sansSailec font-medium text-xl md:text-4xl",
+          className
+        )}
         style={style}
         as={as}
         defaultAs="h5"
@@ -153,7 +169,10 @@ export class Typography extends Component<TypographyProps> {
   static H6 = ({ children, className = '', style, as }: TypographyProps) => {
     return (
       <GenericTypography
-        className={`font-sansSailec font-medium text-lg md:text-3xl ${className}`}
+        className={twMerge(
+          "font-sansSailec font-medium text-lg md:text-3xl",
+          className
+        )}
         style={style}
         as={as}
         defaultAs="h6"
@@ -166,7 +185,10 @@ export class Typography extends Component<TypographyProps> {
   static H7 = ({ children, className = '', style, as }: TypographyProps) => {
     return (
       <GenericTypography
-        className={`font-sansSailec font-medium text-base md:text-2xl ${className}`}
+        className={twMerge(
+          "font-sansSailec font-medium text-base md:text-2xl",
+          className
+        )}
         style={style}
         as={as}
         defaultAs="h6"
@@ -185,7 +207,10 @@ export class Typography extends Component<TypographyProps> {
   }: TypographyProps) => {
     return (
       <GenericTypography
-        className={`font-sansInter font-normal text-base md:text-xl ${className}`}
+        className={twMerge(
+          "font-sansInter font-normal text-base md:text-xl",
+          className
+        )}
         style={style}
         as={as}
         defaultAs="p"
@@ -205,7 +230,10 @@ export class Typography extends Component<TypographyProps> {
   }: TypographyProps) => {
     return (
       <GenericTypography
-        className={`font-sansInter font-normal text-base leading-7 ${className}`}
+        className={twMerge(
+          "font-sansInter font-normal text-base leading-7",
+          className
+        )}
         style={style}
         as={as}
         defaultAs="p"
@@ -225,7 +253,10 @@ export class Typography extends Component<TypographyProps> {
   }: TypographyProps) => {
     return (
       <GenericTypography
-        className={`font-sansInter font-normal text-base leading-7 ${className}`}
+        className={twMerge(
+          "font-sansInter font-normal text-base leading-7",
+          className
+        )}
         style={style}
         as={as}
         defaultAs="p"
@@ -239,7 +270,7 @@ export class Typography extends Component<TypographyProps> {
   static Title = ({ children, className = '', style, as }: TypographyProps) => {
     return (
       <GenericTypography
-        className={`font-sansInter font-bold text-xl ${className}`}
+        className={twMerge("font-sansInter font-bold text-xl", className)}
         style={style}
         as={as}
         defaultAs="p"
@@ -257,7 +288,7 @@ export class Typography extends Component<TypographyProps> {
   }: TypographyProps) => {
     return (
       <GenericTypography
-        className={`font-sansInter font-bold text-xs ${className}`}
+        className={twMerge("font-sansInter font-bold text-xs", className)}
         style={style}
         as={as}
         defaultAs="p"
@@ -275,7 +306,7 @@ export class Typography extends Component<TypographyProps> {
   }: TypographyProps) => {
     return (
       <GenericTypography
-        className={`font-sansInter font-normal text-sm ${className}`}
+        className={twMerge("font-sansInter font-normal text-sm", className)}
         style={style}
         as={as}
         defaultAs="p"
@@ -293,7 +324,7 @@ export class Typography extends Component<TypographyProps> {
   }: TypographyProps) => {
     return (
       <GenericTypography
-        className={`font-sansInter font-normal text-xs ${className}`}
+        className={twMerge("font-sansInter font-normal text-xs", className)}
         style={style}
         as={as}
         defaultAs="p"
@@ -306,7 +337,10 @@ export class Typography extends Component<TypographyProps> {
   static Label = ({ children, className = '', style, as }: TypographyProps) => {
     return (
       <GenericTypography
-        className={`font-sansInter font-bold text-sm uppercase ${className}`}
+        className={twMerge(
+          "font-sansInter font-bold text-sm uppercase",
+          className
+        )}
         style={style}
         as={as}
         defaultAs="span"
@@ -325,7 +359,10 @@ export class Typography extends Component<TypographyProps> {
   }: TypographyProps) => {
     return (
       <GenericTypography
-        className={`font-sansInter font-bold text-base text-link-blue ${className}`}
+        className={twMerge(
+          "font-sansInter font-bold text-base text-link-blue",
+          className
+        )}
         style={style}
         as={as}
         defaultAs="p"
