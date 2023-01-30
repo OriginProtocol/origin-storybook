@@ -107,6 +107,8 @@ export const Button = ({
       background =
         type === 'primary'
           ? 'bg-gradient-to-r from-story-button-start to-story-button-end'
+          : type === 'header'
+          ? ''
           : 'bg-white'
       textColor =
         type === 'primary'

@@ -231,7 +231,7 @@ export const Header = ({
         <div
           className={`
             ${open ? 'translate-y-0' : 'translate-y-full'}
-            ${webProperty === 'ousd' ? 'bg-black' : ''}
+            ${webProperty === 'ousd' ? 'bg-black' : 'bg-white'}
             transform md:hidden fixed top-0 bottom-0 right-0 left-0 transition-transform shadow z-50
           `}
         >
