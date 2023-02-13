@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Button } from '../Button'
 import { Dropdown } from '../Dropdown'
 import { OriginDollarLogo, OriginLogo, OriginStoryLogo } from '../Icons'
+import { twMerge } from 'tailwind-merge'
 import { getRelProps } from '../utils'
 
 export type MappedLink<Link> = {
@@ -191,20 +192,24 @@ export interface HeaderProps {
    * Currently displayed page of navigation bar
    */
   active?: string
+
+  className?: string
 }
 
 export const Header = ({
   webProperty,
   mappedLinks,
   active,
+  className
 }: HeaderProps) => {
   const [open, setOpen] = useState(false)
 
   return (
     <header
-      className={`${
-        webProperty === 'ousd' ? 'px-8 md:px-16 lg:px-[8.375rem]' : ''
-      }`}
+      className={twMerge(
+        `${webProperty === 'ousd' ? 'px-8 md:px-16 lg:px-[8.375rem]' : ''}`,
+        className
+      )}
     >
       <div
         className={`py-9 md:py-16 w-full flex justify-between items-center mx-auto ${
@@ -238,9 +243,7 @@ export const Header = ({
           <div className="relative h-full">
             <div className="flex flex-col justify-center align-middle h-full">
               <div className="absolute left-8 top-9 h-4">
-                <a href="/">
-                  {webProperty === 'ousd' && <OriginDollarLogo />}
-                </a>
+                <a href="/">{webProperty === 'ousd' && <OriginDollarLogo />}</a>
               </div>
               <div className="absolute right-8 top-9">
                 <Hamburger
