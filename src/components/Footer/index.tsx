@@ -27,25 +27,53 @@ export const Footer = ({ webProperty }: FooterProps) => (
         <div className="flex flex-col md:justify-between space-y-6 md:space-y-0 flex-6">
           <OriginLogo theme="dark" />
           <div className="flex space-x-6 items-center md:pt-40">
-            <a href="https://twitter.com/OriginProtocol" target="_blank" rel="noreferrer">
+            <a
+              href="https://twitter.com/OriginProtocol"
+              target="_blank"
+              rel="noreferrer"
+            >
               <Twitter />
             </a>
-            <a href="https://www.facebook.com/originprotocol/" target="_blank" rel="noreferrer">
+            <a
+              href="https://www.facebook.com/originprotocol/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <Facebook />
             </a>
-            <a href="https://www.youtube.com/c/originprotocol" target="_blank" rel="noreferrer">
+            <a
+              href="https://www.youtube.com/c/originprotocol"
+              target="_blank"
+              rel="noreferrer"
+            >
               <YouTube />
             </a>
-            <a href="https://blog.originprotocol.com/" target="_blank" rel="noreferrer">
+            <a
+              href="https://blog.originprotocol.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <Medium />
             </a>
-            <a href="https://t.me/originprotocol" target="_blank" rel="noreferrer">
+            <a
+              href="https://t.me/originprotocol"
+              target="_blank"
+              rel="noreferrer"
+            >
               <Telegram />
             </a>
-            <a href="https://discord.com/invite/ogn" target="_blank" rel="noreferrer">
+            <a
+              href="https://discord.com/invite/ogn"
+              target="_blank"
+              rel="noreferrer"
+            >
               <Discord />
             </a>
-            <a href="https://www.reddit.com/r/originprotocol/" target="_blank" rel="noreferrer">
+            <a
+              href="https://www.reddit.com/r/originprotocol/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <RedditIcon />
             </a>
           </div>
@@ -54,23 +82,25 @@ export const Footer = ({ webProperty }: FooterProps) => (
           <Typography.Body3 className="font-semibold">
             Organization
           </Typography.Body3>
-          <div className="flex flex-row md:flex-col space-x-4 md:space-x-0 md:space-y-4">
+          <div className="flex flex-row md:flex-col md:space-x-0 md:space-y-4 items-center md:items-start">
             <a
               href={
                 webProperty === 'originprotocol'
                   ? '/community'
                   : 'https://originprotocol.com/community'
               }
-              target={webProperty === 'originprotocol' ? '_self' : '_blank'} rel="noreferrer"
+              target={webProperty === 'originprotocol' ? '_self' : '_blank'}
+              rel="noreferrer"
             >
               <Typography.Caption className="opacity-75">
                 Community
               </Typography.Caption>
             </a>
-            <div className="flex items-center">
+            <div className="flex items-center ml-4 md:ml-0 relative md:-top-1">
               <a
                 href="https://angel.co/company/originprotocol/jobs"
-                target="_blank" rel="noreferrer"
+                target="_blank"
+                rel="noreferrer"
               >
                 <Typography.Caption className="opacity-75">
                   Careers
@@ -78,7 +108,8 @@ export const Footer = ({ webProperty }: FooterProps) => (
               </a>
               <a
                 href="https://angel.co/company/originprotocol/jobs"
-                target="_blank" rel="noreferrer"
+                target="_blank"
+                rel="noreferrer"
               >
                 <div className="opacity-100 text-sm ml-2 bg-gray-700 py-1 px-3 rounded-xl font-medium">
                   Hiring!
@@ -96,7 +127,8 @@ export const Footer = ({ webProperty }: FooterProps) => (
                   ? 'https://story.xyz'
                   : 'https://originprotocol.com'
               }
-              target="_blank" rel="noreferrer"
+              target="_blank"
+              rel="noreferrer"
             >
               <Typography.Caption>
                 {webProperty !== 'story' ? 'Origin Story' : 'Origin Protocol'}
@@ -108,7 +140,8 @@ export const Footer = ({ webProperty }: FooterProps) => (
                   ? 'https://ousd.com'
                   : 'https://originprotocol.com'
               }
-              target="_blank" rel="noreferrer"
+              target="_blank"
+              rel="noreferrer"
             >
               <Typography.Caption>
                 {webProperty !== 'ousd' ? 'Origin Dollar' : 'Origin Protocol'}
@@ -119,23 +152,22 @@ export const Footer = ({ webProperty }: FooterProps) => (
         <div className="flex flex-col flex-2 space-y-4">
           <Typography.Body3 className="font-bold">Resources</Typography.Body3>
           <div className="flex flex-row md:flex-col space-x-4 md:space-x-0 md:space-y-4 opacity-75">
-            <a href="https://github.com/originprotocol" target="_blank" rel="noreferrer">
+            <a
+              href="https://github.com/originprotocol"
+              target="_blank"
+              rel="noreferrer"
+            >
               <Typography.Caption>GitHub</Typography.Caption>
             </a>
-            <a
-              href="https://originprotocol.com/blog#press"
-              target="_self"
-            >
-              <Typography.Caption>
-                Press
-              </Typography.Caption>
+            <a href="https://originprotocol.com/blog#press" target="_self">
+              <Typography.Caption>Press</Typography.Caption>
             </a>
           </div>
         </div>
       </div>
       <div className="pt-10 flex flex-col md:flex-row space-y-2 md:space-y-0 justify-between opacity-75 px-9 max-w-screen-xl mx-auto">
         <Typography.Caption2>
-          © 2022 Origin Protocol Inc. All rights reserved.
+          © {new Date().getFullYear()} Origin Protocol Inc. All rights reserved.
         </Typography.Caption2>
         <div className="flex space-x-6">
           <a href="/privacy" target="_blank">
