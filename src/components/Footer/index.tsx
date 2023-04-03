@@ -120,7 +120,7 @@ export const Footer = ({ webProperty }: FooterProps) => (
         </div>
         <div className="flex flex-col flex-2 space-y-4">
           <Typography.Body3 className="font-bold">Products</Typography.Body3>
-          <div className="flex flex-row md:flex-col space-x-4 md:space-x-0 md:space-y-4 opacity-75">
+          <div className="flex flex-row md:flex-col md:space-x-0 md:space-y-4 items-center md:items-start opacity-75">
             <a
               href={
                 webProperty !== 'story'
@@ -151,7 +151,7 @@ export const Footer = ({ webProperty }: FooterProps) => (
         </div>
         <div className="flex flex-col flex-2 space-y-4">
           <Typography.Body3 className="font-bold">Resources</Typography.Body3>
-          <div className="flex flex-row md:flex-col space-x-4 md:space-x-0 md:space-y-4 opacity-75">
+          <div className="flex flex-row md:flex-col md:space-x-0 md:space-y-4 items-center md:items-start opacity-75">
             <a
               href="https://github.com/originprotocol"
               target="_blank"
