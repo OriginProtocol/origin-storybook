@@ -141,6 +141,7 @@ export const Footer = ({ webProperty }: FooterProps) => (
                   : 'https://originprotocol.com'
               }
               target="_blank"
+              className="ml-4 md:ml-0"
               rel="noreferrer"
             >
               <Typography.Caption>
@@ -159,7 +160,11 @@ export const Footer = ({ webProperty }: FooterProps) => (
             >
               <Typography.Caption>GitHub</Typography.Caption>
             </a>
-            <a href="https://originprotocol.com/blog#press" target="_self">
+            <a
+              className="ml-4 md:ml-0"
+              href="https://originprotocol.com/blog#press"
+              target="_self"
+            >
               <Typography.Caption>Press</Typography.Caption>
             </a>
           </div>
