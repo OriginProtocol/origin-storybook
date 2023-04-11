@@ -1,7 +1,12 @@
 import React, { useState } from 'react'
 import { Button } from '../Button'
 import { Dropdown } from '../Dropdown'
-import { OriginDollarLogo, OriginLogo, OriginStoryLogo } from '../Icons'
+import {
+  OriginDollarLogo,
+  OriginEtherLogo,
+  OriginLogo,
+  OriginStoryLogo
+} from '../Icons'
 import { twMerge } from 'tailwind-merge'
 import { getRelProps } from '../utils'
 
@@ -40,7 +45,7 @@ export interface NavLinksProps {
   /**
    * webProperty that header will be used on, changes logo on left side
    */
-  webProperty: 'originprotocol' | 'ousd' | 'story'
+  webProperty: 'originprotocol' | 'ousd' | 'oeth' | 'story'
   /**
    * Currently displayed page of navigation bar
    */
@@ -49,17 +54,22 @@ export interface NavLinksProps {
    * Is this being used on a mobile hamburger drawer? Used to enlarge text if so.
    */
   isMobile?: boolean
+  /**
+   * Tailwind background color class of the header
+   */
+  background?: string
 }
 
 const NavLinks = ({
   mappedLinks,
   webProperty,
   active,
-  isMobile
+  isMobile,
+  background
 }: NavLinksProps) => (
   <div
     className={`flex flex-col md:flex-row space-y-4 md:space-y-0 ${
-      webProperty === 'ousd' && isMobile
+      (webProperty === 'ousd' || webProperty === 'oeth') && isMobile
         ? 'px-8'
         : 'items-center justify-center'
     }`}
@@ -83,9 +93,9 @@ const NavLinks = ({
           return (
             <div
               className={`group flex flex-col ${
-                webProperty === 'ousd' && isMobile
+                (webProperty === 'ousd' || webProperty === 'oeth') && isMobile
                   ? '-ml-4 mr-auto'
-                  : webProperty === 'ousd'
+                  : webProperty === 'ousd' || webProperty === 'oeth'
                   ? 'pt-2'
                   : ''
               }`}
@@ -98,10 +108,11 @@ const NavLinks = ({
                 href={mappedLink.href}
                 webProperty={webProperty}
                 target={mappedLink.target}
+                background={background}
                 className={`${
                   mappedLink.isHighlight ? 'text-story-pink' : ''
                 } ${
-                  webProperty === 'ousd' && isMobile
+                  (webProperty === 'ousd' || webProperty === 'oeth') && isMobile
                     ? 'text-base'
                     : isMobile
                     ? 'text-2xl'
@@ -109,7 +120,7 @@ const NavLinks = ({
                 }`}
                 {...relProps}
               />
-              {webProperty === 'ousd' && (
+              {(webProperty === 'ousd' || webProperty === 'oeth') && (
                 <div
                   className={`h-1 mx-4 mt-0.5 bg-gradient-to-r group-hover:from-ousd-purple group-hover:to-ousd-blue rounded-full ${
                     active === mappedLink.label
@@ -132,16 +143,21 @@ const NavLinks = ({
         if (mappedLink.isButton) {
           return (
             <Button
-              size="small"
+              size={
+                webProperty === 'ousd' || webProperty === 'oeth'
+                  ? 'border'
+                  : 'small'
+              }
               label={mappedLink.label}
               key={mappedLink.label}
               href={mappedLink.href}
               target={mappedLink.target}
               className={`${
-                webProperty === 'ousd' && isMobile
+                (webProperty === 'ousd' || webProperty === 'oeth') && isMobile
                   ? 'absolute left-8 right-8 bottom-8 text-center'
                   : ''
               }`}
+              background={background}
               webProperty={webProperty}
               {...relProps}
             />
@@ -159,19 +175,23 @@ const Hamburger = ({
 }: {
   setOpen: React.Dispatch<React.SetStateAction<boolean>>
   open: boolean
-  webProperty: 'originprotocol' | 'ousd' | 'story'
+  webProperty: 'originprotocol' | 'ousd' | 'oeth' | 'story'
 }) => (
   <div className="space-y-2 cursor-pointer" onClick={() => setOpen(!open)}>
     <span
       className={`block w-8 h-0.5 ${
-        webProperty === 'ousd' ? 'bg-white' : 'bg-gray-600'
+        webProperty === 'ousd' || webProperty === 'oeth'
+          ? 'bg-white'
+          : 'bg-gray-600'
       } transform transition-transform ${
         open ? 'rotate-45 translate-y-1.5' : ''
       }`}
     ></span>
     <span
       className={`block w-8 h-0.5 ${
-        webProperty === 'ousd' ? 'bg-white' : 'bg-gray-600'
+        webProperty === 'ousd' || webProperty === 'oeth'
+          ? 'bg-white'
+          : 'bg-gray-600'
       } transform transition-transform ${
         open ? '-rotate-45 -translate-y-1' : ''
       }`}
@@ -183,7 +203,7 @@ export interface HeaderProps {
   /**
    * webProperty that header will be used on, changes logo on left side
    */
-  webProperty: 'originprotocol' | 'ousd' | 'story'
+  webProperty: 'originprotocol' | 'ousd' | 'oeth' | 'story'
   /**
    * Array of link objects the header will use to create dropdowns and buttons
    */
@@ -194,11 +214,16 @@ export interface HeaderProps {
   active?: string
 
   className?: string
+  /**
+   * Tailwind background color class of the header
+   */
+  background?: string
 }
 
 export const Header = ({
   webProperty,
   mappedLinks,
+  background,
   active,
   className
 }: HeaderProps) => {
@@ -207,24 +232,33 @@ export const Header = ({
   return (
     <header
       className={twMerge(
-        `${webProperty === 'ousd' ? 'px-8 md:px-16 lg:px-[8.375rem]' : ''}`,
+        `${
+          webProperty === 'ousd' || webProperty === 'oeth'
+            ? 'px-8 md:px-16 lg:px-[8.375rem]'
+            : ''
+        }`,
+        background,
         className
       )}
     >
       <div
         className={`py-9 md:py-16 w-full flex justify-between items-center mx-auto ${
-          webProperty === 'ousd' ? 'max-w-[89.5rem]' : 'max-w-screen-xl px-9'
+          webProperty === 'ousd' || webProperty === 'oeth'
+            ? 'max-w-[89.5rem]'
+            : 'max-w-screen-xl px-9'
         }`}
       >
         <div className="flex h-4 md:h-6">
           <a href="/">
             {webProperty === 'originprotocol' && <OriginLogo />}
             {webProperty === 'ousd' && <OriginDollarLogo />}
+            {webProperty === 'oeth' && <OriginEtherLogo />}
             {webProperty === 'story' && <OriginStoryLogo />}
           </a>
         </div>
         <div className="hidden md:block">
           <NavLinks
+            background={background}
             mappedLinks={mappedLinks}
             webProperty={webProperty}
             active={active}
@@ -236,7 +270,11 @@ export const Header = ({
         <div
           className={`
             ${open ? 'translate-y-0' : 'translate-y-full'}
-            ${webProperty === 'ousd' ? 'bg-black' : 'bg-white'}
+            ${
+              webProperty === 'ousd' || webProperty === 'oeth'
+                ? 'bg-black'
+                : 'bg-white'
+            }
             transform md:hidden fixed top-0 bottom-0 right-0 left-0 transition-transform shadow z-50
           `}
         >
