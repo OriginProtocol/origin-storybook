@@ -57,6 +57,10 @@ export interface ButtonProps {
    * Tailwind background color class
    */
   background?: string
+  /**
+   * Whether button looks like button
+   */
+  isButton?: boolean
 }
 
 /**
@@ -75,6 +79,7 @@ export const Button = ({
   style = {},
   disabled,
   background: bg,
+  isButton,
   onClick,
   ...props
 }: ButtonProps) => {
@@ -233,17 +238,17 @@ export const Button = ({
       {...props}
     >
       <Component href={href || ''} target={target}>
-        <div
-          className={twMerge(
-            bg,
-            webProperty === 'ousd' || webProperty === 'oeth'
-              ? 'rounded-full px-8 py-1'
-              : ''
-          )}
-        >
-          {label}
-          {children}
-        </div>
+        {webProperty === 'ousd' || webProperty === 'oeth' ? (
+          <div className={twMerge(bg, isButton && 'rounded-full px-8 py-1')}>
+            {label}
+            {children}
+          </div>
+        ) : (
+          <>
+            {label}
+            {children}
+          </>
+        )}
       </Component>
     </a>
   )
