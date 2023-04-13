@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
+import { twMerge } from 'tailwind-merge'
 
 export interface ButtonProps {
   /**
@@ -9,11 +10,11 @@ export interface ButtonProps {
   /**
    * What property is this button for?
    */
-  webProperty?: 'originprotocol' | 'ousd' | 'story'
+  webProperty?: 'originprotocol' | 'ousd' | 'oeth' | 'story'
   /**
    * How large should the button be?
    */
-  size?: 'small' | 'medium' | 'large' | 'nav'
+  size?: 'small' | 'medium' | 'large' | 'nav' | 'border'
   /**
    * Button contents
    */
@@ -52,6 +53,10 @@ export interface ButtonProps {
    * Disables the button
    */
   disabled?: boolean
+  /**
+   * Tailwind background color class
+   */
+  background?: string
 }
 
 /**
@@ -69,6 +74,7 @@ export const Button = ({
   className = '',
   style = {},
   disabled,
+  background: bg,
   onClick,
   ...props
 }: ButtonProps) => {
@@ -103,6 +109,17 @@ export const Button = ({
       hoverStyles = type === 'header' ? '' : 'hover:text-gray-300'
       break
 
+    case 'oeth':
+      background =
+        type === 'primary'
+          ? 'bg-gradient-to-r from-oeth-button-start to-oeth-button-end'
+          : type === 'secondary'
+          ? 'bg-gradient-to-r from-oeth-button-dark-start to-oethx  -button-dark-end'
+          : ''
+      textColor = 'text-white'
+      hoverStyles = type === 'header' ? '' : 'hover:text-gray-300'
+      break
+
     case 'story':
       background =
         type === 'primary'
@@ -129,6 +146,11 @@ export const Button = ({
   let textSize
   let padding
   switch (size) {
+    case 'border':
+      textSize = 'text-base font-normal'
+      padding = 'px-0.5 py-0.5'
+      break
+
     case 'nav':
       textSize = 'text-base font-normal'
       padding = 'px-7 py-1'
@@ -211,10 +233,17 @@ export const Button = ({
       {...props}
     >
       <Component href={href || ''} target={target}>
-        <>
+        <div
+          className={twMerge(
+            bg,
+            webProperty === 'ousd' || webProperty === 'oeth'
+              ? 'rounded-full px-8 py-1'
+              : ''
+          )}
+        >
           {label}
           {children}
-        </>
+        </div>
       </Component>
     </a>
   )

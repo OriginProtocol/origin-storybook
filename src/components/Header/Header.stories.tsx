@@ -94,10 +94,60 @@ OUSD.args = {
       order: 6,
       links: []
     }
-  ]
+  ],
+  background: 'bg-black'
 }
 
 OUSD.parameters = {
+  backgrounds: {
+    default: 'dark'
+  }
+}
+
+export const OETH = Template.bind({})
+OETH.args = {
+  webProperty: 'oeth',
+  mappedLinks: [
+    {
+      href: 'https://ousd.com',
+      label: 'Governance',
+      isButton: false,
+      order: 1,
+      links: []
+    },
+    {
+      href: 'https://ousd.com',
+      label: 'Docs',
+      isButton: false,
+      order: 3,
+      links: []
+    },
+    {
+      href: 'https://ousd.com',
+      label: 'FAQ',
+      isButton: false,
+      order: 3,
+      links: []
+    },
+    {
+      href: 'https://ousd.com',
+      label: 'OGV',
+      isButton: false,
+      order: 5,
+      links: []
+    },
+    {
+      href: 'https://google.com',
+      label: 'Connect Wallet',
+      isButton: true,
+      order: 6,
+      links: []
+    }
+  ],
+  background: 'bg-black'
+}
+
+OETH.parameters = {
   backgrounds: {
     default: 'dark'
   }
