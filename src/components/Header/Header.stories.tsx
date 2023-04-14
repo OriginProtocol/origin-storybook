@@ -138,7 +138,7 @@ OETH.args = {
     },
     {
       href: 'https://google.com',
-      label: 'Connect Wallet',
+      label: 'App',
       isButton: true,
       order: 6,
       links: []

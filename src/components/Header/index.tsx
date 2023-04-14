@@ -68,13 +68,16 @@ const NavLinks = ({
   background
 }: NavLinksProps) => (
   <div
-    className={`flex flex-col md:flex-row space-y-4 md:space-y-0 ${
+    className={`flex flex-col md:!flex-row space-y-4 md:space-y-0 ${
       (webProperty === 'ousd' || webProperty === 'oeth') && isMobile
         ? 'px-8'
         : 'items-center justify-center'
     }`}
   >
     {mappedLinks.map((mappedLink) => {
+      {
+        console.log(isMobile)
+      }
       const relProps = getRelProps(mappedLink.nofollow)
 
       if (!mappedLink.isButton && mappedLink.links) {
@@ -135,7 +138,7 @@ const NavLinks = ({
       }
     })}
     <div
-      className={`flex flex-col md:flex-row md:space-x-5 md:pl-4 items-center justify-center space-y-4 md:space-y-0`}
+      className={`flex flex-col md:!flex-row md:!space-x-5 md:!pl-4 items-center justify-center space-y-4 md:!space-y-0`}
     >
       {mappedLinks.map((mappedLink) => {
         const relProps = getRelProps(mappedLink.nofollow)
@@ -159,6 +162,7 @@ const NavLinks = ({
               }`}
               background={background}
               webProperty={webProperty}
+              isButton
               {...relProps}
             />
           )
@@ -234,7 +238,7 @@ export const Header = ({
       className={twMerge(
         `${
           webProperty === 'ousd' || webProperty === 'oeth'
-            ? 'px-8 md:px-16 lg:px-[8.375rem]'
+            ? 'px-8 md:!px-16 lg:!px-[8.375rem]'
             : ''
         }`,
         background,
@@ -242,13 +246,13 @@ export const Header = ({
       )}
     >
       <div
-        className={`py-9 md:py-16 w-full flex justify-between items-center mx-auto ${
+        className={`py-9 md:!py-16 w-full flex justify-between items-center mx-auto ${
           webProperty === 'ousd' || webProperty === 'oeth'
             ? 'max-w-[89.5rem]'
             : 'max-w-screen-xl px-9'
         }`}
       >
-        <div className="flex h-4 md:h-6">
+        <div className="flex h-4 md:!h-6">
           <a href="/">
             {webProperty === 'originprotocol' && <OriginLogo />}
             {webProperty === 'ousd' && <OriginDollarLogo />}
@@ -256,7 +260,7 @@ export const Header = ({
             {webProperty === 'story' && <OriginStoryLogo />}
           </a>
         </div>
-        <div className="hidden md:block">
+        <div className="hidden md:!block">
           <NavLinks
             background={background}
             mappedLinks={mappedLinks}
@@ -264,7 +268,7 @@ export const Header = ({
             active={active}
           />
         </div>
-        <div className="block md:hidden">
+        <div className="block md:!hidden">
           <Hamburger open={open} setOpen={setOpen} webProperty={webProperty} />
         </div>
         <div
@@ -275,7 +279,7 @@ export const Header = ({
                 ? 'bg-black'
                 : 'bg-white'
             }
-            transform md:hidden fixed top-0 bottom-0 right-0 left-0 transition-transform shadow z-50
+            transform md:!hidden fixed top-0 bottom-0 right-0 left-0 transition-transform shadow z-50
           `}
         >
           <div className="relative h-full">
