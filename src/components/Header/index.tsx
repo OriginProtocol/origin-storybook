@@ -68,7 +68,7 @@ const NavLinks = ({
   background
 }: NavLinksProps) => (
   <div
-    className={`flex flex-col md:!flex-row space-y-4 md:space-y-0 ${
+    className={`flex flex-col md:!flex-row space-y-4 md:!space-y-0 ${
       (webProperty === 'ousd' || webProperty === 'oeth') && isMobile
         ? 'px-8'
         : 'items-center justify-center'
