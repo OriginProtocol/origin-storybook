@@ -75,9 +75,6 @@ const NavLinks = ({
     }`}
   >
     {mappedLinks.map((mappedLink) => {
-      {
-        console.log(isMobile)
-      }
       const relProps = getRelProps(mappedLink.nofollow)
 
       if (!mappedLink.isButton && mappedLink.links) {
