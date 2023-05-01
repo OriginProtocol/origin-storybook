@@ -122,7 +122,13 @@ const NavLinks = ({
               />
               {(webProperty === 'ousd' || webProperty === 'oeth') && (
                 <div
-                  className={`h-1 mx-4 mt-0.5 bg-gradient-to-r group-hover:from-ousd-purple group-hover:to-ousd-blue rounded-full ${
+                  className={`h-1 mx-4 mt-0.5 bg-gradient-to-r ${
+                    webProperty === 'ousd' &&
+                    'group-hover:from-ousd-purple group-hover:to-ousd-blue'
+                  } ${
+                    webProperty === 'oeth' &&
+                    'group-hover:from-oeth-purple group-hover:to-oeth-blue'
+                  } rounded-full ${
                     active === mappedLink.label
                       ? 'from-ousd-purple to-ousd-blue'
                       : ''
@@ -292,6 +298,7 @@ export const Header = ({
                 />
               </div>
               <NavLinks
+                background={background}
                 mappedLinks={mappedLinks}
                 webProperty={webProperty}
                 isMobile

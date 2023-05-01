@@ -144,7 +144,7 @@ OETH.args = {
       links: []
     }
   ],
-  background: 'bg-black'
+  background: 'bg-black md:bg-black'
 }
 
 OETH.parameters = {
