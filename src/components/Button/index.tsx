@@ -239,9 +239,23 @@ export const Button = ({
     >
       <Component href={href || ''} target={target}>
         {webProperty === 'ousd' || webProperty === 'oeth' ? (
-          <div className={twMerge(bg, isButton && 'rounded-full px-8 py-1')}>
-            {label}
-            {children}
+          <div
+            className={`relative bg-gradient2 rounded-[100px] w-full md:w-fit h-fit ${
+              isButton ? 'hover:opacity-90' : ''
+            }`}
+          >
+            <button
+              onClick={onClick}
+              className={twMerge(
+                `relative bg-origin-bg-black rounded-[100px] w-full md:w-auto ${
+                  isButton ? 'px-4 lg:px-6 hover:bg-[#1b1a1abb]' : ''
+                } py-1 text-origin-white`,
+                bg
+              )}
+            >
+              {label}
+              {children}
+            </button>
           </div>
         ) : (
           <>
