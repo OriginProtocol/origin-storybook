@@ -10,7 +10,7 @@ export interface ButtonProps {
   /**
    * What property is this button for?
    */
-  webProperty?: 'originprotocol' | 'ousd' | 'oeth' | 'story'
+  webProperty?: 'originprotocol' | 'ousd' | 'oeth' | 'defi' | 'story'
   /**
    * How large should the button be?
    */
@@ -238,7 +238,7 @@ export const Button = ({
       {...props}
     >
       <Component href={href || ''} target={target}>
-        {webProperty === 'ousd' || webProperty === 'oeth' ? (
+        {webProperty === 'ousd' || webProperty === 'oeth' || webProperty === 'defi' ? (
           <div
             className={`relative bg-gradient2 rounded-[100px] w-full md:w-fit h-fit ${
               isButton ? 'hover:opacity-90' : ''
