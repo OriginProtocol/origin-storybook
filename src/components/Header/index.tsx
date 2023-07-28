@@ -3,6 +3,7 @@ import { Button } from '../Button'
 import { Dropdown } from '../Dropdown'
 import {
   OriginDollarLogo,
+  OriginDefiLogo,
   OriginEtherLogo,
   OriginLogo,
   OriginStoryLogo
@@ -45,7 +46,7 @@ export interface NavLinksProps {
   /**
    * webProperty that header will be used on, changes logo on left side
    */
-  webProperty: 'originprotocol' | 'ousd' | 'oeth' | 'story'
+  webProperty: 'originprotocol' | 'ousd' | 'oeth' | 'defi' | 'story'
   /**
    * Currently displayed page of navigation bar
    */
@@ -69,7 +70,7 @@ const NavLinks = ({
 }: NavLinksProps) => (
   <div
     className={`flex flex-col md:!flex-row space-y-4 md:!space-y-0 ${
-      (webProperty === 'ousd' || webProperty === 'oeth') && isMobile
+      (webProperty === 'ousd' || webProperty === 'oeth' || webProperty === 'defi') && isMobile
         ? 'px-8'
         : 'items-center justify-center'
     }`}
@@ -93,9 +94,9 @@ const NavLinks = ({
           return (
             <div
               className={`group flex flex-col ${
-                (webProperty === 'ousd' || webProperty === 'oeth') && isMobile
+                (webProperty === 'ousd' || webProperty === 'oeth' || webProperty === 'defi') && isMobile
                   ? '-ml-4 mr-auto'
-                  : webProperty === 'ousd' || webProperty === 'oeth'
+                  : webProperty === 'ousd' || webProperty === 'oeth' || webProperty === 'defi'
                   ? 'pt-2'
                   : ''
               }`}
@@ -112,7 +113,7 @@ const NavLinks = ({
                 className={`${
                   mappedLink.isHighlight ? 'text-story-pink' : ''
                 } ${
-                  (webProperty === 'ousd' || webProperty === 'oeth') && isMobile
+                  (webProperty === 'ousd' || webProperty === 'oeth' || webProperty === 'defi') && isMobile
                     ? 'text-base'
                     : isMobile
                     ? 'text-2xl'
@@ -120,13 +121,16 @@ const NavLinks = ({
                 }`}
                 {...relProps}
               />
-              {(webProperty === 'ousd' || webProperty === 'oeth') && (
+              {(webProperty === 'ousd' || webProperty === 'oeth' || webProperty === 'defi') && (
                 <div
                   className={`h-1 mx-4 mt-0.5 bg-gradient-to-r ${
                     webProperty === 'ousd' &&
                     'group-hover:from-ousd-purple group-hover:to-ousd-blue'
                   } ${
                     webProperty === 'oeth' &&
+                    'group-hover:from-oeth-purple group-hover:to-oeth-blue'
+                  } ${
+                    webProperty === 'defi' &&
                     'group-hover:from-oeth-purple group-hover:to-oeth-blue'
                   } rounded-full ${
                     active === mappedLink.label
@@ -150,7 +154,7 @@ const NavLinks = ({
           return (
             <Button
               size={
-                webProperty === 'ousd' || webProperty === 'oeth'
+                webProperty === 'ousd' || webProperty === 'oeth' || webProperty === 'defi'
                   ? 'border'
                   : 'small'
               }
@@ -159,7 +163,7 @@ const NavLinks = ({
               href={mappedLink.href}
               target={mappedLink.target}
               className={`${
-                (webProperty === 'ousd' || webProperty === 'oeth') && isMobile
+                (webProperty === 'ousd' || webProperty === 'oeth' || webProperty === 'defi') && isMobile
                   ? 'absolute left-8 right-8 bottom-8 text-center'
                   : ''
               }`}
@@ -182,12 +186,12 @@ const Hamburger = ({
 }: {
   setOpen: React.Dispatch<React.SetStateAction<boolean>>
   open: boolean
-  webProperty: 'originprotocol' | 'ousd' | 'oeth' | 'story'
+  webProperty: 'originprotocol' | 'ousd' | 'oeth' | 'defi' | 'story'
 }) => (
   <div className="space-y-2 cursor-pointer" onClick={() => setOpen(!open)}>
     <span
       className={`block w-8 h-0.5 ${
-        webProperty === 'ousd' || webProperty === 'oeth'
+        webProperty === 'ousd' || webProperty === 'oeth' || webProperty === 'defi'
           ? 'bg-white'
           : 'bg-gray-600'
       } transform transition-transform ${
@@ -196,7 +200,7 @@ const Hamburger = ({
     ></span>
     <span
       className={`block w-8 h-0.5 ${
-        webProperty === 'ousd' || webProperty === 'oeth'
+        webProperty === 'ousd' || webProperty === 'oeth' || webProperty === 'defi'
           ? 'bg-white'
           : 'bg-gray-600'
       } transform transition-transform ${
@@ -210,7 +214,7 @@ export interface HeaderProps {
   /**
    * webProperty that header will be used on, changes logo on left side
    */
-  webProperty: 'originprotocol' | 'ousd' | 'oeth' | 'story'
+  webProperty: 'originprotocol' | 'ousd' | 'oeth' | 'defi' | 'story'
   /**
    * Array of link objects the header will use to create dropdowns and buttons
    */
@@ -240,7 +244,7 @@ export const Header = ({
     <header
       className={twMerge(
         `${
-          webProperty === 'ousd' || webProperty === 'oeth'
+          webProperty === 'ousd' || webProperty === 'oeth' || webProperty === 'defi'
             ? 'px-8 md:!px-16 lg:!px-[8.375rem]'
             : ''
         }`,
@@ -250,7 +254,7 @@ export const Header = ({
     >
       <div
         className={`py-9 md:!py-16 w-full flex justify-between items-center mx-auto ${
-          webProperty === 'ousd' || webProperty === 'oeth'
+          webProperty === 'ousd' || webProperty === 'oeth' || webProperty === 'defi'
             ? 'max-w-[89.5rem]'
             : 'max-w-screen-xl px-9'
         }`}
@@ -260,6 +264,7 @@ export const Header = ({
             {webProperty === 'originprotocol' && <OriginLogo />}
             {webProperty === 'ousd' && <OriginDollarLogo />}
             {webProperty === 'oeth' && <OriginEtherLogo />}
+            {webProperty === 'defi' && <OriginDefiLogo />}
             {webProperty === 'story' && <OriginStoryLogo />}
           </a>
         </div>
@@ -278,7 +283,7 @@ export const Header = ({
           className={`
             ${open ? 'translate-y-0' : 'translate-y-full'}
             ${
-              webProperty === 'ousd' || webProperty === 'oeth'
+              webProperty === 'ousd' || webProperty === 'oeth' || webProperty === 'defi'
                 ? 'bg-black'
                 : 'bg-white'
             }
@@ -288,7 +293,11 @@ export const Header = ({
           <div className="relative h-full">
             <div className="flex flex-col justify-center align-middle h-full">
               <div className="absolute left-8 top-9 h-4">
-                <a href="/">{webProperty === 'ousd' && <OriginDollarLogo />}</a>
+                <a href="/">
+                  {webProperty === 'ousd' && <OriginDollarLogo />}
+                  {webProperty === 'oeth' && <OriginEtherLogo />}
+                  {webProperty === 'defi' && <OriginDefiLogo />}
+                </a>
               </div>
               <div className="absolute right-8 top-9">
                 <Hamburger
