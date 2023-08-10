@@ -1,4 +1,4 @@
-import { useState, Fragment } from 'react'
+import { useState, Fragment, useEffect } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon, ChevronDownIcon } from '@heroicons/react/20/solid'
 
@@ -16,12 +16,23 @@ type Props = {
   label: string
   onSelect: (value: Option) => void
   options: Option[]
-  initialValue?: number
+  initialValue?: number | null
+  value: number | null
 }
 
-export function Select({ label, onSelect, options, initialValue }: Props) {
+const findOption = (options: Option[], value: number | null) => {
+  return options.find(({ id }) => value === id)
+}
+
+export function Select({
+  label,
+  onSelect,
+  options,
+  initialValue,
+  value
+}: Props) {
   const initialOption = initialValue
-    ? options.find(({ id }) => initialValue === id) ?? options[0]
+    ? findOption(options, initialValue) ?? options[0]
     : options[0]
   const [selected, setSelected] = useState(initialOption)
 
@@ -29,6 +40,12 @@ export function Select({ label, onSelect, options, initialValue }: Props) {
     onSelect(value)
     setSelected(value)
   }
+
+  useEffect(() => {
+    if (value && value !== selected.id) {
+      setSelected(findOption(options, value) ?? options[0])
+    }
+  }, [value])
 
   return (
     <Listbox value={selected} onChange={onChange}>
