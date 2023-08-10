@@ -9,6 +9,10 @@
   "sideEffects": [
     "**/*.css"
   ],
+  "engines": {
+    "node": ">=16.0.0 <17.0.0",
+    "npm": ">=6.0.0"
+  },
   "repository": "https://github.com/originprotocol/origin-storybook.git",
   "author": "Nick Hong",
   "license": "MIT",
