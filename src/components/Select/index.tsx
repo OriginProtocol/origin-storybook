@@ -16,10 +16,14 @@ type Props = {
   label: string
   onSelect: (value: Option) => void
   options: Option[]
+  initialValue?: number
 }
 
-export function Select({ label, onSelect, options }: Props) {
-  const [selected, setSelected] = useState(options[0])
+export function Select({ label, onSelect, options, initialValue }: Props) {
+  const initialOption = initialValue
+    ? options.find(({ id }) => initialValue === id) ?? options[0]
+    : options[0]
+  const [selected, setSelected] = useState(initialOption)
 
   const onChange = (value: Option) => {
     onSelect(value)
