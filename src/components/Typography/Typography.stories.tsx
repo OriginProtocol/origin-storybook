@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react/no-children-prop */
 /* eslint-disable react/no-unescaped-entities */
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import type { Meta, StoryFn } from '@storybook/react'
 
-import { Typography, GradientText } from '.'
+import { GradientText, Typography } from '.'
 import { GradientTextProps } from './GradientText'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
@@ -14,10 +14,10 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' }
   }
-} as ComponentMeta<typeof Typography>
+} as Meta<typeof Typography>
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Typography> = (args) => (
+const Template: StoryFn<typeof Typography> = (args) => (
   <div>
     <Typography.H1 {...args} children="Typography.H1" />
     <div className="text-xs opacity-50 mt-2">
@@ -165,7 +165,7 @@ const textOptions: GradientTextProps[] = [
   }
 ]
 
-const GradientTemplate: ComponentStory<typeof GradientText> = () => (
+const GradientTemplate: StoryFn<typeof GradientText> = () => (
   <div>
     {textOptions.map((gradientTextProps, i) => (
       <Typography.Body key={`gradient-text-${i}`}>
