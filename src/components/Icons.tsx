@@ -142,8 +142,8 @@ export const OriginEtherLogo = () => {
 export const OriginDefiLogo = () => {
   return (
     <svg
-      width="550"
-      height="76"
+      width="auto"
+      height="100%"
       viewBox="0 0 550 76"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
