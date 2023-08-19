@@ -238,9 +238,11 @@ export const Button = ({
       {...props}
     >
       <Component href={href || ''} target={target}>
-        {webProperty === 'ousd' || webProperty === 'oeth' || webProperty === 'defi' ? (
+        {webProperty === 'ousd' ||
+        webProperty === 'oeth' ||
+        webProperty === 'defi' ? (
           <div
-            className={`relative bg-gradient2 rounded-[100px] w-full md:w-fit h-fit ${
+            className={`relative rounded-[100px] w-full md:w-fit h-fit ${
               isButton ? 'hover:opacity-90' : ''
             }`}
           >
