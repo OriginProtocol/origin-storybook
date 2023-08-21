@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { ComponentStory, ComponentMeta, Meta, StoryFn } from '@storybook/react'
 
 import { Header } from '.'
 
@@ -9,9 +9,9 @@ export default {
     // More on Story layout: https://storybook.js.org/docs/react/configure/story-layout
     layout: 'fullscreen'
   }
-} as ComponentMeta<typeof Header>
+} as Meta<typeof Header>
 
-const Template: ComponentStory<typeof Header> = (args) => <Header {...args} />
+const Template: StoryFn<typeof Header> = (args) => <Header {...args} />
 
 export const OriginProtocol = Template.bind({})
 OriginProtocol.args = {
@@ -148,6 +148,55 @@ OETH.args = {
 }
 
 OETH.parameters = {
+  backgrounds: {
+    default: 'dark'
+  }
+}
+
+export const Defi = Template.bind({})
+Defi.args = {
+  webProperty: 'defi',
+  mappedLinks: [
+    {
+      href: 'https://ousd.com',
+      label: 'Governance',
+      isButton: false,
+      order: 1,
+      links: []
+    },
+    {
+      href: 'https://ousd.com',
+      label: 'Docs',
+      isButton: false,
+      order: 3,
+      links: []
+    },
+    {
+      href: 'https://ousd.com',
+      label: 'FAQ',
+      isButton: false,
+      order: 3,
+      links: []
+    },
+    {
+      href: 'https://ousd.com',
+      label: 'OGV',
+      isButton: false,
+      order: 5,
+      links: []
+    },
+    {
+      href: 'https://google.com',
+      label: 'App',
+      isButton: true,
+      order: 6,
+      links: []
+    }
+  ],
+  background: 'bg-black md:bg-black'
+}
+
+Defi.parameters = {
   backgrounds: {
     default: 'dark'
   }

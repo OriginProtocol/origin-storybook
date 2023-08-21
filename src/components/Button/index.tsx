@@ -125,6 +125,17 @@ export const Button = ({
       hoverStyles = type === 'header' ? '' : 'hover:text-gray-300'
       break
 
+    case 'defi':
+      background =
+        type === 'primary'
+          ? 'bg-gradient-to-r from-oeth-button-start to-oeth-button-end'
+          : type === 'secondary'
+          ? 'bg-gradient-to-r from-oeth-button-dark-start to-oethx  -button-dark-end'
+          : ''
+      textColor = 'text-white'
+      hoverStyles = type === 'header' ? '' : 'hover:text-gray-300'
+      break
+
     case 'story':
       background =
         type === 'primary'
