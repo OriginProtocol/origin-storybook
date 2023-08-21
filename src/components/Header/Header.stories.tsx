@@ -193,7 +193,7 @@ Defi.args = {
       links: []
     }
   ],
-  background: 'bg-black md:bg-black'
+  background: 'bg-black md:bg-gray-900'
 }
 
 Defi.parameters = {

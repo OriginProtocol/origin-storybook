@@ -260,7 +260,7 @@ export const Button = ({
             <button
               onClick={onClick}
               className={twMerge(
-                `relative bg-origin-bg-black rounded-[100px] w-full md:w-auto ${
+                `relative rounded-[100px] w-full md:w-auto ${
                   isButton ? 'px-4 lg:px-6 hover:bg-[#1b1a1abb]' : ''
                 } py-1 text-origin-white`,
                 bg
