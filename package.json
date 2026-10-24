@@ -1,6 +1,6 @@
 {
   "name": "@originprotocol/origin-storybook",
-  "version": "0.27.22",
+  "version": "0.27.23",
   "description": "Component library for Origin Protocol, using Storybook",
   "main": "lib/index.js",
   "dir": "lib",
@@ -10,7 +10,7 @@
     "**/*.css"
   ],
   "engines": {
-    "node": ">=16.0.0",
+    "node": "^22.23.4 || ^24.22.1",
     "npm": ">=6.0.0"
   },
   "repository": "https://github.com/originprotocol/origin-storybook.git",
